@@ -25,13 +25,13 @@
         <h4 class="text-center">Cek Rute dan Tarif Primajasa</h4>
         <div class="space-y-4">
           <!-- Filter pakai Select Menu -->
-          <div class="flex gap-4 w-max mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-screen-lg mx-auto">
             <USelectMenu
               v-model="asalInput"
               :items="asalList"
               placeholder="Select status"
               size="xl"
-              class="w-full max-w-[300px]"
+              class="w-full "
             />
             <USelectMenu
               v-model="tujuanInput"
@@ -39,7 +39,7 @@
               placeholder="Pilih Tujuan"
               size="xl"
               :disabled="!asalInput"
-              class="w-full max-w-[300px]"
+              class="w-full "
             />
             <USelectMenu
               v-model="kelasInput"
@@ -47,12 +47,12 @@
               placeholder="Pilih Kelas"
               size="xl"
               :disabled="!tujuanInput"
-              class="w-full max-w-[300px]"
+              class="w-full"
             />
           </div>
 
           <!-- Hasil Filtering -->
-          <div v-if="hasil.length" class="mt-4">
+          <div v-if="hasil.length" class="mt-4 max-w-screen-lg mx-auto ">
             <div
               v-for="r in hasil"
               :key="r.id"
@@ -60,16 +60,15 @@
             >
               <h4>{{ r.asal }} – {{ r.tujuan }} ({{ r.kelas }})</h4>
               <div class="flex items-center gap-4">
-               <span> <icon name="ic:baseline-airline-seat-recline-normal" class="text-xl"/></span>
+               <span class="flex items-center"> <icon name="hugeicons:airplane-seat" class="text-xl"/> Seat</span>
                <span> {{ r.seat }}</span>
               </div>
               <div class="flex items-center gap-4">
-               <span> <icon name="hugeicons:money-04"/></span>
-               <span> Rp{{ r.tarif.toLocaleString() }} </span>
+               <span class="flex items-center"> <icon name="tdesign:money" class="text-xl" /> Tarif</span>
+               <span class="text-xl font-semibold"> Rp{{ r.tarif.toLocaleString() }} </span>
               </div>
-              <p>Seat: {{ r.seat }} | Harga: Rp{{ r.tarif.toLocaleString() }}</p>
-              <div v-if="r.id">
-                {{ r.rute_detail }}
+              <div v-if="r.id" class="flex flex-wrap items-center gap-2 mt-2">
+                <u-button v-for="rute in r.rute_detail"> {{ rute.asal }} </u-button>
               </div>
             </div>
           </div>
