@@ -5,9 +5,9 @@
         <!-- Logo -->
         <nuxt-link to="/">
           <img
-            src="/logo.png"
+            src="/logo-white.png"
             alt="Logo Primajasa"
-            class="filter grayscale invert brightness-200"
+            class="h-12"
           />
         </nuxt-link>
 
