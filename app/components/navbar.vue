@@ -43,6 +43,7 @@
                 <nuxt-link
                   :to="menu.to"
                   class="block py-1 px-3 rounded-full hover:bg-brand-900 duration-200 group"
+                  active-class="bg-brand-900"
                 >
                   {{ menu.label }}
                   <icon

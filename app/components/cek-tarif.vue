@@ -167,8 +167,8 @@ import { useRute } from "~/composables/rute";
 const { rute } = useRute();
 
 // input
-const asalInput = ref("Pilih Asal");
-const tujuanInput = ref("Pilih Tujuan");
+const asalInput = ref("Bearngkat");
+const tujuanInput = ref("Tujuan");
 const kelasInput = ref(" Kelas");
 
 // daftar unik
