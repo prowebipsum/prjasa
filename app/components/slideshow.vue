@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const items = ["img/slide-1.webp", "img/slide-2-min.png", "img/slide-3-min.png"];
+const items = ["img/sl1.jpg", "img/sl2.jpg"];
 </script>
 
 <template>
   <UCarousel
     v-slot="{ item }"
-    :autoplay="{ delay: 2000 }"
+    :autoplay="{ delay: 4000 }"
     :items="items"
     :loop="true"
     :dots="true"
