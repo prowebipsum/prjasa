@@ -3,7 +3,6 @@
     <Slideshow />
 
     <!-- kategori -->
-
     <div class="max-w-screen-lg mx-auto">
       <div
         class="grid grid-cols-2 lg:grid-cols-5 bg-white px-5 rounded-2xl shadow-2xl divide-y-1 lg:divide-x-1 divide-gray-200 relative -top-20 max-w-max mx-auto"

@@ -2,7 +2,7 @@
   <div>
     <section class="footer bg-primary text-light text-sm pt-12 pb-6">
       <div class="container">
-        <img src="/logo-white.png" alt="" class="mb-5" />
+        <img src="/logo-white.png" alt="" class="mb-5 h-12" />
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
           <div>
             <!-- col one -->
