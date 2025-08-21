@@ -31,17 +31,19 @@
         </div>
       </div>
       <div class="lg:col-span-3">
-       <p class="font-bold text-xl">Sparation Color</p>
+        <p class="font-bold text-xl">Sparation Color</p>
         <div class="grid grid-cols-1 lg:grid-cols-9">
-          <div class="bg-primary/90 h-12"></div>
-          <div class="bg-primary/80 h-12"></div>
-          <div class="bg-primary/70 h-12"></div>
-          <div class="bg-primary/60 h-12"></div>
-          <div class="bg-primary/50 h-12"></div>
-          <div class="bg-primary/40 h-12"></div>
-          <div class="bg-primary/30 h-12"></div>
-          <div class="bg-primary/20 h-12"></div>
-          <div class="bg-primary/10 h-12"></div>
+          <div class="bg-brand-950 h-12"></div>
+          <div class="bg-brand-900 h-12"></div>
+          <div class="bg-brand-800 h-12"></div>
+          <div class="bg-brand-700 h-12"></div>
+          <div class="bg-brand-600 h-12"></div>
+          <div class="bg-brand-500 h-12"></div>
+          <div class="bg-brand-400 h-12"></div>
+          <div class="bg-brand-300 h-12"></div>
+          <div class="bg-brand-200 h-12"></div>
+          <div class="bg-brand-100 h-12"></div>
+          <div class="bg-brand-50 h-12"></div>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-9">
           <div class="bg-secondary/90 h-12"></div>
@@ -54,7 +56,7 @@
           <div class="bg-secondary/20 h-12"></div>
           <div class="bg-secondary/10 h-12"></div>
         </div>
-       <div class="grid grid-cols-1 lg:grid-cols-9">
+        <div class="grid grid-cols-1 lg:grid-cols-9">
           <div class="bg-light/90 h-12"></div>
           <div class="bg-light/80 h-12"></div>
           <div class="bg-light/70 h-12"></div>
@@ -65,7 +67,7 @@
           <div class="bg-light/20 h-12"></div>
           <div class="bg-light/10 h-12"></div>
         </div>
-         <div class="grid grid-cols-1 lg:grid-cols-9">
+        <div class="grid grid-cols-1 lg:grid-cols-9">
           <div class="bg-gray-900 h-12"></div>
           <div class="bg-gray-800 h-12"></div>
           <div class="bg-gray-700 h-12"></div>
@@ -76,7 +78,6 @@
           <div class="bg-gray-200 h-12"></div>
           <div class="bg-gray-100 h-12"></div>
         </div>
-
       </div>
     </div>
   </div>

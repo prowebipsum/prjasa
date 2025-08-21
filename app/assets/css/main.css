@@ -3,18 +3,34 @@
 
 
 @theme {
-    --color-primary: #9d181d;
-    --color-secondary: #dac879;
-    --color-light: #fbf8e8;
 
-    --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  --color-brand-50: #fef2f2;
+  --color-brand-100: #ffe1e2;
+  --color-brand-200: #ffc9cb;
+  --color-brand-300: #fea3a6;
+  --color-brand-400: #fb6e73;
+  --color-brand-500: #f34047;
+  --color-brand-600: #e12128;
+  --color-brand-700: #bd181e;
+  --color-brand-800: #9d181d;
+  --color-brand-900: #811b1f;
+  --color-brand-950: #46090b;
+
+  --color-primary: var(--color-brand-800);
+  --color-secondary: #dac879;
+  --color-light: #fbf8e8;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+
 }
 
 @utility container {
-    @apply max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 @layer base {
+
   /* Body */
   body {
     @apply text-gray-700 text-base leading-relaxed bg-white;
@@ -90,6 +106,7 @@
 
 
 @layer utilities {
+
   /* class: custom-scrollbar */
   .custom-scrollbar {
     /* Firefox */
@@ -102,12 +119,15 @@
     height: 8px;
     width: 8px;
   }
+
   .custom-scrollbar::-webkit-scrollbar-track {
     @apply bg-secondary;
   }
+
   .custom-scrollbar::-webkit-scrollbar-thumb {
     @apply bg-primary rounded-full;
   }
+
   .custom-scrollbar:hover::-webkit-scrollbar-thumb {
     @apply bg-gray-300
   }
@@ -116,6 +136,7 @@
   .dark .custom-scrollbar {
     scrollbar-color: theme(colors.gray.400 / 0.6) transparent;
   }
+
   .dark .custom-scrollbar::-webkit-scrollbar-thumb {
     @apply bg-primary
   }
