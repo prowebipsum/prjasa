@@ -1,5 +1,9 @@
 <template>
-  <div ref="navbar" class="bg-primary text-white py-2 relative">
+  <div
+    ref="navbar"
+    class="bg-primary text-white py-2 fixed top-0 left-0 w-full z-50 transition-transform duration-300"
+    :class="isVisible ? 'translate-y-0' : '-translate-y-full'"
+  >
     <div class="container">
       <nav class="flex items-center justify-between gap-5 relative">
         <!-- Logo -->
@@ -32,7 +36,6 @@
               :key="menu.to"
               class="relative w-full lg:w-auto group"
             >
-              <!-- Main link -->
               <div
                 class="flex justify-between items-center cursor-pointer hover:text-secondary"
                 @click="toggleDropdown(menu.to)"
@@ -45,11 +48,9 @@
                   <icon
                     v-if="menu.children"
                     name="bi:chevron-down"
-                    class="duration-200 text-md align-middle group-hover:rotate-180 duration-200"
-                  >
-                  </icon>
+                    class="duration-200 text-md align-middle group-hover:rotate-180"
+                  />
                 </nuxt-link>
-                <!-- Dropdown arrow for mobile -->
                 <span v-if="menu.children" class="lg:hidden ml-2 text-sm">
                   {{ openDropdown === menu.to ? "▲" : "▼" }}
                 </span>
@@ -60,9 +61,7 @@
                 v-if="menu.children"
                 class="flex-col gap-2 bg-primary rounded-b-xl lg:w-[180px] p-4"
                 :class="[
-                  // Mobile: buka dengan klik
                   openDropdown === menu.to ? 'flex' : 'hidden',
-                  // Desktop: buka dengan hover
                   'lg:absolute lg:top-full lg:hidden lg:group-hover:flex',
                 ]"
               >
@@ -80,7 +79,7 @@
   </div>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
 import { onMounted, onBeforeUnmount } from "vue";
 
 const { menus } = useMenus();
@@ -103,7 +102,30 @@ onMounted(() => {
   window.addEventListener("resize", checkDesktop);
 });
 
+// ====== SCROLL LOGIC ======
+const isVisible = ref(true);
+let lastScrollY = 0;
+
+const handleScroll = () => {
+  const currentY = window.scrollY;
+
+  if (currentY > lastScrollY && currentY > 80) {
+    // scroll down, sembunyikan navbar
+    isVisible.value = false;
+  } else {
+    // scroll up, tampilkan navbar
+    isVisible.value = true;
+  }
+
+  lastScrollY = currentY;
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
 onBeforeUnmount(() => {
+  window.removeEventListener("scroll", handleScroll);
   window.removeEventListener("resize", checkDesktop);
 });
 </script>
