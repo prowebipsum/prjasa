@@ -1,7 +1,7 @@
 <template>
   <div
     ref="navbar"
-    class="bg-primary text-white py-2 fixed top-0 left-0 w-full z-50 transition-transform duration-300"
+    class="bg-primary text-white fixed top-0 left-0 w-full z-50 transition-transform duration-300 flex flex-col justify-center h-16"
     :class="isVisible ? 'translate-y-0' : '-translate-y-full'"
   >
     <div class="container">
@@ -42,15 +42,22 @@
               >
                 <nuxt-link
                   :to="menu.to"
-                  class="block py-1 px-3 rounded-full hover:bg-brand-900 duration-200 group"
-                  active-class="bg-brand-900"
+                  class="block group h-max"
+                  :style="{
+                    height: navbarHeight + 'px',
+                    lineHeight: navbarHeight + 'px',
+                  }"
                 >
-                  {{ menu.label }}
-                  <icon
-                    v-if="menu.children"
-                    name="bi:chevron-down"
-                    class="duration-200 text-md align-middle group-hover:rotate-180"
-                  />
+                  <span
+                    class="pt-1 pb-2 px-3 rounded-full hover:bg-brand-900 duration-200"
+                  >
+                    {{ menu.label }}
+                    <icon
+                      v-if="menu.children"
+                      name="bi:chevron-down"
+                      class="duration-200 text-md align-middle group-hover:rotate-180"
+                    />
+                  </span>
                 </nuxt-link>
                 <span v-if="menu.children" class="lg:hidden ml-2 text-sm">
                   {{ openDropdown === menu.to ? "▲" : "▼" }}
@@ -60,7 +67,7 @@
               <!-- Submenu -->
               <ul
                 v-if="menu.children"
-                class="flex-col gap-2 bg-primary rounded-b-xl lg:w-[180px] py-4"
+                class="flex-col gap-2 bg-brand-700 rounded-b-xl lg:w-[180px] pb-2"
                 :class="[
                   openDropdown === menu.to ? 'flex' : 'hidden',
                   'lg:absolute lg:top-full lg:hidden lg:group-hover:flex',
@@ -69,7 +76,7 @@
                 <li
                   v-for="child in menu.children"
                   :key="child.to"
-                  class="hover:bg-brand-900 duration-300 py-2 px-4"
+                  class="hover:bg-primary duration-300 py-2 px-4"
                 >
                   <nuxt-link
                     :to="child.to"
@@ -100,6 +107,15 @@ const { menus } = useMenus();
 const isOpen = ref(false);
 const openDropdown = ref<string | null>(null);
 const isDesktop = ref(false);
+
+const navbar = ref<HTMLElement | null>(null);
+const navbarHeight = ref(0);
+
+const updateNavbarHeight = () => {
+  if (navbar.value) {
+    navbarHeight.value = navbar.value.offsetHeight;
+  }
+};
 
 const toggleDropdown = (menuTo: string) => {
   if (isDesktop.value) return; // desktop tetap hover
@@ -134,11 +150,20 @@ const handleScroll = () => {
 };
 
 onMounted(() => {
+  updateNavbarHeight();
+  window.addEventListener("resize", updateNavbarHeight);
+
   window.addEventListener("scroll", handleScroll);
 });
 
 onBeforeUnmount(() => {
+  window.removeEventListener("resize", updateNavbarHeight);
   window.removeEventListener("scroll", handleScroll);
   window.removeEventListener("resize", checkDesktop);
 });
 </script>
+<style lang="css" scoped>
+.router-link-active span {
+  background-color: var(--color-brand-900);
+}
+</style>
