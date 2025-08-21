@@ -7,10 +7,26 @@ export const useMenus = () => {
       label: 'Produk', 
       to: '#',
       children: [
-        { label: 'Bus Regular', to: '#' },
-        { label: 'Moda', to: '#' },
-        { label: 'Shuttle', to: '#' },
-        { label: 'Pariwisata', to: '#' },
+        { 
+          label: 'Bus Regular',
+           to: '#' ,
+           image:'/img/akap.png'
+        },
+        { 
+          label: 'Moda', 
+          to: '#',
+          image:'/img/moda.png'
+         },
+        { 
+          label: 'Shuttle', 
+          to: '#',
+          image:'/img/shutle.png'
+         },
+        { 
+          label: 'Pariwisata', 
+          to: '#', 
+          image:'/img/wisata.png'
+        },
       ]
 
      },

@@ -60,14 +60,26 @@
               <!-- Submenu -->
               <ul
                 v-if="menu.children"
-                class="flex-col gap-2 bg-primary rounded-b-xl lg:w-[180px] p-4"
+                class="flex-col gap-2 bg-primary rounded-b-xl lg:w-[180px] py-4"
                 :class="[
                   openDropdown === menu.to ? 'flex' : 'hidden',
                   'lg:absolute lg:top-full lg:hidden lg:group-hover:flex',
                 ]"
               >
-                <li v-for="child in menu.children" :key="child.to">
-                  <nuxt-link :to="child.to" class="hover:text-secondary block">
+                <li
+                  v-for="child in menu.children"
+                  :key="child.to"
+                  class="hover:bg-brand-900 duration-300 py-2 px-4"
+                >
+                  <nuxt-link
+                    :to="child.to"
+                    class="hover:text-secondary flex gap-2 items-center"
+                  >
+                    <img
+                      v-if="child.image"
+                      :src="child.image"
+                      class="h-12 object-contain"
+                    />
                     {{ child.label }}
                   </nuxt-link>
                 </li>
