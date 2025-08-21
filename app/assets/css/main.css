@@ -87,3 +87,36 @@
     @apply focus:outline-none;
   }
 }
+
+
+@layer utilities {
+  /* class: custom-scrollbar */
+  .custom-scrollbar {
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: theme(colors.gray.500 / 0.7) transparent;
+  }
+
+  /* WebKit */
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-secondary;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+  .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+    @apply bg-gray-300
+  }
+
+  /* Dark mode tweak (opsional) */
+  .dark .custom-scrollbar {
+    scrollbar-color: theme(colors.gray.400 / 0.6) transparent;
+  }
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-primary
+  }
+}

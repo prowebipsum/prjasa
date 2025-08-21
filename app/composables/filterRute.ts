@@ -1,5 +1,5 @@
 // composables/useFilterRute.ts
-import { useRute } from './rute'
+import { useRute } from '../composable/rute'
 
 export const useFilterRute = () => {
   const { rute } = useRute()
