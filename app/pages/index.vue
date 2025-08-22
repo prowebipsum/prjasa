@@ -15,7 +15,7 @@
           <img
             :src="item.image"
             alt=""
-            class="group-hover:scale-110 transition-all duration-300 ease-in-out"
+            class="group-hover:scale-110 transition-all duration-300 ease-in-out h-20 w-auto"
           />
           <span>{{ item.name }}</span>
         </div>
@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
 const productCategory = ref([
-  { name: "Bus Reguler", image: "/img/akap.png" },
+  { name: "Bus Reguler", image: "/img/bus-cartoon.webp" },
   { name: "Moda", image: "/img/moda.png" },
   { name: "Shuttle", image: "/img/shutle.png" },
   { name: "Pariwisata", image: "/img/wisata.png" },
