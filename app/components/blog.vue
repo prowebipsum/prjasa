@@ -18,9 +18,7 @@
               <h4 class="text-white">
                 {{ item.title }}
               </h4>
-              <p class="">
-                {{ item.summary }}
-              </p>
+
               <UButton size="xl" class="rounded-full px-6">Read more</UButton>
             </div>
           </div>
