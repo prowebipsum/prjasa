@@ -8,8 +8,9 @@
             <img
               :src="item.image_url"
               alt=""
-              class="w-full h-56 object-cover rounded-xl mb-5 group-hover:shadow-2xl duration-200"
+              class="w-full h-56 object-cover rounded-xl mb-5 group-hover:border border-gray-200 group-hover:shadow-2xl duration-300"
             />
+
             <span class="text-sm flex items-center gap-1 text-gray-500 mb-1">
               <icon
                 name="material-symbols-light:calendar-month-outline-rounded"
