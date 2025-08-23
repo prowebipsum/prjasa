@@ -102,6 +102,15 @@
                 </div>
               </div>
 
+              <!-- slot map -->
+              <div
+                class="w-full bg-gray-100 rounded-xl border border-gray-300 border-dashed h-64 flex flex-col justify-center items-center my-10"
+              >
+                <Icon name="fluent:location-ripple-20-filled" class="text-3xl"></Icon>
+                <span class=""> Map disini</span>
+              </div>
+              <!-- end slotmap -->
+
               <!-- timeline -->
               <div class="mt-5 border-t border-gray-300 py-4">
                 <p class="font-medium">Lintasan</p>

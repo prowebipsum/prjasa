@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="mb-20 pb-16 bg-gray-50">
-      <div class="max-w-screen-lg mx-auto">
+      <div class="max-w-screen-lg mx-auto px-6 lg:px-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
           <div>
             <img src="/logo.png" alt="" class="h-12 object-contain mb-5" />
