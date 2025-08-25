@@ -10,22 +10,22 @@ export const useMenus = () => {
         { 
           label: 'Bus Regular',
            to: '#' ,
-           image:'/img/akap.png'
+           image:'/img/icon-reguler.png'
         },
         { 
           label: 'Moda', 
           to: '#',
-          image:'/img/moda.png'
+          image:'/img/icon-moda.png'
          },
         { 
           label: 'Shuttle', 
           to: '#',
-          image:'/img/shutle.png'
+          image:'/img/icon-shutle.png'
          },
         { 
           label: 'Pariwisata', 
           to: '#', 
-          image:'/img/wisata.png'
+          image:'/img/icon-wisata.png'
         },
       ]
 

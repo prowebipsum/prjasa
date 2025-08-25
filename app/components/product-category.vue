@@ -26,10 +26,10 @@
 
 <script lang="ts" setup>
 const productCategory = ref([
-  { name: "Bus Reguler", image: "/img/bus-cartoon.webp" },
-  { name: "Moda", image: "/img/moda.png" },
-  { name: "Shuttle", image: "/img/shutle.png" },
-  { name: "Pariwisata", image: "/img/wisata.png" },
+  { name: "Bus Reguler", image: "/img/icon-wisata.png" },
+  { name: "Moda", image: "/img/icon-moda.png" },
+  { name: "Shuttle", image: "/img/icon-shutle.png" },
+  { name: "Pariwisata", image: "/img/icon-wisata.png" },
 ]);
 </script>
 
