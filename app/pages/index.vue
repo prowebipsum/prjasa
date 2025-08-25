@@ -21,7 +21,7 @@
             </div>
           </div>
           <div>
-            <img src="/img/cari-pool.webp" alt="" />
+            <img src="/img/pulkam.webp" alt="" />
           </div>
         </div>
       </div>
