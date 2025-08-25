@@ -20,7 +20,7 @@
   --color-primary: var(--color-brand-800);
   --color-secondary: #dac879;
   --color-light: #fbf8e8;
-  --font-sans: 'Montserrat', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
   --font-open-sans:'Open Sans', sans-serif;
 
 
@@ -34,7 +34,7 @@
 
   /* Body */
   body {
-    @apply text-gray-700 text-base leading-relaxed bg-white;
+    @apply text-gray-700 text-base leading-relaxed bg-white overflow-x-hidden;
   }
 
   /* Headings */
