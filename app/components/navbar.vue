@@ -67,7 +67,7 @@
               <!-- Submenu -->
               <ul
                 v-if="menu.children"
-                class="flex-col gap-2 bg-brand-700 rounded-b-xl lg:w-[180px] pb-2"
+                class="flex-col gap-2 bg-brand-700 rounded-b-xl lg:w-[200px] pb-2"
                 :class="[
                   openDropdown === menu.to ? 'flex' : 'hidden',
                   'lg:absolute lg:top-full lg:hidden lg:group-hover:flex',
