@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-20 pb-10" :class="background">
+  <div class="hero pt-20 pb-10 relative" :class="background">
     <div class="container">
       <h1 class="text-4xl mb-2 text-primary">{{ title }}</h1>
       <p v-if="description">{{ description }}</p>
@@ -15,4 +15,14 @@ const props = defineProps({
 });
 </script>
 
-<style></style>
+<style>
+.hero::after {
+  content: "";
+  width: 120px;
+  height: 100px;
+  display: block;
+  background: url("/img/aksen.png") no-repeat bottom right;
+  position: absolute;
+  right: 0;
+}
+</style>

@@ -23,6 +23,7 @@
           <slot />
         </div>
       </div>
+      <ElementPoolTarif class="mt-10" />
     </div>
     <Footer />
   </div>
