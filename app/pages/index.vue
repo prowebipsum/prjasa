@@ -9,13 +9,13 @@
           <div class="flex flex-col gap-10 justify-center items-center">
             <div class="text-center">
               <h2>Lihat Rute dan Tarif</h2>
-              <UButton to="/" size="xl" class="rounded-full" icon="gis:route">
+              <UButton to="/cek-rute" size="xl" class="rounded-full" icon="gis:route">
                 Cek Rute dan Tarif
               </UButton>
             </div>
             <div class="text-center">
               <h2>Cari Pool Bus</h2>
-              <UButton to="/" size="xl" class="rounded-full" icon="tabler:bus">
+              <UButton to="/cek-pool" size="xl" class="rounded-full" icon="tabler:bus">
                 Cari Armada terdekat
               </UButton>
             </div>

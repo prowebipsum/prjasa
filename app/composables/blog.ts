@@ -4,7 +4,7 @@ export const useBlog = () => {
       {
         "title": "Tips Nyaman Bepergian Menggunakan Bus Malam",
         "summary": "Bepergian jarak jauh dengan bus malam bisa menjadi pilihan praktis dan hemat.",
-        "image_url": "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg",
+        "image_url": "/img/blog1.jpg",
         "author": "Admin Blog",
         "date": "2025-08-10",
         "source": "Blog Dummy"

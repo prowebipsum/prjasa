@@ -1,7 +1,7 @@
 <template>
   <div
     ref="navbar"
-    class="bg-primary text-white fixed top-0 left-0 w-full z-50 transition-transform duration-300 flex flex-col justify-center h-16"
+    class="bg-primary text-white fixed top-0 left-0 w-full z-[99999] transition-transform duration-300 flex flex-col justify-center h-16"
     :class="isVisible ? 'translate-y-0' : '-translate-y-full'"
   >
     <div class="container">
@@ -11,7 +11,7 @@
           <img src="/logo-white.png" alt="Logo Primajasa" class="h-12" />
         </nuxt-link>
 
-        <!-- Hamburger Button -->
+        <!-- Hamburger -->
         <button
           @click="isOpen = !isOpen"
           class="lg:hidden flex flex-col gap-1"
@@ -37,7 +37,7 @@
               class="relative w-full lg:w-auto group"
             >
               <div
-                class="flex justify-between items-center cursor-pointer hover:text-secondary"
+                class="flex justify-between items-center cursor-pointer"
                 @click="toggleDropdown(menu.to)"
               >
                 <nuxt-link
@@ -48,9 +48,7 @@
                     lineHeight: navbarHeight + 'px',
                   }"
                 >
-                  <span
-                    class="pt-1 pb-2 px-3 rounded-full hover:bg-brand-900 duration-200"
-                  >
+                  <span class="pt-1 pb-2 px-3 rounded-full hover:bg-accent duration-200">
                     {{ menu.label }}
                     <icon
                       v-if="menu.children"
@@ -78,10 +76,7 @@
                   :key="child.to"
                   class="hover:bg-primary duration-300 py-2 px-4"
                 >
-                  <nuxt-link
-                    :to="child.to"
-                    class="hover:text-secondary flex gap-2 items-center"
-                  >
+                  <nuxt-link :to="child.to" class="flex gap-2 items-center">
                     <img
                       v-if="child.image"
                       :src="child.image"
@@ -94,12 +89,19 @@
             </li>
           </ul>
         </div>
+
+        <!-- Language switcher -->
+        <div class="flex items-center gap-2">
+          <UButton label="ID" variant="link" color="white" class="font-bold" />
+          <UButton label="EN" variant="link" color="white" />
+        </div>
       </nav>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { UButton } from "#components";
 import { onMounted, onBeforeUnmount } from "vue";
 
 const { menus } = useMenus();
@@ -118,12 +120,12 @@ const updateNavbarHeight = () => {
 };
 
 const toggleDropdown = (menuTo: string) => {
-  if (isDesktop.value) return; // desktop tetap hover
+  if (isDesktop.value) return;
   openDropdown.value = openDropdown.value === menuTo ? null : menuTo;
 };
 
 const checkDesktop = () => {
-  isDesktop.value = window.innerWidth >= 1024; // lg breakpoint
+  isDesktop.value = window.innerWidth >= 1024;
 };
 
 onMounted(() => {
@@ -131,39 +133,30 @@ onMounted(() => {
   window.addEventListener("resize", checkDesktop);
 });
 
-// ====== SCROLL LOGIC ======
+// Scroll hide/show
 const isVisible = ref(true);
 let lastScrollY = 0;
 
 const handleScroll = () => {
   const currentY = window.scrollY;
-
   if (currentY > lastScrollY && currentY > 80) {
-    // scroll down, sembunyikan navbar
     isVisible.value = false;
   } else {
-    // scroll up, tampilkan navbar
     isVisible.value = true;
   }
-
   lastScrollY = currentY;
 };
 
 onMounted(() => {
   updateNavbarHeight();
   window.addEventListener("resize", updateNavbarHeight);
-
   window.addEventListener("scroll", handleScroll);
 });
-
-onBeforeUnmount(() => {
-  window.removeEventListener("resize", updateNavbarHeight);
-  window.removeEventListener("scroll", handleScroll);
-  window.removeEventListener("resize", checkDesktop);
-});
 </script>
-<style lang="css" scoped>
+
+<style>
+/* Highlight menu aktif */
 .router-link-active span {
-  background-color: var(--color-brand-900);
+  background-color: var(--color-accent);
 }
 </style>

@@ -5,20 +5,21 @@
 @theme {
 
 
-  --color-brand-50: #fef2f2;
-  --color-brand-100: #ffe1e2;
-  --color-brand-200: #ffc9cb;
-  --color-brand-300: #fea3a6;
-  --color-brand-400: #fb6e73;
-  --color-brand-500: #f34047;
-  --color-brand-600: #e12128;
-  --color-brand-700: #bd181e;
-  --color-brand-800: #8F2529;
-  --color-brand-900: #811b1f;
-  --color-brand-950: #46090b;
+--color-brand-50: #fdf3f3;
+--color-brand-100: #fce4e5;
+--color-brand-200: #faced0;
+--color-brand-300: #f5acaf;
+--color-brand-400: #ed7c80;
+--color-brand-500: #e15257;
+--color-brand-600: #ce343a;
+--color-brand-700: #ad282d;
+--color-brand-800: #8f2529;
+--color-brand-900: #772528;
+--color-brand-950: #400f11;
 
   --color-primary: var(--color-brand-800);
   --color-secondary: #dac879;
+  --color-accent: #cf5b35 ;
   --color-light: #fbf8e8;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
   --font-open-sans:'Open Sans', sans-serif;
@@ -103,6 +104,19 @@
   button {
     @apply focus:outline-none;
   }
+
+  /* Sembunyikan widget default Google */
+#google_translate_element,
+.goog-te-banner-frame,
+.goog-te-gadget,
+.VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate {
+  @apply hidden invisible z-0
+ }
+
+.goog-te-banner-frame {
+  display: none !important;
+}
+
 }
 
 

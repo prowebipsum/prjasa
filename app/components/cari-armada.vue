@@ -1,11 +1,10 @@
 <template>
   <div>
-    <section class="mb-20 pb-16 bg-gray-50">
+    <section class="pb-16 bg-gray-50">
       <div class="max-w-screen-lg mx-auto px-6 lg:px-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
+        <div class="items-center">
           <div>
-            <img src="/logo.png" alt="" class="h-12 object-contain mb-5" />
-            <h1 class="text-5xl lg:text-6xl font-bold mb-5">Cari Armada di Kota Kamu</h1>
+            <h3 class="text-center mb-10 text-primary">Cari Armada di Kota Kamu</h3>
             <!-- ⬇️ Klik item ATAU tekan Enter akan memanggil applyCity -->
             <UInputMenu
               v-model="selectedCity"
@@ -47,10 +46,6 @@
                 <!-- <p class="text-gray-600 text-xs mb-0">{{ selectedCity }}</p> -->
               </div>
             </div>
-          </div>
-
-          <div>
-            <img src="/img/cari-armada.png" alt="" />
           </div>
         </div>
       </div>
