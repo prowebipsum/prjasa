@@ -4,8 +4,8 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
         <div v-for="item in wca" class="p-4 rounded-xl shadow">
           <icon :name="item.icon" class="text-6xl text-primary" />
-          <h4 class="mb-1">{{ item.title }}</h4>
-          <p class="">{{ item.description }}</p>
+          <h5 class="mb-1">{{ item.title }}</h5>
+          <p class="text-sm">{{ item.description }}</p>
         </div>
       </div>
     </div>
