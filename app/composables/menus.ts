@@ -31,7 +31,7 @@ export const useMenus = () => {
           description:'loremipsum doloretsitamet'
         },
         {
-          label:'Penghaargaan',
+          label:'Penghargaan',
           to: '/about/penghargaan',
           description:'loremipsum doloretsitamet'
         }
