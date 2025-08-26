@@ -1,22 +1,24 @@
 <template>
   <div>
-    <section class="bg-gray-50">
+    <section class="bg-gray-50" :class="background">
       <!-- kategori -->
       <div class="max-w-screen-lg mx-auto px-6">
         <div
           class="featured grid grid-cols-2 lg:grid-cols-4 bg-white px-5 rounded-2xl shadow-2xl divide-y-1 lg:divide-x-1 divide-gray-200 relative -top-20 w-full mx-auto"
         >
           <div
-            v-for="item in productCategory"
-            :key="item.name"
+            v-for="item in productMenu"
+            :key="item.to"
             class="featured-item flex flex-col items-center justify-end gap-2 p-5 text-center group"
           >
-            <img
-              :src="item.image"
-              alt=""
-              class="group-hover:scale-110 transition-all duration-300 ease-in-out h-20 w-auto"
-            />
-            <span>{{ item.name }}</span>
+            <nuxt-link :to="item.to">
+              <img
+                :src="item.image"
+                alt=""
+                class="group-hover:scale-110 transition-all duration-300 ease-in-out h-20 w-auto"
+              />
+              <span>{{ item.label }}</span>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -25,12 +27,21 @@
 </template>
 
 <script lang="ts" setup>
+const props = defineProps({
+  background: {
+    type: String,
+    default: "bg-gray-50",
+  },
+});
 const productCategory = ref([
   { name: "Bus Reguler", image: "/img/icon-wisata.png" },
   { name: "Moda", image: "/img/icon-moda.png" },
   { name: "Shuttle", image: "/img/icon-shutle.png" },
   { name: "Pariwisata", image: "/img/icon-wisata.png" },
 ]);
+
+const { menus } = useMenus();
+const productMenu = computed(() => menus.value[2].children);
 </script>
 
 <style scoped>

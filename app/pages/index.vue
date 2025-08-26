@@ -35,5 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import CariArmada from "~/components/cari-armada.vue";
+definePageMeta({
+  layout: "home",
+});
 </script>

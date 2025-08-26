@@ -44,7 +44,7 @@ export const useMenus = () => {
       children: [
         {
           label: 'Bus Regular',
-          to: '#',
+          to: '/product/bus-reguler',
           image: '/img/icon-reguler.png'
         },
         {
@@ -67,7 +67,7 @@ export const useMenus = () => {
     },
     { label: 'Promo', to: '#' },
     { label: 'Berita & CSR', to: '#' },
-    { label: 'FAQ', to: '#' },
+    { label: 'FAQ', to: '/faq', description:'loremipsum doloretsitamet' },
     { label: 'Kontak', to: '#' },
   ])
 

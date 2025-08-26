@@ -2,13 +2,13 @@
   <div class="min-h-screen pt-[60px]">
     <navbar />
     <ElementHeroCenter
-      :title="activeMenu?.label"
-      :description="activeMenu?.description"
-      background="bg-gray-50"
+      :title="activeMenu.label"
+      :description="activeMenu.description"
+      background="bg-gray-50 pb-32"
     />
-    <div class="container py-16">
+    <ProductCategory background="bg-white" />
+    <div class="container pb-20">
       <slot />
-      <ElementPoolTarif class="mt-16" />
     </div>
 
     <Footer />
