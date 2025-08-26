@@ -21,7 +21,7 @@ export const useMenus = () => {
           description:'loremipsum doloretsitamet'
         },
         {
-          label: 'Dewan Direksi',
+          label:'Dewan Direksi',
           to: '/about/dewan-direksi',
           description:'loremipsum doloretsitamet'
         },
