@@ -9,6 +9,7 @@
     <ProductCategory background="bg-white" />
     <div class="container pb-20">
       <slot />
+      <ElementPoolTarif class="mt-16" />
     </div>
 
     <Footer />
