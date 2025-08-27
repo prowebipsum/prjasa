@@ -16,7 +16,7 @@
               </li>
               <li class="flex gap-2 items-center">
                 <icon name="material-symbols:ac-unit" class="text-2xl text-primary" />
-                <span class="ml-2">AC 2x</span>
+                <span class="ml-2">AC</span>
               </li>
               <li class="flex gap-2 items-center">
                 <icon name="maki:karaoke" class="text-2xl text-primary" />
