@@ -68,7 +68,7 @@ export const useMenus = () => {
     { label: 'Promo', to: '/promo', description:'loremipsum doloretsitamet' },
     { label: 'Berita & CSR', to: '/news', description:'loremipsum doloretsitamet' },
     { label: 'FAQ', to: '/faq', description:'loremipsum doloretsitamet' },
-    { label: 'Kontak', to: '#' },
+    { label: 'Kontak', to: '/kontak', description:'loremipsum doloretsitamet' },
   ])
 
   return {
