@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   css: [
     '~/assets/css/main.css',
-    '~/assets/animation.css'
+    '~/assets/css/animation.css'
   ],
 
   vite:{

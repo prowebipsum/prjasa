@@ -4,8 +4,8 @@
     class="bg-primary text-white fixed top-0 left-0 w-full z-[99999] transition-transform duration-300 flex flex-col justify-center h-16"
     :class="isVisible ? 'translate-y-0' : '-translate-y-full'"
   >
-    <div class="container">
-      <nav class="flex items-center justify-between gap-5 relative">
+    <div class="max-w-[1280px] mx-auto w-full px-6">
+      <nav class="flex items-center justify-between gap-5 relative w-full">
         <!-- Logo -->
         <nuxt-link to="/">
           <img src="/logo-white.png" alt="Logo Primajasa" class="h-12" />
@@ -30,7 +30,9 @@
             'lg:top-auto lg:opacity-100 lg:visible',
           ]"
         >
-          <ul class="flex flex-col lg:flex-row items-start lg:items-center p-4 lg:p-0">
+          <ul
+            class="flex flex-col lg:flex-row items-start lg:items-center p-4 lg:p-0 lg:gap-4 w-full"
+          >
             <li
               v-for="menu in menus"
               :key="menu.to"
@@ -65,7 +67,7 @@
               <!-- Submenu -->
               <ul
                 v-if="menu.children"
-                class="flex-col gap-2 bg-brand-700 rounded-b-xl lg:w-[200px] pb-2"
+                class="flex-col gap-2 bg-primary lg:bg-accent rounded-b-xl lg:w-[200px] pb-2"
                 :class="[
                   openDropdown === menu.to ? 'flex' : 'hidden',
                   'lg:absolute lg:top-full lg:hidden lg:group-hover:flex',
