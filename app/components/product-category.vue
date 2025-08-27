@@ -52,4 +52,9 @@ const productMenu = computed(() => menus.value[2].children);
   opacity: 1;
   transition: all 0.35 ease-in;
 }
+.featured-item .router-link-active span {
+  background-color: transparent;
+  font-weight: bold;
+  color: var(--color-primary);
+}
 </style>
