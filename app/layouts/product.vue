@@ -6,7 +6,7 @@
       :description="activeMenu.description"
       background="bg-gray-50 pb-32"
     />
-    <ProductCategory background="bg-white" />
+    <ProductCategory background="bg-white " />
     <div class="container pb-20">
       <slot />
       <ElementPoolTarif class="mt-16" />
