@@ -4,7 +4,7 @@
     <ElementHeroCenter
       :title="activeMenu?.label"
       :description="activeMenu?.description"
-      background="bg-gray-50"
+      :background="activeMenu?.background"
     />
     <div class="container py-16">
       <slot />

@@ -84,7 +84,11 @@
     </section>
     <div class="p-2 bg-brand-900 text-light text-xs text-center">
       <div class="container">
-        <p class="mb-0">Copyright Primajasa Perdanaraya Utama 2025. All right reserved</p>
+        <p class="mb-0">
+          Primajasa Perdanaraya Utama © 2025 | Powered by
+          <a href="https://proweb.id" target="_blank" class="underline"> proweb</a>
+          | All right reserved
+        </p>
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@
     <ElementHero
       :title="activeMenu.label"
       :description="activeMenu.description"
-      background="bg-gray-50"
+      :background="activeMenu.background"
     />
     <div class="container py-20">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-10">
@@ -34,6 +34,12 @@ const { menus } = useMenus();
 const { activeMenu } = useActiveMenu();
 
 const sidebarMenu = computed(() => menus.value[1].children);
+
+const background = computed(() => {
+  if (activeMenu.value?.background) {
+    return `bg-${activeMenu.value.background}`;
+  }
+});
 </script>
 
 <style></style>

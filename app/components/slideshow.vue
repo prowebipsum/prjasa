@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const items = ["img/slider1a.jpg", "img/slide2.jpg"];
+const items = ["img/ss-1.jpg", "img/ss-2.jpg"];
 </script>
 
 <template>

@@ -4,7 +4,8 @@
     <ElementHeroCenter
       :title="activeMenu.label"
       :description="activeMenu.description"
-      background="bg-gray-50 pb-32"
+      :background="activeMenu.background"
+      class="pb-32"
     />
     <ProductCategory background="bg-white " />
     <div class="container pb-20">

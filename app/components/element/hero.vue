@@ -1,6 +1,11 @@
 <template>
-  <div class="hero pt-20 pb-10 relative" :class="background">
-    <div class="container">
+  <div
+    class="hero pt-20 pb-10 relative bg-cover bg-bottom"
+    :class="!isImage ? backgroundClass : ''"
+    :style="isImage ? { backgroundImage: `url(${background})` } : {}"
+  >
+    <div v-if="isImage" class="absolute inset-0 bg-white/90"></div>
+    <div class="container relative">
       <h1 class="text-4xl mb-2 text-primary">{{ title }}</h1>
       <p v-if="description">{{ description }}</p>
     </div>
@@ -8,21 +13,17 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
-  title: String,
-  description: String,
-  background: String,
-});
-</script>
+const props = defineProps<{
+  title: string;
+  description?: string;
+  background?: string;
+}>();
 
-<style>
-.hero::after {
-  content: "";
-  width: 120px;
-  height: 100px;
-  display: block;
-  background: url("/img/aksen.png") no-repeat bottom right;
-  position: absolute;
-  right: 0;
-}
-</style>
+const isImage = computed(() => {
+  if (!props.background) return false;
+  return props.background.startsWith("http") || props.background.startsWith("/");
+});
+
+// fallback ke bg-gray-50 jika kosong
+const backgroundClass = computed(() => props.background || "bg-gray-50");
+</script>
