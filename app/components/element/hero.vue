@@ -1,6 +1,6 @@
 <template>
   <div
-    class="hero pt-20 pb-10 relative bg-cover bg-bottom"
+    class="hero pt-20 pb-10 relative bg-cover bg-center min-h-[300px] flex flex-col justify-center"
     :class="!isImage ? backgroundClass : ''"
     :style="isImage ? { backgroundImage: `url(${background})` } : {}"
   >

@@ -15,7 +15,12 @@
             <p class="mb-0">{{ item.name }}</p>
             <p class="text-xs mb-0">{{ item.role }}</p>
           </div>
-          <u-button size="xl" variant="link" @click="selectDireksi(item)">
+          <u-button
+            size="xl"
+            variant="link"
+            @click="selectDireksi(item)"
+            class="hover:scale-110 duration-200 cursor-pointer"
+          >
             <icon name="bi:arrow-right-circle-fill" class="text-2xl text-primary" />
           </u-button>
         </div>
@@ -63,43 +68,61 @@ const direksi = ref([
     name: "John Doe",
     role: "CEO",
     photo: "/img/direktur-2.jpg",
-    bio:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.",
+    bio: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.</p>
+      <p>
+      In pharetra, lacus sed condimentum bibendum, urna nibh lobortis justo, sit amet convallis elit lorem a felis. Ut eu mi sit amet lacus dignissim sollicitudin ac sed mi. Sed non eros efficitur, pharetra erat sit amet, laoreet urna. In tempor varius nunc non gravida.
+      </p>
+      `,
   },
   {
     name: "Robert Doe",
     role: "CEO",
     photo: "/img/direktur-2.jpg",
-    bio:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.",
+    bio: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.</p>
+      <p>
+      In pharetra, lacus sed condimentum bibendum, urna nibh lobortis justo, sit amet convallis elit lorem a felis. Ut eu mi sit amet lacus dignissim sollicitudin ac sed mi. Sed non eros efficitur, pharetra erat sit amet, laoreet urna. In tempor varius nunc non gravida.
+      </p>
+      `,
   },
   {
     name: "Peter Doe",
     role: "CEO",
     photo: "/img/direktur-2.jpg",
-    bio:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.",
+    bio: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.</p>
+      <p>
+      In pharetra, lacus sed condimentum bibendum, urna nibh lobortis justo, sit amet convallis elit lorem a felis. Ut eu mi sit amet lacus dignissim sollicitudin ac sed mi. Sed non eros efficitur, pharetra erat sit amet, laoreet urna. In tempor varius nunc non gravida.
+      </p>
+      `,
   },
   {
     name: "Harry Kane",
     role: "CEO",
     photo: "/img/direktur-2.jpg",
-    bio:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.",
+    bio: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.</p>
+      <p>
+      In pharetra, lacus sed condimentum bibendum, urna nibh lobortis justo, sit amet convallis elit lorem a felis. Ut eu mi sit amet lacus dignissim sollicitudin ac sed mi. Sed non eros efficitur, pharetra erat sit amet, laoreet urna. In tempor varius nunc non gravida.
+      </p>
+      `,
   },
   {
     name: "Karen Smith",
     role: "CEO",
     photo: "/img/direktur-2.jpg",
-    bio:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.",
+    bio: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.</p>
+      <p>
+      In pharetra, lacus sed condimentum bibendum, urna nibh lobortis justo, sit amet convallis elit lorem a felis. Ut eu mi sit amet lacus dignissim sollicitudin ac sed mi. Sed non eros efficitur, pharetra erat sit amet, laoreet urna. In tempor varius nunc non gravida.
+      </p>
+      `,
   },
   {
     name: "Robert Johnson",
     role: "CEO",
     photo: "/img/direktur-2.jpg",
-    bio:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.",
+    bio: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.</p>
+      <p>
+      In pharetra, lacus sed condimentum bibendum, urna nibh lobortis justo, sit amet convallis elit lorem a felis. Ut eu mi sit amet lacus dignissim sollicitudin ac sed mi. Sed non eros efficitur, pharetra erat sit amet, laoreet urna. In tempor varius nunc non gravida.
+      </p>
+      `,
   },
 ]);
 

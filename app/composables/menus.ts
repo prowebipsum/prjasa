@@ -21,7 +21,7 @@ export const useMenus = () => {
           label: 'Pesan dari Pendiri',
           to: '/about/pesan-pendiri',
           description:'loremipsum doloretsitamet',
-          background:'/img/about-1.jpg'
+          background:'/img/about-3.jpg'
         },
         {
           label:'Dewan Direksi',
@@ -33,7 +33,7 @@ export const useMenus = () => {
           label: 'Kebijakan Perusahaan',
           to: '/about/kebijakan-perusahaan',
           description:'loremipsum doloretsitamet',
-          background:'/img/about-2.jpg'
+          background:'/img/product-2.jpg'
         },
         {
           label:'Penghargaan',
@@ -75,10 +75,23 @@ export const useMenus = () => {
     { label: 'Promo',
        to: '/promo', 
        description:'loremipsum doloretsitamet' ,
+        background:'/img/product-2.jpg'
       },
-    { label: 'Berita & CSR', to: '/news', description:'loremipsum doloretsitamet' },
-    { label: 'FAQ', to: '/faq', description:'loremipsum doloretsitamet' },
-    { label: 'Kontak', to: '/kontak', description:'loremipsum doloretsitamet' },
+    { label: 'Berita & CSR', 
+      to: '/news', 
+      description:'loremipsum doloretsitamet',
+       background:'/img/berita.jpg'
+
+     },
+    { label: 'FAQ', to: '/faq', 
+      description:'loremipsum doloretsitamet',
+       background:'/img/product-1.jpg'
+     },
+    { label: 'Kontak', to: 
+      '/kontak', 
+      description:'loremipsum doloretsitamet',
+       background:'/img/about-3.jpg'
+     },
   ])
 
   return {
