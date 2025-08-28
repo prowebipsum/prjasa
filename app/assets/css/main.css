@@ -5,23 +5,24 @@
 @theme {
 
 
---color-brand-50: #fdf3f3;
---color-brand-100: #fce4e5;
---color-brand-200: #faced0;
---color-brand-300: #f5acaf;
---color-brand-400: #ed7c80;
---color-brand-500: #e15257;
---color-brand-600: #ce343a;
---color-brand-700: #ad282d;
---color-brand-800: #8f2529;
---color-brand-900: #772528;
---color-brand-950: #400f11;
+--color-brand-50: #fcf5f4;
+--color-brand-100: #f9ecea;
+--color-brand-200: #f2dcd9;
+--color-brand-300: #e8beb9;
+--color-brand-400: #da9992;
+--color-brand-500: #c9706a;
+--color-brand-600: #b24f4c;
+--color-brand-700: #993d3d; /* brand */
+--color-brand-800: #7d3436;
+--color-brand-900: #6c2f33;
+--color-brand-950: #3b1617;
 
-  --color-primary: var(--color-brand-800);
+
+  --color-primary: var(--color-brand-700);
   --color-secondary: #dac879;
   --color-accent: #cf5b35 ;
   --color-light: #fbf8e8;
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Outfit', sans-serif;
   --font-open-sans:'Open Sans', sans-serif;
 
 

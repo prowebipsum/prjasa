@@ -30,12 +30,12 @@ const items = [
     class="relative"
   >
     <div
-      class="w-full min-h-screen bg-cover bg-center flex flex-col justify-end py-20"
+      class="w-full min-h-[calc(100vh+100px)] bg-cover bg-center flex flex-col justify-end py-20"
       :style="{ backgroundImage: `url(${item.src})` }"
     >
       <div class="max-w-screen-lg mx-auto w-full px-6">
         <div class="max-w-[600px]">
-          <h1 class="text-white mb-10 lg:mb-20 text-shadow-2xl">{{ item.title }}</h1>
+          <h1 class="text-white mb-10 lg:mb-42 text-shadow-2xl">{{ item.title }}</h1>
         </div>
       </div>
     </div>

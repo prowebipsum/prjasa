@@ -35,10 +35,10 @@
         <div class="grid grid-cols-1 lg:grid-cols-9 text-sm">
           <div class="bg-brand-950 h-12"></div>
           <div class="bg-brand-900 h-12"></div>
-          <div class="bg-brand-800 h-12 flex items-center justify-center text-white">
+          <div class="bg-brand-800 h-12"></div>
+          <div class="bg-brand-700 h-12 flex items-center justify-center text-white">
             Brand
           </div>
-          <div class="bg-brand-700 h-12"></div>
           <div class="bg-brand-600 h-12"></div>
           <div class="bg-brand-500 h-12"></div>
           <div class="bg-brand-400 h-12"></div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="mb-20">
+    <section class="py-20 bg-brand-50">
       <div class="container">
         <h3 class="text-center mb-10 text-primary">Blog</h3>
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-6 justify-between">

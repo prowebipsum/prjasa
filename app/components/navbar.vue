@@ -4,7 +4,7 @@
     class="bg-primary text-white fixed top-0 left-0 w-full z-[99999] transition-transform duration-300 flex flex-col justify-center h-16"
     :class="isVisible ? 'translate-y-0' : '-translate-y-full'"
   >
-    <div class="max-w-[1280px] mx-auto w-full px-6">
+    <div class="container mx-auto w-full px-6">
       <nav class="flex items-center justify-between gap-5 relative w-full">
         <!-- Logo -->
         <nuxt-link to="/">
@@ -50,7 +50,9 @@
                     lineHeight: navbarHeight + 'px',
                   }"
                 >
-                  <span class="pt-1 pb-2 px-3 rounded-full hover:bg-accent duration-200">
+                  <span
+                    class="pt-1 pb-2 px-3 rounded-full hover:bg-brand-500 duration-200"
+                  >
                     {{ menu.label }}
                     <icon
                       v-if="menu.children"
@@ -67,7 +69,7 @@
               <!-- Submenu -->
               <ul
                 v-if="menu.children"
-                class="flex-col gap-2 bg-primary lg:bg-accent rounded-b-xl lg:w-[200px] pb-2"
+                class="flex-col gap-2 bg-brand-600 rounded-b-xl lg:w-[200px] pb-2"
                 :class="[
                   openDropdown === menu.to ? 'flex' : 'hidden',
                   'lg:absolute lg:top-full lg:hidden lg:group-hover:flex',
@@ -159,6 +161,6 @@ onMounted(() => {
 <style>
 /* Highlight menu aktif */
 .router-link-active span {
-  background-color: var(--color-accent);
+  background-color: var(--color-brand-600);
 }
 </style>
