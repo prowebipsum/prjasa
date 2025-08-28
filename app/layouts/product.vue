@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen pt-[60px]">
     <navbar />
-    <ElementHeroCenter
+    <ElementHero
       :title="activeMenu.label"
       :description="activeMenu.description"
       :background="activeMenu.background"

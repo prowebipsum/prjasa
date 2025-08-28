@@ -4,7 +4,7 @@
     :class="!isImage ? backgroundClass : ''"
     :style="isImage ? { backgroundImage: `url(${background})` } : {}"
   >
-    <div v-if="isImage" class="absolute inset-0 bg-white/90"></div>
+    <div v-if="isImage" class="absolute inset-0 bg-white/40"></div>
     <div class="container relative">
       <h1 class="text-4xl mb-2 text-primary">{{ title }}</h1>
       <p v-if="description">{{ description }}</p>

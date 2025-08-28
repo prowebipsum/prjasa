@@ -3,7 +3,7 @@
     <Slideshow />
     <ProductCategory />
 
-    <section class="bg-gray-50">
+    <section class="bg-gray-50 relative">
       <div class="container">
         <div class="grid grid-cols-1 lg:grid-cols-2">
           <div class="flex flex-col gap-10 justify-center items-center">

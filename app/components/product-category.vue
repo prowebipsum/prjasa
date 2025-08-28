@@ -1,10 +1,10 @@
 <template>
   <div>
-    <section class="bg-gray-50" :class="background">
+    <section class="bg-gray-50 -mb-20 pb-10" :class="background">
       <!-- kategori -->
       <div class="max-w-screen-lg mx-auto px-6">
         <div
-          class="featured grid grid-cols-2 lg:grid-cols-4 bg-white px-5 rounded-2xl shadow-2xl divide-y-1 lg:divide-x-1 divide-gray-200 relative -top-20 w-full mx-auto"
+          class="featured grid grid-cols-2 lg:grid-cols-4 bg-white px-5 rounded-2xl shadow-xl divide-y-1 lg:divide-x-1 divide-gray-200 relative -top-20 w-full mx-auto"
         >
           <div
             v-for="item in productMenu"

@@ -1,5 +1,16 @@
 <script setup lang="ts">
-const items = ["img/ss-1.jpg", "img/ss-2.jpg"];
+import { Title } from "#components";
+
+const items = [
+  {
+    src: "img/slider1a.jpg",
+    title: "Lorem ipsum dolor sit amet.",
+  },
+  {
+    src: "img/slide2.jpg",
+    title: "Consectetur adipisicing elit.",
+  },
+];
 </script>
 
 <template>
@@ -16,8 +27,17 @@ const items = ["img/ss-1.jpg", "img/ss-2.jpg"];
         'absolute right-0 left-3 -translate-y-1/2 top-1/2 w-max h-max flex-col px-1 py-2 rounded-full bg-primary',
       dot: '',
     }"
-    class="w-full mx-auto"
+    class="relative"
   >
-    <img :src="item" class="w-full h-screen object-cover" alt="Slideshow Image" />
+    <div
+      class="w-full min-h-screen bg-cover bg-center flex flex-col justify-end py-20"
+      :style="{ backgroundImage: `url(${item.src})` }"
+    >
+      <div class="max-w-screen-lg mx-auto w-full px-6">
+        <div class="max-w-[600px]">
+          <h1 class="text-white mb-10 lg:mb-20 text-shadow-2xl">{{ item.title }}</h1>
+        </div>
+      </div>
+    </div>
   </UCarousel>
 </template>

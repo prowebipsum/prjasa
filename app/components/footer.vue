@@ -87,7 +87,6 @@
         <p class="mb-0">
           Primajasa Perdanaraya Utama © 2025 | Powered by
           <a href="https://proweb.id" target="_blank" class="underline"> proweb</a>
-          | All right reserved
         </p>
       </div>
     </div>
