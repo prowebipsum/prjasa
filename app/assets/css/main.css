@@ -5,21 +5,34 @@
 @theme {
 
 
---color-brand-50: #fcf5f4;
---color-brand-100: #f9ecea;
---color-brand-200: #f2dcd9;
---color-brand-300: #e8beb9;
---color-brand-400: #da9992;
---color-brand-500: #c9706a;
---color-brand-600: #b24f4c;
---color-brand-700: #993d3d; /* brand */
---color-brand-800: #7d3436;
---color-brand-900: #6c2f33;
---color-brand-950: #3b1617;
+--color-brand-50: #fdf3f3;
+--color-brand-100: #fce4e4;
+--color-brand-200: #facece;
+--color-brand-300: #f5acad;
+--color-brand-400: #ed7c7d;
+--color-brand-500: #e15253;
+--color-brand-600: #ce3435;
+--color-brand-700: #ad2829;
+--color-brand-800: #8f2526; /* primary */
+--color-brand-900: #772526;
+--color-brand-950: #400f0f;
+
+--color-red-50: #fff0f1;
+--color-red-100: #ffdde0;
+--color-red-200: #ffc0c5;
+--color-red-300: #ff949c;
+--color-red-400: #ff5764;
+--color-red-500: #ff2333;
+--color-red-600: #ff0013; /* secondary */
+--color-red-700: #d70010;
+--color-red-800: #b10310;
+--color-red-900: #920a14;
+--color-red-950: #500006;
 
 
-  --color-primary: var(--color-brand-700);
-  --color-secondary: #dac879;
+
+  --color-primary: var(--color-brand-800);
+  --color-secondary: var(--color-red-600);
   --color-accent: #cf5b35 ;
   --color-light: #fbf8e8;
   --font-sans: 'Outfit', sans-serif;
@@ -103,7 +116,7 @@
 
   /* Buttons (default reset) */
   button {
-    @apply focus:outline-none;
+    @apply focus:outline-none cursor-pointer ;
   }
 
   /* Sembunyikan widget default Google */

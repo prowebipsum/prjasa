@@ -51,7 +51,7 @@
                   }"
                 >
                   <span
-                    class="pt-1 pb-2 px-3 rounded-full hover:bg-brand-500 duration-200"
+                    class="pt-1 pb-2 px-3 rounded-full hover:bg-brand-600 duration-200"
                   >
                     {{ menu.label }}
                     <icon
