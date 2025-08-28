@@ -15,7 +15,7 @@ export const useMenus = () => {
           label: 'Visi & Misi',
           to: '/about/visi-misi',
           description:'loremipsum doloretsitamet',
-          background:'/img/about-2.jpg'
+          background:'/img/visi-misi.jpg'
         },
         {
           label: 'Pesan dari Pendiri',
