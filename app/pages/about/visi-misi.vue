@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h4>Vission</h4>
+    <h4>Visi</h4>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus est eligendi dolore,
       ad numquam modi non voluptas, dignissimos quidem ratione porro quis a quos nisi cum
       temporibus eum quod architecto?
     </p>
-    <h4>Mission</h4>
+    <h4>Misi</h4>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ab ducimus
       nemo consequatur blanditiis veniam ratione facere. Totam esse similique aperiam
