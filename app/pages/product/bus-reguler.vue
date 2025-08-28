@@ -42,6 +42,7 @@ const reguler = ref([
   {
     name: "Bus Reguler ",
     facility: [
+      "Non AC",
       "Seat 2-3 ",
       "Alat Pemadam Kebakaran",
       "Smoking Room",
