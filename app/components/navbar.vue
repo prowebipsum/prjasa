@@ -51,7 +51,7 @@
                   }"
                 >
                   <span
-                    class="pt-1 pb-2 px-3 rounded-full hover:bg-brand-600 duration-200"
+                    class="pt-1 pb-2 px-3 rounded-full hover:bg-brand-700 duration-200"
                   >
                     {{ menu.label }}
                     <icon
@@ -69,7 +69,7 @@
               <!-- Submenu -->
               <ul
                 v-if="menu.children"
-                class="flex-col gap-2 bg-brand-600 rounded-b-xl lg:w-[200px] pb-2"
+                class="flex-col gap-2 bg-brand-700 rounded-b-xl lg:w-[200px] pb-2"
                 :class="[
                   openDropdown === menu.to ? 'flex' : 'hidden',
                   'lg:absolute lg:top-full lg:hidden lg:group-hover:flex',
@@ -161,6 +161,6 @@ onMounted(() => {
 <style>
 /* Highlight menu aktif */
 .router-link-active span {
-  background-color: var(--color-brand-600);
+  background-color: var(--color-brand-700);
 }
 </style>
