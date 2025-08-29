@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative lg:pt-10">
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 justify-between p-6 rounded-xl bg-light border border-brand-100 relative"
     >
@@ -12,7 +12,7 @@
       </div>
 
       <div class="lg:col-span-2 flex flex-col items-center justify-center">
-        <p>Tiket dapat di pesan melalui.</p>
+        <p class="text-xl font-medium text-primary">Tiket dapat di pesan melalui.</p>
         <div class="flex items-center gap-4">
           <button class="">
             <img

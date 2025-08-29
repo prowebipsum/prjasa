@@ -19,12 +19,14 @@
         <div class="relative pt-28" v-for="item in reguler">
           <!-- bus item -->
           <img src="/img/icon-wisata.png" alt="" class="absolute top-0 right-0 h-52" />
-          <div class="p-6 pt-20 rounded-xl bg-gray-50 border border-gray-300">
+          <div class="p-6 pt-20 rounded-xl bg-gray-50 border border-gray-300 h-full">
             <h5 class="mb-3 text-primary">{{ item.name }}</h5>
             <ul class="flex flex-col gap-2">
               <li v-for="value in item.facility" class="flex gap-2 items-center">
-                <span><icon name="ci:dot-02-s" class="text-sm" /></span>
-                <span class="">{{ value }}</span>
+                <span class="leading-none"
+                  ><icon :name="value.icon" class="text-xl"
+                /></span>
+                <span class="">{{ value.name }}</span>
               </li>
             </ul>
           </div>
@@ -42,60 +44,151 @@ const reguler = ref([
   {
     name: "Bus Reguler ",
     facility: [
-      "Non AC",
-      "Seat 2-3 ",
-      "Alat Pemadam Kebakaran",
-      "Smoking Room",
-      "Window Breaker",
-      "Kapasitas Bagasi Besar (Free)",
+      {
+        name: "Seat 2-3 ",
+        icon: "hugeicons:airplane-seat",
+      },
+      {
+        name: "Alat Pemadam Kebakaran",
+        icon: "icon-park-outline:fire-extinguisher",
+      },
+      {
+        name: "Smoking Room",
+        icon: "ic:outline-smoking-rooms",
+      },
+      {
+        name: "Window Breaker",
+        icon: "game-icons:cracked-glass",
+      },
+      {
+        name: "Kapasitas Bagasi Besar (Free)",
+        icon: "carbon:baggage-claim",
+      },
     ],
   },
   {
     name: "Bus AC Ekonomi ",
+
     facility: [
-      "AC",
-      "Seat 2-3",
-      "Alat Pemadam Kebakaran",
-      "Smoking Room",
-      "Window Breaker",
-      "Kapasitas Bagasi Besar (Free)",
+      {
+        name: "AC",
+        icon: "bi:snow",
+      },
+      {
+        name: "Seat 2-3",
+        icon: "hugeicons:airplane-seat",
+      },
+      {
+        name: "Alat Pemadam Kebakaran",
+        icon: "icon-park-outline:fire-extinguisher",
+      },
+      {
+        name: "Smoking Room",
+        icon: "ic:outline-smoking-rooms",
+      },
+      {
+        name: "Window Breaker",
+        icon: "game-icons:cracked-glass",
+      },
+      {
+        name: "Kapasitas Bagasi Besar (Free)",
+        icon: "carbon:baggage-claim",
+      },
     ],
   },
   {
     name: "Bus AC Bisnis ",
     facility: [
-      "AC",
-      "Seat 2-3",
-      "Alat Pemadam Kebakaran",
-      "Smoking Room",
-      "Window Breaker",
-      "Kapasitas Bagasi Besar (Free)",
+      {
+        name: "AC",
+        icon: "bi:snow",
+      },
+      {
+        name: "Seat 2-3",
+        icon: "hugeicons:airplane-seat",
+      },
+      {
+        name: "Alat Pemadam Kebakaran",
+        icon: "icon-park-outline:fire-extinguisher",
+      },
+      {
+        name: "Smoking Room",
+        icon: "ic:outline-smoking-rooms",
+      },
+      {
+        name: "Window Breaker",
+        icon: "game-icons:cracked-glass",
+      },
+      {
+        name: "Kapasitas Bagasi Besar (Free)",
+        icon: "carbon:baggage-claim",
+      },
     ],
   },
   {
     name: "Bus Eksekutif ",
     facility: [
-      "AC",
-      "Seat 2-2",
-      "Alat Pemadam Kebakaran",
-      "Smoking Room",
-      "Toilet",
-      "TV",
-      "Window Breaker",
-      "Kapasitas Bagasi Besar (Free)",
+      {
+        name: "AC",
+        icon: "bi:snow",
+      },
+      {
+        name: "Seat 2-2",
+        icon: "hugeicons:airplane-seat",
+      },
+      {
+        name: "Alat Pemadam Kebakaran",
+        icon: "icon-park-outline:fire-extinguisher",
+      },
+      {
+        name: "Smoking Room",
+        icon: "ic:outline-smoking-rooms",
+      },
+      {
+        name: "Toilet",
+        icon: "lucide:toilet",
+      },
+      {
+        name: "Window Breaker",
+        icon: "game-icons:cracked-glass",
+      },
+      {
+        name: "Kapasitas Bagasi Besar (Free)",
+        icon: "carbon:baggage-claim",
+      },
     ],
   },
   {
     name: "Bus Super Eksekutif ",
     facility: [
-      "AC",
-      "Seat 2-2",
-      "Alat Pemadam Kebakaran",
-      "Smoking Room",
-      "Toilet",
-      "TV",
-      "Window Breaker",
-      "Kapasitas Bagasi Besar (Free)",
+      {
+        name: "AC",
+        icon: "bi:snow",
+      },
+      {
+        name: "Seat 2-2",
+        icon: "hugeicons:airplane-seat",
+      },
+      {
+        name: "Alat Pemadam Kebakaran",
+        icon: "icon-park-outline:fire-extinguisher",
+      },
+      {
+        name: "Smoking Room",
+        icon: "ic:outline-smoking-rooms",
+      },
+      {
+        name: "Toilet",
+        icon: "lucide:toilet",
+      },
+      {
+        name: "Window Breaker",
+        icon: "game-icons:cracked-glass",
+      },
+      {
+        name: "Kapasitas Bagasi Besar (Free)",
+        icon: "carbon:baggage-claim",
+      },
     ],
   },
 ]);

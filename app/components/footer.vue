@@ -36,19 +36,19 @@
               <p class="flex gap-4 items-center group">
                 <icon
                   name="bi:instagram"
-                  class="text-xl text-secondary hover:text-light duration-150"
+                  class="text-xl text-light hover:text-red-300 duration-150"
                 />
                 <icon
                   name="bi:facebook"
-                  class="text-xl text-secondary hover:text-light duration-150"
+                  class="text-xl text-light hover:text-red-300 duration-150"
                 />
                 <icon
                   name="bi:youtube"
-                  class="text-xl text-secondary hover:text-light duration-150"
+                  class="text-xl text-light hover:text-red-300 duration-150"
                 />
                 <icon
                   name="bi:linkedin"
-                  class="text-xl text-secondary hover:text-light duration-150"
+                  class="text-xl text-light hover:text-red-300 duration-150"
                 />
               </p>
             </div>
