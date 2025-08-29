@@ -15,25 +15,26 @@
                 size="xl"
                 class="rounded-full mb-5"
                 icon="gis:route"
+                target="_blank"
               >
                 Cek Rute dan Tarif
               </UButton>
               <p>Tiket dapat di pesan melalui</p>
               <div class="flex items-center justify-center gap-4">
-                <button class="">
+                <a href="https://www.redbus.id/" class="" target="_blank">
                   <img
                     src="/img/redbus.png"
                     alt=""
                     class="w-20 h-20 object-contain rounded-xl hover:shadow-2xl duration-300"
                   />
-                </button>
-                <button>
+                </a>
+                <a href="https://www.traveloka.com/id/" class="" target="_blank">
                   <img
                     src="/img/traveloka.webp"
                     alt=""
                     class="w-20 h-20 object-contain border border-gray-300 rounded-xl hover:shadow-2xl duration-300"
                   />
-                </button>
+                </a>
               </div>
             </div>
           </div>

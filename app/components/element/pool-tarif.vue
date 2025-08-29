@@ -6,7 +6,13 @@
       <div class="lg:col-span-2">
         <h3 class="mb-0 text-primary">Cek Rute dan Tarif</h3>
         <p class="text-xl">dan temukan armada terdekat di lokasi Anda.</p>
-        <UButton to="/cek-rute" size="xl" class="rounded-full" icon="gis:route">
+        <UButton
+          to="/cek-rute"
+          size="xl"
+          class="rounded-full"
+          icon="gis:route"
+          target="_blank"
+        >
           Cek Rute dan Tarif
         </UButton>
       </div>
@@ -14,20 +20,20 @@
       <div class="lg:col-span-2 flex flex-col items-center justify-center">
         <p class="text-xl font-medium text-primary">Tiket dapat di pesan melalui.</p>
         <div class="flex items-center gap-4">
-          <button class="">
+          <a href="https://www.redbus.id/" class="" target="_blank">
             <img
               src="/img/redbus.png"
               alt=""
               class="w-20 h-20 object-contain rounded-xl hover:shadow-2xl duration-300"
             />
-          </button>
-          <button>
+          </a>
+          <a href="https://www.traveloka.com/id/" class="" target="_blank">
             <img
               src="/img/traveloka.webp"
               alt=""
               class="w-20 h-20 object-contain border border-gray-300 rounded-xl hover:shadow-2xl duration-300"
             />
-          </button>
+          </a>
         </div>
       </div>
 
