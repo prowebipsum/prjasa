@@ -15,7 +15,7 @@
           including versions of Lorem Ipsum.
         </p>
       </div>
-      <div v-for="item in reguler" class="relative pt-28">
+      <div v-for="item in reguler" class="relative pt-28 mb-10">
         <img src="/img/icon-wisata.png" alt="" class="absolute top-0 left-4 h-52" />
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-6 lg:gap-10">
           <div class="lg:col-span-2">
@@ -34,7 +34,7 @@
               </ul>
             </div>
           </div>
-          <div class="lg:col-span-5 px-6">
+          <div class="lg:col-span-5 lg:px-6">
             <!-- kanan -->
             <UCarousel
               v-slot="{ item }"
@@ -43,7 +43,10 @@
               :ui="{ item: 'basis-1/2' }"
               arrows
             >
-              <img :src="item" class="w-full h-[340px] object-cover rounded-lg" />
+              <img
+                :src="item"
+                class="w-full h-[180px] lg:h-[340px] object-cover rounded-lg"
+              />
             </UCarousel>
           </div>
         </div>
