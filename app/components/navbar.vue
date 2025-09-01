@@ -1,105 +1,114 @@
 <template>
-  <div
-    ref="navbar"
-    class="bg-primary text-white fixed top-0 left-0 w-full z-[99999] transition-transform duration-300 flex flex-col justify-center h-16"
-    :class="isVisible ? 'translate-y-0' : '-translate-y-full'"
-  >
-    <div class="container mx-auto w-full px-6">
-      <nav class="flex items-center justify-between gap-5 relative w-full">
-        <!-- Logo -->
-        <nuxt-link to="/">
-          <img src="/logo-white.png" alt="Logo Primajasa" class="h-12" />
-        </nuxt-link>
+  <div>
+    <div
+      class="fixed top-0 left-0 h-0.5 bg-gradient-to-r from-secondary via-primary to-red-200 z-[10000]"
+      :style="{ width: `${progress}%` }"
+    ></div>
 
-        <!-- Hamburger -->
-        <button
-          @click="isOpen = !isOpen"
-          class="lg:hidden flex flex-col gap-1"
-          aria-label="Toggle menu"
-        >
-          <span class="w-6 h-0.5 bg-white"></span>
-          <span class="w-6 h-0.5 bg-white"></span>
-          <span class="w-6 h-0.5 bg-white"></span>
-        </button>
+    <div
+      ref="navbar"
+      class="bg-primary text-white fixed top-0 left-0 w-full z-[9999] transition-transform duration-300 flex flex-col justify-center h-16"
+      :class="isVisible ? 'translate-y-0' : '-translate-y-full'"
+    >
+      <div class="container mx-auto w-full px-6">
+        <nav class="flex items-center justify-between gap-5 relative w-full">
+          <!-- Logo -->
+          <nuxt-link to="/">
+            <img src="/logo-white.png" alt="Logo Primajasa" class="h-12" />
+          </nuxt-link>
 
-        <!-- Menu -->
-        <div
-          class="absolute lg:static left-0 w-full lg:w-auto bg-primary lg:bg-transparent transition-all duration-300 z-50"
-          :class="[
-            isOpen ? 'top-full opacity-100 visible' : 'top-[-500px] opacity-0 invisible',
-            'lg:top-auto lg:opacity-100 lg:visible',
-          ]"
-        >
-          <ul
-            class="flex flex-col lg:flex-row items-start lg:items-center p-4 lg:p-0 lg:gap-4 w-full"
+          <!-- Hamburger -->
+          <button
+            @click="isOpen = !isOpen"
+            class="lg:hidden flex flex-col gap-1"
+            aria-label="Toggle menu"
           >
-            <li
-              v-for="menu in menus"
-              :key="menu.to"
-              class="relative w-full lg:w-auto group"
+            <span class="w-6 h-0.5 bg-white"></span>
+            <span class="w-6 h-0.5 bg-white"></span>
+            <span class="w-6 h-0.5 bg-white"></span>
+          </button>
+
+          <!-- Menu -->
+          <div
+            class="absolute lg:static left-0 w-full lg:w-auto bg-primary lg:bg-transparent transition-all duration-300 z-50"
+            :class="[
+              isOpen
+                ? 'top-full opacity-100 visible'
+                : 'top-[-500px] opacity-0 invisible',
+              'lg:top-auto lg:opacity-100 lg:visible',
+            ]"
+          >
+            <ul
+              class="flex flex-col lg:flex-row items-start lg:items-center p-4 lg:p-0 lg:gap-4 w-full"
             >
-              <div
-                class="flex justify-between items-center cursor-pointer"
-                @click="toggleDropdown(menu.to)"
+              <li
+                v-for="menu in menus"
+                :key="menu.to"
+                class="relative w-full lg:w-auto group"
               >
-                <nuxt-link
-                  :to="menu.to"
-                  class="block group h-max"
-                  :style="{
-                    height: navbarHeight + 'px',
-                    lineHeight: navbarHeight + 'px',
-                  }"
+                <div
+                  class="flex justify-between items-center cursor-pointer"
+                  @click="toggleDropdown(menu.to)"
                 >
-                  <span
-                    class="pt-1 pb-2 px-3 rounded-full hover:bg-brand-700 duration-200"
+                  <nuxt-link
+                    :to="menu.to"
+                    class="block group h-max"
+                    :style="{
+                      height: navbarHeight + 'px',
+                      lineHeight: navbarHeight + 'px',
+                    }"
                   >
-                    {{ menu.label }}
-                    <icon
-                      v-if="menu.children"
-                      name="bi:chevron-down"
-                      class="duration-200 text-md align-middle group-hover:rotate-180"
-                    />
-                  </span>
-                </nuxt-link>
-                <span v-if="menu.children" class="lg:hidden ml-2 text-sm">
-                  {{ openDropdown === menu.to ? "▲" : "▼" }}
-                </span>
-              </div>
-
-              <!-- Submenu -->
-              <ul
-                v-if="menu.children"
-                class="flex-col gap-2 bg-brand-700 rounded-b-xl lg:w-[200px] pb-2"
-                :class="[
-                  openDropdown === menu.to ? 'flex' : 'hidden',
-                  'lg:absolute lg:top-full lg:hidden lg:group-hover:flex',
-                ]"
-              >
-                <li
-                  v-for="child in menu.children"
-                  :key="child.to"
-                  class="hover:bg-primary duration-300 py-2 px-4"
-                >
-                  <nuxt-link :to="child.to" class="flex gap-2 items-center">
-                    <img
-                      v-if="child.image"
-                      :src="child.image"
-                      class="h-12 object-contain"
-                    />
-                    {{ child.label }}
+                    <span
+                      class="pt-1 pb-2 px-3 rounded-full hover:bg-brand-700 duration-200"
+                    >
+                      {{ menu.label }}
+                      <icon
+                        v-if="menu.children"
+                        name="bi:chevron-down"
+                        class="duration-200 text-md align-middle group-hover:rotate-180"
+                      />
+                    </span>
                   </nuxt-link>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+                  <span v-if="menu.children" class="lg:hidden ml-2 text-sm">
+                    {{ openDropdown === menu.to ? "▲" : "▼" }}
+                  </span>
+                </div>
 
-        <!-- Language switcher -->
-        <div class="flex items-center gap-2">
-          <UButton label="ID" variant="link" color="white" class="font-bold" />
-          <UButton label="EN" variant="link" color="white" />
-        </div>
-      </nav>
+                <!-- Submenu -->
+                <ul
+                  v-if="menu.children"
+                  class="flex-col gap-2 bg-brand-700 rounded-b-xl lg:w-[200px] pb-2"
+                  :class="[
+                    openDropdown === menu.to ? 'flex' : 'hidden',
+                    'lg:absolute lg:top-full lg:hidden lg:group-hover:flex',
+                  ]"
+                >
+                  <li
+                    v-for="child in menu.children"
+                    :key="child.to"
+                    class="hover:bg-primary duration-300 py-2 px-4"
+                  >
+                    <nuxt-link :to="child.to" class="flex gap-2 items-center">
+                      <img
+                        v-if="child.image"
+                        :src="child.image"
+                        class="h-12 object-contain"
+                      />
+                      {{ child.label }}
+                    </nuxt-link>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Language switcher -->
+          <div class="flex items-center gap-2">
+            <UButton label="ID" variant="link" color="white" class="font-bold" />
+            <UButton label="EN" variant="link" color="white" />
+          </div>
+        </nav>
+      </div>
     </div>
   </div>
 </template>
@@ -150,6 +159,15 @@ const handleScroll = () => {
   }
   lastScrollY = currentY;
 };
+
+// loading indicator
+const { progress, isLoading, start, finish, clear } = useLoadingIndicator({
+  duration: 2000,
+  throttle: 200,
+  // This is how progress is calculated by default
+  estimatedProgress: (duration, elapsed) =>
+    (2 / Math.PI) * 100 * Math.atan(((elapsed / duration) * 100) / 50),
+});
 
 onMounted(() => {
   updateNavbarHeight();
