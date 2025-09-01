@@ -15,14 +15,13 @@
           including versions of Lorem Ipsum.
         </p>
       </div>
-      <div v-for="item in reguler" class="relative pt-28 mb-10">
-        <img src="/img/icon-wisata.png" alt="" class="absolute top-0 left-4 h-52" />
+      <div v-for="item in reguler" class="relative mb-10">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-6 lg:gap-10">
           <div class="lg:col-span-2">
             <!-- kiri -->
             <!-- bus item -->
 
-            <div class="p-6 pt-20 rounded-xl bg-gray-50 border border-gray-300 h-full">
+            <div class="p-6 rounded-xl bg-gray-50 border border-gray-300 h-full">
               <h5 class="mb-3 text-primary">{{ item.name }}</h5>
               <ul class="flex flex-col gap-2">
                 <li v-for="value in item.facility" class="flex gap-2 items-center">
