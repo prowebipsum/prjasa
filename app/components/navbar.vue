@@ -70,7 +70,7 @@
                     </span>
                   </nuxt-link>
                   <span v-if="menu.children" class="lg:hidden ml-2 text-sm">
-                    {{ openDropdown === menu.to ? "▲" : "▼" }}
+                    {{ openDropdown === menu.to ? "" : "" }}
                   </span>
                 </div>
 
@@ -103,8 +103,9 @@
           </div>
 
           <!-- Language switcher -->
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-2 text-white">
             <UButton label="ID" variant="link" color="white" class="font-bold" />
+            <span>|</span>
             <UButton label="EN" variant="link" color="white" />
           </div>
         </nav>
