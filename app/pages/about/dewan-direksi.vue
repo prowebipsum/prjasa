@@ -68,7 +68,7 @@ definePageMeta({
 const direksi = ref([
   {
     name: "Tiar Nabila Karbala",
-    role: "Managing Diretor",
+    role: "Managing Director",
     photo: "/direksi/tiar-1.jpg",
     bio: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.</p>
       <p>
