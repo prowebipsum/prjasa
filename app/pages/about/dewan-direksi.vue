@@ -8,7 +8,7 @@
         <img
           :src="item.photo"
           alt=""
-          class="w-full h-48 md:h-60 lg:h-72 object-cover object-top rounded-xl mb-5"
+          class="w-full h-72 object-cover object-top rounded-xl mb-5"
         />
         <div class="flex gap-4 justify-between items-end">
           <div>

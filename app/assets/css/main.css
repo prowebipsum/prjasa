@@ -35,10 +35,8 @@
   --color-secondary: var(--color-red-600);
   --color-accent: #cf5b35 ;
   --color-light: #fbf8e8;
-  --font-sans: 'Outfit', sans-serif;
+  --font-sans: 'Montserrat', sans-serif;
   --font-open-sans:'Open Sans', sans-serif;
-
-
 }
 
 @utility container {

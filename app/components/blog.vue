@@ -23,6 +23,11 @@
             </div>
           </div>
         </div>
+        <div class="flex justify-center items-center">
+          <UButton to="/blog" size="xl" class="rounded-full px-6 mt-10 mx-auto"
+            >Selengkapnya</UButton
+          >
+        </div>
       </div>
     </section>
   </div>

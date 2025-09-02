@@ -12,6 +12,16 @@
             <NuxtImg :src="item.image" alt="" width="400" height="400" />
           </div>
         </div>
+        <div class="flex justify-center items-center">
+          <UButton
+            to="/promo"
+            size="xl"
+            color="neutral"
+            variant="soft"
+            class="rounded-full px-6 mt-10 mx-auto"
+            >Selengkapnya</UButton
+          >
+        </div>
       </div>
     </section>
   </div>
