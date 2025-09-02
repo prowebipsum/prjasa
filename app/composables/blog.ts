@@ -12,7 +12,7 @@ export const useBlog = () => {
       {
         "title": "Bus Ekonomi vs. Executive, Mana yang Cocok?",
         "summary": "Bingung memilih antara bus ekonomi atau executive? Artikel ini membahas kelebihan dan kekurangan masing-masing kelas.",
-        "image_url": "/img/primajasa-7.webp",
+        "image_url": "/img/bis.jpg",
         "author": "Admin Blog",
         "date": "2025-08-12",
         "source": "Blog Dummy"
