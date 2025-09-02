@@ -39,7 +39,7 @@
             </div>
           </div>
           <div>
-            <img src="/img/pulkam.webp" alt="" />
+            <NuxtImg src="/img/pulkam.webp" alt="" format="webp" />
           </div>
         </div>
       </div>

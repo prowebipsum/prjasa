@@ -16,7 +16,7 @@ export default defineNuxtConfig({
    ]
   },
 
-  modules: ['@nuxt/ui', '@nuxtjs/i18n'],
+  modules: ['@nuxt/ui', '@nuxtjs/i18n', '@nuxt/image'],
   plugins: [
     { src: '~/plugins/splide.client.ts', mode: 'client' },
   ],

@@ -5,7 +5,8 @@
         <h3 class="text-center mb-10 text-primary">Berita Terkini</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
           <div v-for="item in news" class="group">
-            <img
+            <NuxtImg
+              format="webp,avif,jpeg"
               :src="item.image_url"
               alt=""
               class="w-full h-56 object-cover rounded-xl mb-5 group-hover:border border-gray-200 group-hover:shadow-2xl duration-300"
