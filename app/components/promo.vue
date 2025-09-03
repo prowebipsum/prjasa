@@ -9,7 +9,7 @@
             :key="item"
             class="border border-brand-400 border-dashed rounded-xl overflow-hidden"
           >
-            <NuxtImg :src="item.image" alt="" width="400" height="400" />
+            <img :src="item.image" alt="" />
           </div>
         </div>
         <div class="flex justify-center items-center">

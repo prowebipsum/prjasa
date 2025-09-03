@@ -59,7 +59,7 @@ definePageMeta({
   layout: "product",
 });
 const reguler = ref([
-  {
+  /*   {
     name: "Bus Reguler ",
     facility: [
       {
@@ -84,7 +84,7 @@ const reguler = ref([
       },
     ],
     images: ["/img/bis.jpg", "/img/interior.jpg"],
-  },
+  }, */
   {
     name: "Bus AC Ekonomi ",
 

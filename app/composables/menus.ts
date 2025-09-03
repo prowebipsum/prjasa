@@ -45,7 +45,7 @@ export const useMenus = () => {
 
     },
     {
-      label: 'Produk',
+      label: 'Layanan',
       to: '#',
       children: [
         {

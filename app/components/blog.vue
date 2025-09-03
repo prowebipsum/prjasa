@@ -2,7 +2,7 @@
   <div>
     <section class="py-20 bg-brand-50">
       <div class="container">
-        <h3 class="text-center mb-10 text-primary">Blog</h3>
+        <h3 class="text-center mb-10 text-primary">Artikel</h3>
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-6 justify-between">
           <div
             v-for="(item, index) in blog"
@@ -24,7 +24,11 @@
           </div>
         </div>
         <div class="flex justify-center items-center">
-          <UButton to="/blog" size="xl" class="rounded-full px-6 mt-10 mx-auto"
+          <UButton
+            to="/blog"
+            size="xl"
+            color="primary"
+            class="rounded-full px-6 mt-10 mx-auto"
             >Selengkapnya</UButton
           >
         </div>
