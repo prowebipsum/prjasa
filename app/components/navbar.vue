@@ -7,7 +7,7 @@
 
     <div
       ref="navbar"
-      class="bg-primary text-white fixed top-0 left-0 w-full z-[9999] transition-transform duration-300 flex flex-col justify-center h-16"
+      class="bg-primary text-white text-sm fixed top-0 left-0 w-full z-[9999] transition-transform duration-300 flex flex-col justify-center h-16"
       :class="isVisible ? 'translate-y-0' : '-translate-y-full'"
     >
       <div class="container mx-auto w-full px-6">
