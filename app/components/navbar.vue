@@ -103,7 +103,7 @@
           </div>
 
           <!-- Language switcher -->
-          <div class="flex items-center gap-2 text-white">
+          <div class="flex items-center text-white">
             <UButton label="ID" variant="link" color="white" class="font-bold" />
             <span>|</span>
             <UButton label="EN" variant="link" color="white" />
