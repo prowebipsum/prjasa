@@ -1,6 +1,5 @@
 <template>
-  <div class="min-h-screen pt-10">
-    <h3 class="text-center mb-10 text-primary">Cari Armada di Kota Kamu</h3>
+  <div class="min-h-screen pt-10 bg-white">
     <div class="container mb-16">
       <div class="prjasa-wrap rounded-xl">
         <iframe
