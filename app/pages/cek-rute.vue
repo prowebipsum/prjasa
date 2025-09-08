@@ -1,23 +1,25 @@
 <template>
-  <div class="min-h-screen">
-    <div class="prjasa-wrap">
-      <iframe
-        id="prjasaTarif"
-        src="https://primajasa.co/cektarif/index.html?embed=1&bg=transparent&primary=%23B91C1C&accent=%23F59E0B"
-        style="
-          width: 100%;
-          min-height: 720px;
-          border: 0;
-          overflow: hidden;
-          border-radius: 12px;
-        "
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        allow="geolocation"
-      >
-      </iframe>
+  <div class="min-h-screen pt-10">
+    <h3 class="text-center mb-10 text-primary">Cari Armada di Kota Kamu</h3>
+    <div class="container">
+      <div class="prjasa-wrap rounded-xl">
+        <iframe
+          id="prjasaTarif"
+          src="https://primajasa.co/cektarif/index.html?embed=1&bg=transparent&primary=%23B91C1C&accent=%23F59E0B"
+          style="
+            width: 100%;
+            min-height: 720px;
+            border: 0;
+            overflow: hidden;
+            border-radius: 12px;
+          "
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allow="geolocation"
+        >
+        </iframe>
+      </div>
     </div>
-    <wca class="py-20" />
   </div>
 </template>
 
