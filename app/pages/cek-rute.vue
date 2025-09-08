@@ -15,7 +15,7 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           allow="geolocation"
-          class="min-h-[calc(100vh-100px)]"
+          class="min-h-screen"
         >
         </iframe>
       </div>
