@@ -7,7 +7,7 @@
           src="https://primajasa.co/cektarif/index.html?embed=1&bg=transparent&primary=%23B91C1C&accent=%23F59E0B"
           style="
             width: 100%;
-            min-height: 720px;
+            height: 100%;
             border: 0;
             overflow: hidden;
             border-radius: 12px;
@@ -15,6 +15,7 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           allow="geolocation"
+          class="min-h-[calc(100vh-100px)]"
         >
         </iframe>
       </div>
