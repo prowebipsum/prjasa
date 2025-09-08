@@ -104,9 +104,21 @@
 
           <!-- Language switcher -->
           <div class="flex items-center text-white">
-            <UButton label="ID" variant="link" color="white" class="font-bold" />
+            <UButton
+              label="ID"
+              variant="link"
+              color="white"
+              @click="setLocale('id')"
+              :class="{ 'font-bold': locale === 'id' }"
+            />
             <span>|</span>
-            <UButton label="EN" variant="link" color="white" />
+            <UButton
+              label="EN"
+              variant="link"
+              color="white"
+              @click="setLocale('en')"
+              :class="{ 'font-bold': locale === 'en' }"
+            />
           </div>
         </nav>
       </div>
@@ -117,6 +129,7 @@
 <script setup lang="ts">
 import { UButton } from "#components";
 import { onMounted, onBeforeUnmount } from "vue";
+const { locale, locales, setLocale } = useI18n();
 
 const { menus } = useMenus();
 
