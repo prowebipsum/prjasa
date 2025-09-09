@@ -1,5 +1,5 @@
 import { useI18n } from 'vue-i18n'
-
+import { useFetchApi } from './fetchApi'
 
 export function useWpContent<T>(slug: string, options: any = {}) {
   const { locale } = useI18n()

@@ -5,7 +5,7 @@
     >
       <div class="lg:col-span-2">
         <h3 class="mb-0 text-primary">Cek Rute dan Tarif</h3>
-        <p class="text-xl">dan temukan armada terdekat di lokasi Anda.</p>
+        <p class="text-lg">dan temukan armada terdekat di lokasi Anda.</p>
         <UButton
           href="https://primajasa.co/cektarif/index.html?embed=1&bg=transparent&primary=%23B91C1C&accent=%23F59E0B"
           size="xl"

@@ -1,24 +1,17 @@
 <template>
   <div class="">
-    <h4>About</h4>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus est eligendi dolore,
-      ad numquam modi non voluptas, dignissimos quidem ratione porro quis a quos nisi cum
-      temporibus eum quod architecto?
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam inventore quasi
-      molestiae. Ratione, minima? Excepturi dolor nihil asperiores provident.
-    </p>
-
+    <div class="flex flex-col gap-2" v-html="cp?.content"></div>
     <h4>History</h4>
     <UTimeline
       v-model="active"
-      :items="history"
+      :items="items"
       :ui="{ title: 'text-xl', date: 'text-sm font-medium' }"
       class="max-w-xl"
       size="sm"
     >
+      <template #description="{ item }">
+        <div v-html="item?.description" class="" />
+      </template>
     </UTimeline>
   </div>
 </template>
@@ -30,64 +23,26 @@ definePageMeta({
   layout: "about",
 });
 
-const history = ref([
-  {
-    date: "1991",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam inventore quasi molestiae. Ratione, minima? Excepturi dolor nihil asperiores provident.",
-    image: "/img/icon-wisata.png",
-  },
-  {
-    date: "1995",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam inventore quasi molestiae. Ratione, minima? Excepturi dolor nihil asperiores provident.",
-    image: "/img/icon-wisata.png",
-  },
-  {
-    date: "1999",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam inventore quasi molestiae. Ratione, minima? Excepturi dolor nihil asperiores provident.",
-    image: "/img/icon-wisata.png",
-  },
-  {
-    date: "2003",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam inventore quasi molestiae. Ratione, minima? Excepturi dolor nihil asperiores provident.",
-    image: "/img/icon-wisata.png",
-  },
-  {
-    date: "2007",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam inventore quasi molestiae. Ratione, minima? Excepturi dolor nihil asperiores provident.",
-    image: "/img/icon-wisata.png",
-  },
-  {
-    date: "2017",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam inventore quasi molestiae. Ratione, minima? Excepturi dolor nihil asperiores provident.",
-    image: "/img/icon-wisata.png",
-  },
-  {
-    date: "2019",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam inventore quasi molestiae. Ratione, minima? Excepturi dolor nihil asperiores provident.",
-    image: "/img/icon-wisata.png",
-  },
-  {
-    date: "2023",
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam inventore quasi molestiae. Ratione, minima? Excepturi dolor nihil asperiores provident.",
-    image: "/img/icon-wisata.png",
-  },
-]);
+// const { data: cp, status, error } = useFetchApi(`/content/id/profil-perusahaan`);
+
+const route = useRoute();
+
+interface PageContent {
+  id: number;
+  title: string;
+  content: string;
+  featured_image: string | null;
+}
+
+const { data: cp, status, error } = useWpContent<PageContent>("profil-perusahaan");
+
+const items = computed(() =>
+  cp.value?.acf?.history.map((h) => ({
+    date: h.tahun,
+    title: h.titel,
+    description: h.deskripsi,
+  }))
+);
 
 const active = ref(0);
 onMounted(() => {

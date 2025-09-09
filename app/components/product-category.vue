@@ -8,16 +8,16 @@
         >
           <div
             v-for="item in productMenu"
-            :key="item.to"
+            :key="item?.to"
             class="featured-item flex flex-col items-center justify-end gap-2 p-5 text-center group"
           >
-            <nuxt-link :to="item.to">
+            <nuxt-link :to="item?.to">
               <img
-                :src="item.image"
+                :src="item?.image"
                 alt=""
                 class="group-hover:scale-110 transition-all duration-300 ease-in-out h-20 w-auto"
               />
-              <span>{{ item.label }}</span>
+              <span>{{ item?.label }}</span>
             </nuxt-link>
           </div>
         </div>
@@ -41,7 +41,7 @@ const productCategory = ref([
 ]);
 
 const { menus } = useMenus();
-const productMenu = computed(() => menus.value[2].children);
+const productMenu = computed(() => menus.value[2]?.children);
 </script>
 
 <style scoped>

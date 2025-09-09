@@ -1,0 +1,122 @@
+// single page 
+//==============================
+
+<script setup lang="ts">
+import { useRoute } from 'vue-router'
+
+interface PageContent {
+  id: number
+  title: string
+  content: string
+  featured_image: string | null
+}
+
+const route = useRoute()
+const { data, status, error } = useWpContent<PageContent>(route.params.slug as string)
+</script>
+
+<template>
+  <div>
+    <div v-if="status === 'pending'">Loading...</div>
+    <div v-else-if="error">Error: {{ error.message }}</div>
+    <article v-else>
+      <h1>{{ data?.title }}</h1>
+      <img v-if="data?.featured_image" :src="data.featured_image" class="mb-4" />
+      <div v-html="data?.content" class="prose"></div>
+    </article>
+  </div>
+</template>
+
+// posts
+//==============================
+
+<script setup lang="ts">
+interface Post {
+  id: number
+  title: string
+  excerpt: string
+  slug: string
+  featured_image: string | null
+}
+
+const { data: posts, status } = useWpPosts<Post[]>('blog', {
+  per_page: 6,
+  orderby: 'date',
+  order: 'desc'
+})
+</script>
+
+<template>
+  <section>
+    <h2 class="text-2xl font-bold mb-4">Latest Posts</h2>
+    <div v-if="status === 'pending'">Loading posts...</div>
+    <ul v-else class="space-y-6">
+      <li v-for="post in posts" :key="post.id">
+        <NuxtLink :to="`/blog/${post.slug}`" class="block">
+          <img v-if="post.featured_image" :src="post.featured_image" class="mb-2" />
+          <h3 class="text-xl font-semibold">{{ post.title }}</h3>
+          <p v-html="post.excerpt"></p>
+        </NuxtLink>
+      </li>
+    </ul>
+  </section>
+</template>
+
+
+// opsion
+//==============================
+
+<script setup lang="ts">
+interface SiteOptions {
+  site_name: string
+  logo: string
+  footer_text: string
+  socials: { platform: string; url: string }[]
+}
+
+const { data: options } = useWpOptions<SiteOptions>()
+</script>
+
+<template>
+  <footer class="mt-12 border-t pt-6">
+    <img v-if="options?.logo" :src="options.logo" class="h-10 mb-4" />
+    <p>{{ options?.footer_text }}</p>
+    <ul class="flex gap-4 mt-2">
+      <li v-for="s in options?.socials" :key="s.platform">
+        <a :href="s.url" target="_blank">{{ s.platform }}</a>
+      </li>
+    </ul>
+  </footer>
+</template>
+
+
+
+// taxomnomy, term
+//==============================
+
+<script setup lang="ts">
+interface TaxonomyPost {
+  id: number
+  title: string
+  slug: string
+  featured_image: string | null
+}
+
+const { data: categoryPosts, status } = useWpTaxonomy<TaxonomyPost[]>(
+  'category', // taxonomy
+  'news',     // term slug
+  { per_page: 5 }
+)
+</script>
+
+<template>
+  <section>
+    <h2 class="text-2xl font-bold mb-4">Category: News</h2>
+    <div v-if="status === 'pending'">Loading...</div>
+    <ul v-else>
+      <li v-for="post in categoryPosts" :key="post.id">
+        <NuxtLink :to="`/blog/${post.slug}`">{{ post.title }}</NuxtLink>
+      </li>
+    </ul>
+  </section>
+</template>

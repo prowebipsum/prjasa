@@ -9,12 +9,12 @@ interface PageContent {
 }
 
 const route = useRoute();
-const { data, pending } = useWpContent<PageContent>(route.params.slug as string);
+const { data, status } = useWpContent<PageContent>(route.params.slug as string);
 </script>
 
 <template>
   <div>
-    <div v-if="pending">Loading...</div>
+    <div v-if="status === 'loading'">Loading...</div>
     <article v-else>
       <h1>{{ data?.title }}</h1>
       <img v-if="data?.featured_image" :src="data.featured_image" />

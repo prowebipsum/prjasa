@@ -42,7 +42,7 @@
               class="flex flex-col lg:flex-row items-start lg:items-center p-4 lg:p-0 lg:gap-4 w-full"
             >
               <li
-                v-for="menu in menus"
+                v-for="menu in menusList"
                 :key="menu.to"
                 class="relative w-full lg:w-auto group"
               >
@@ -109,7 +109,7 @@
               variant="link"
               color="white"
               @click="setLocale('id')"
-              :class="{ 'font-bold': locale === 'id' }"
+              :class="{ 'font-bold': locale.value === 'id' }"
             />
             <span>|</span>
             <UButton
@@ -117,7 +117,7 @@
               variant="link"
               color="white"
               @click="setLocale('en')"
-              :class="{ 'font-bold': locale === 'en' }"
+              :class="{ 'font-bold': locale.value === 'en' }"
             />
           </div>
         </nav>
@@ -128,9 +128,10 @@
 
 <script setup lang="ts">
 import { UButton } from "#components";
-import { onMounted, onBeforeUnmount } from "vue";
-const { locale, locales, setLocale } = useI18n();
+import { onMounted, onBeforeUnmount, ref, computed } from "vue";
+import { useI18n } from "vue-i18n";
 
+const { locale, setLocale } = useI18n();
 const { menus } = useMenus();
 
 const isOpen = ref(false);
@@ -174,19 +175,30 @@ const handleScroll = () => {
   lastScrollY = currentY;
 };
 
-// loading indicator
-const { progress, isLoading, start, finish, clear } = useLoadingIndicator({
-  duration: 2000,
-  throttle: 200,
-  // This is how progress is calculated by default
-  estimatedProgress: (duration, elapsed) =>
-    (2 / Math.PI) * 100 * Math.atan(((elapsed / duration) * 100) / 50),
-});
-
 onMounted(() => {
   updateNavbarHeight();
   window.addEventListener("resize", updateNavbarHeight);
   window.addEventListener("scroll", handleScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", checkDesktop);
+  window.removeEventListener("resize", updateNavbarHeight);
+  window.removeEventListener("scroll", handleScroll);
+});
+
+// loading indicator
+const { progress } = useLoadingIndicator({
+  duration: 2000,
+  throttle: 200,
+  estimatedProgress: (duration, elapsed) =>
+    (2 / Math.PI) * 100 * Math.atan(((elapsed / duration) * 100) / 50),
+});
+
+// menusList yang stabil (kalau menus adalah object per-locale, ambil locale; kalau array pakai langsung)
+const menusList = computed(() => {
+  if (Array.isArray(menus.value)) return menus.value;
+  return menus.value?.[locale.value] || menus.value?.["id"] || [];
 });
 </script>
 

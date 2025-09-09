@@ -1,11 +1,11 @@
-// composables/useActiveMenu.ts
-// import { useMenus } from './useMenus'
+import { useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 
 export const useActiveMenu = () => {
   const route = useRoute()
+  const { locale } = useI18n()
   const { menus } = useMenus()
 
-  // Recursive finder untuk cari child juga
   const findMenu = (items: any[], path: string): any | null => {
     for (const item of items) {
       if (item.to === path) return item
@@ -17,9 +17,12 @@ export const useActiveMenu = () => {
     return null
   }
 
-  const activeMenu = computed(() => findMenu(menus.value, route.path))
+  const activeMenu = computed(() => {
+    // fallback: kalau bahasa aktif tidak lengkap, pakai 'id'
+    const localizedMenus =
+      menus.value?.[locale.value] || menus.value?.['id'] || []
+    return findMenu(localizedMenus, route.path)
+  })
 
-  return {
-    activeMenu
-  }
+  return { activeMenu }
 }
