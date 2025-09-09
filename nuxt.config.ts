@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      wpApi: process.env.WP_API || 'http://localhost/wp-json/api/v1/'
+      wpApi: process.env.WP_API
     }
   },
 
