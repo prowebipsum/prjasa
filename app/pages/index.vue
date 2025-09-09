@@ -11,7 +11,7 @@
               <h2>Cek Rute dan Tarif</h2>
               <h4 class="text-gray-700">Dan temukan Armada terdekat di lokasi Anda</h4>
               <UButton
-                to="/cek-rute"
+                href="https://primajasa.co/cektarif/index.html?embed=1&bg=transparent&primary=%23B91C1C&accent=%23F59E0B"
                 size="xl"
                 class="rounded-full mb-5"
                 icon="gis:route"
