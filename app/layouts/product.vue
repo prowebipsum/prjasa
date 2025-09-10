@@ -2,9 +2,9 @@
   <div class="min-h-screen pt-[60px]">
     <navbar />
     <ElementHero
-      :title="activeMenu.label"
-      :description="activeMenu.description"
-      :background="activeMenu.background"
+      :title="activeMenu?.label"
+      :description="activeMenu?.description"
+      :background="activeMenu?.background"
       class="pb-32"
     />
     <ProductCategory background="bg-white " />
