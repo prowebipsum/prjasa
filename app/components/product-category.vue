@@ -7,7 +7,7 @@
           class="featured grid grid-cols-2 lg:grid-cols-4 bg-white px-5 rounded-2xl shadow-xl divide-y-1 lg:divide-x-1 divide-gray-200 relative -top-20 w-full mx-auto"
         >
           <div
-            v-for="item in productMenu"
+            v-for="item in productCategory"
             :key="item?.to"
             class="featured-item flex flex-col items-center justify-end gap-2 p-5 text-center group"
           >
