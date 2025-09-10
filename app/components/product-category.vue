@@ -17,7 +17,7 @@
                 alt=""
                 class="group-hover:scale-110 transition-all duration-300 ease-in-out h-20 w-auto"
               />
-              <span>{{ item?.label }}</span>
+              <span>{{ item?.name }}</span>
             </nuxt-link>
           </div>
         </div>
