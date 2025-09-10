@@ -1,6 +1,16 @@
 <template>
   <div>
-    <UTimeline v-model="active" :default-value="2" :items="penghargaan" class="w-96" />
+    <div v-if="status === 'loading'">Loading...</div>
+    <div
+      v-if="penghargaan?.content"
+      v-html="penghargaan.content"
+      class="flex flex-col gap-2"
+    ></div>
+    <UTimeline v-model="active" :default-value="2" :items="items" class="w-96">
+      <template #description="{ item }">
+        <div v-html="item?.description" class="" />
+      </template>
+    </UTimeline>
   </div>
 </template>
 
@@ -9,48 +19,15 @@ definePageMeta({
   layout: "about",
 });
 
-const penghargaan = ref([
-  {
-    id: 1,
-    title: "Penghargaan One",
-    organization: "Tech Asia",
-    date: "2021",
-    location: "Jakarta, Indonesia",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit Quia totam inventore quasi molestiae.",
-    icon: "bi:award",
-  },
-  {
-    id: 2,
-    title: "Penghargaan Two",
-    organization: "Startup Grind",
-    date: "2022",
-    location: "Bali, Indonesia",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit Quia totam inventore quasi molestiae.",
-    icon: "bi:award",
-  },
-  {
-    id: 3,
-    title: "Penghargaan Three",
-    organization: "Lorem Ipsum",
-    date: "2023",
-    location: "Bandung, Indonesia",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit Quia totam inventore quasi molestiae.",
-    icon: "bi:award",
-  },
-  {
-    id: 4,
-    title: "Pengahargaan Four",
-    organization: "Startup Grind",
-    date: "2024",
-    location: "JAkarta, Indonesia",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit Quia totam inventore quasi molestiae.",
-    icon: "bi:award",
-  },
-]);
+const { data: penghargaan, status, error } = useWpContent<PageContent>("penghargaan");
+
+const items = computed(() =>
+  penghargaan.value?.acf?.penghargaan.map((h) => ({
+    date: h.tahun,
+    title: h.titel,
+    description: h.deskripsi,
+  }))
+);
 
 const active = ref(0);
 

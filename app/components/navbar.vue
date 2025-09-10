@@ -103,22 +103,23 @@
           </div>
 
           <!-- Language switcher -->
-          <div class="flex items-center text-white">
-            <UButton
-              label="ID"
-              variant="link"
-              color="white"
+
+          <div class="flex gap-2 items-center">
+            <button
+              class="rounded-full w-8 h-8"
               @click="setLocale('id')"
-              :class="{ 'font-bold': locale.value === 'id' }"
-            />
-            <span>|</span>
-            <UButton
-              label="EN"
-              variant="link"
-              color="white"
+              :class="{ ' text-primary bg-white/80 ': locale === 'id' }"
+            >
+              ID
+            </button>
+            |
+            <button
+              class="rounded-full w-8 h-8"
               @click="setLocale('en')"
-              :class="{ 'font-bold': locale.value === 'en' }"
-            />
+              :class="{ ' text-primary bg-white/80 ': locale === 'en' }"
+            >
+              EN
+            </button>
           </div>
         </nav>
       </div>

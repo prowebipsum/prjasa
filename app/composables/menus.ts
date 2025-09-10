@@ -1,5 +1,10 @@
 export const useMenus = () => {
   const menus = ref({
+
+     // ============================
+    // MENU ID
+    // ============================= 
+
     id: [
       { label: 'Beranda', to: '/' },
       {
@@ -7,8 +12,8 @@ export const useMenus = () => {
         to: '#',
         children: [
           {
-            label: 'Company Profile',
-            to: '/about/company-profile',
+            label: 'Profil Perusahaan',
+            to: '/about/profil-perusahaan',
             description: 'loremipsum doloretsitamet',
             background: '/img/about-1.jpg'
           },
@@ -25,7 +30,7 @@ export const useMenus = () => {
             background: '/img/about-3.jpg'
           },
           {
-            label: 'Dewan Direksi',
+            label:'Dewan Direksi',
             to: '/about/dewan-direksi',
             description: 'loremipsum doloretsitamet',
             background: '/img/about-4.jpg'
@@ -97,6 +102,10 @@ export const useMenus = () => {
       }
     ],
 
+    // ============================
+    // MENU ENGLISH
+    // =============================
+
     en: [
       { label: 'Home', to: '/' },
       {
@@ -105,7 +114,7 @@ export const useMenus = () => {
         children: [
           {
             label: 'Company Profile',
-            to: '/en/about/company-profile',
+            to: '/en/about/profil-perusahaan',
             description: 'Our company profile',
             background: '/img/about-1.jpg'
           },
@@ -120,6 +129,24 @@ export const useMenus = () => {
             to: '/en/about/pesan-pendiri',
             description: 'Message from the founder',
             background: '/img/about-3.jpg'
+          },
+            {
+            label:'Dewan Direksi',
+            to: '/en/about/dewan-direksi',
+            description: 'loremipsum doloretsitamet',
+            background: '/img/about-4.jpg'
+          },
+          {
+            label: 'Company Policy',
+            to: '/en/about/kebijakan-perusahaan',
+            description: 'loremipsum doloretsitamet',
+            background: '/img/product-2.jpg'
+          },
+          {
+            label: 'Awards',
+            to: '/en/about/penghargaan',
+            description: 'loremipsum doloretsitamet',
+            background: '/img/about-1.jpg'
           }
         ]
       },

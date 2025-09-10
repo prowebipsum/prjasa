@@ -32,33 +32,6 @@ interface PageContent {
 }
 
 const { data: vimi, status, error } = useWpContent<PageContent>("visi-misi");
-
-const values = ref([
-  {
-    title: "Lorem ipsum dolor sit amet consectetur.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam inventore quasi molestiae.",
-    icon: "bi:award",
-  },
-  {
-    title: "Lorem ipsum dolor sit amet consectetur.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam inventore quasi molestiae.",
-    icon: "bi:lightbulb",
-  },
-  {
-    title: "Lorem ipsum dolor sit amet consectetur.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam inventore quasi molestiae.",
-    icon: "bi:bus-front-fill",
-  },
-  {
-    title: "Lorem ipsum dolor sit amet consectetur.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam inventore quasi molestiae.",
-    icon: "bi:person-check",
-  },
-]);
 </script>
 
 <style></style>
