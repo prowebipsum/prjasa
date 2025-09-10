@@ -2,18 +2,18 @@
   <div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 mb-20">
       <div
-        v-for="item in direksi"
+        v-for="item in direksi?.acf?.dewan_direksi"
         class="p-4 rounded-xl border border-gray-300 bg-white hover:shadow duration-300"
       >
         <img
-          :src="item.photo"
-          alt=""
+          :src="item?.foto?.url"
+          :alt="item.foto?.title"
           class="w-full lg:h-72 object-cover object-top rounded-xl mb-5"
         />
         <div class="flex gap-4 justify-between items-end">
           <div>
-            <p class="mb-0">{{ item.name }}</p>
-            <p class="text-xs mb-0">{{ item.role }}</p>
+            <p class="mb-0">{{ item.nama }}</p>
+            <p class="text-xs mb-0">{{ item.jabatan }}</p>
           </div>
           <u-button
             size="xl"
@@ -42,16 +42,16 @@
           </button>
           <div class="flex justify-between flex-wrap lg:flex-nowrap gap-4">
             <img
-              :src="selected.photo"
+              :src="selected?.foto?.url ?? 'https://via.placeholder.com/150'"
               alt=""
               class="w-20 h-20 object-cover object-top rounded-full shrink-0 border border-gray-300"
             />
             <div>
-              <p class="mb-0 text-2xl font-bold">{{ selected.name }}</p>
+              <p class="mb-0 text-2xl font-bold">{{ selected?.nama }}</p>
 
-              <p class="text-sm mb-0">{{ selected.role }}</p>
+              <p class="text-sm mb-0">{{ selected?.jabatan }}</p>
               <hr class="border-gray-300 my-2" />
-              <div v-html="selected.bio"></div>
+              <div v-html="selected?.biografi"></div>
             </div>
           </div>
         </div>
@@ -65,6 +65,9 @@ definePageMeta({
   layout: "about",
 });
 
+const { data: direksi, status, error } = useWpContent<PageContent>("dewan-direksi");
+
+/* 
 const direksi = ref([
   {
     name: "Tiar Nabila Karbala",
@@ -126,7 +129,7 @@ const direksi = ref([
       </p>
       `,
   },
-]);
+]); */
 
 const selected = ref<any | null>(null);
 const selectDireksi = (index: any) => {
