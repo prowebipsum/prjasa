@@ -26,3 +26,29 @@ export function useWpTaxonomy<T>(
     params: { ...params, lang: locale.value }
   })
 }
+
+// ✅ NEW: fetch semua terms dari taxonomy (misalnya kategori-layanan)
+export function useWpTerms<T>(
+  taxonomy: string,
+  params: Record<string, any> = {}
+) {
+  const { locale } = useI18n()
+  return useFetchApi<T>(`/terms/${taxonomy}`, {
+    params: { ...params, lang: locale.value }
+  })
+}
+
+
+
+// ✅ Ambil detail 1 term berdasarkan slug
+export function useWpTerm<T>(
+  taxonomy: string,
+  slug: string,
+  params: Record<string, any> = {}
+) {
+  const { locale } = useI18n()
+  return useFetchApi<T>(`/terms/${taxonomy}/${slug}`, {
+    params: { ...params, lang: locale.value }
+  })
+}
+
