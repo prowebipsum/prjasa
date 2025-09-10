@@ -63,23 +63,23 @@ const menus = ref<Record<string, MenuItem[]>>({
       children: [
         {
           label: 'Bus Regular',
-          to: '/product/bus-reguler',
+          to: '/product/bus-regular',
           image: '/img/icon-reguler.png',
           background: '/img/product-1.jpg'
         },
         {
           label: 'Moda',
-          to: '#',
+          to: '/product/moda',
           image: '/img/icon-moda.png'
         },
         {
           label: 'Shuttle',
-          to: '#',
+          to: '/product/shuttle',
           image: '/img/icon-shutle.png'
         },
         {
           label: 'Pariwisata',
-          to: '#',
+          to: '/product/pariwisata',
           image: '/img/icon-wisata.png'
         }
       ]
@@ -159,13 +159,25 @@ const menus = ref<Record<string, MenuItem[]>>({
       children: [
         {
           label: 'Regular Bus',
-          to: '/product/bus-reguler',
+          to: '/product/bus-regular',
           image: '/img/icon-reguler.png',
           background: '/img/product-1.jpg'
         },
         {
+          label: 'Moda',
+          to: '/product/moda',
+          image: '/img/icon-moda.png',
+          background: '/img/product-1.jpg'
+        },
+         {
+          label: 'Shuttle',
+          to: '/product/shuttle',
+          image: '/img/icon-shutle.png',
+          background: '/img/product-1.jpg'
+        },
+        {
           label: 'Tourism',
-          to: '#',
+          to: '/product/pariwisata',
           image: '/img/icon-wisata.png'
         }
       ]
