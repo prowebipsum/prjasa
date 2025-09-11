@@ -23,7 +23,7 @@
       <img
         v-if="news?.featured_image"
         :src="news.featured_image"
-        class="mb-5 rounded-lg"
+        class="mb-5 rounded-lg w-full"
       />
       <div v-html="news?.content"></div>
     </article>

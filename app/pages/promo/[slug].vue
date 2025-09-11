@@ -23,7 +23,7 @@
       <img
         v-if="promo?.featured_image"
         :src="promo.featured_image"
-        class="mb-5 rounded-lg"
+        class="mb-5 rounded-lg w-full"
       />
       <div v-html="promo?.content"></div>
     </article>
