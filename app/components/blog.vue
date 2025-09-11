@@ -9,7 +9,7 @@
             :key="index"
             class="bg-cover bg-center text-white border border-gray-300 rounded-xl overflow-hidden h-full min-h-[300px] flex flex-col justify-end relative group"
             :class="{ 'lg:row-span-2': index === 0 }"
-            :style="{ backgroundImage: `url(${item.image_url})` }"
+            :style="{ backgroundImage: `url(${item.featured_image})` }"
           >
             <div
               class="absolute top-0 left-0 w-full h-full inset-0 bg-gradient-to-t from-black to-black/10 opacity-70 group-hover:opacity-95 duration-300"
@@ -19,7 +19,9 @@
                 {{ item.title }}
               </h4>
 
-              <UButton size="xl" class="rounded-full px-6">Read more</UButton>
+              <UButton :to="`/blog/${item.slug}`" size="xl" class="rounded-full px-6"
+                >Read more</UButton
+              >
             </div>
           </div>
         </div>
@@ -38,5 +40,9 @@
 </template>
 
 <script setup lang="ts">
-const { blog } = useBlog();
+const { data: blog, status } = useWpPosts("post", {
+  per_page: 3,
+  taxonomy: "category",
+  category: "blog",
+});
 </script>

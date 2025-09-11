@@ -39,12 +39,17 @@
 </template>
 
 <script lang="ts" setup>
+import { table } from "#build/ui";
 import { useNews } from "~/composables/news";
 
 //const { news } = useNews();
 
 const { formatDate } = useDateFormat();
-const { data: news, status } = useWpPosts<PostContent>("post", { per_page: 3 });
+const { data: news, status } = useWpPosts<PostContent>("post", {
+  per_page: 3,
+  taxonomy: "category",
+  term: "berita-csr",
+});
 </script>
 
 <style></style>
