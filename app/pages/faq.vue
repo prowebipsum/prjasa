@@ -1,32 +1,67 @@
 <template>
   <div>
-    <UAccordion
-      :items="items"
-      :ui="{ label: 'text-lg font-semibold cursor-pointer', content: 'text-base' }"
-      v-model="active"
-      class="border border-gray-300 rounded-xl px-6 bg-white"
-    />
+    <!-- Loading state -->
+    <div v-if="status === 'pending'">
+      <loading />
+    </div>
+
+    <!-- Konten statis sebelum FAQ -->
+    <div v-if="faq?.content" class="flex flex-col gap-2" v-html="faq?.content"></div>
+
+    <!-- Accordion -->
+    <div
+      class="accordion divide-y divide-gray-200 border border-gray-300 rounded-xl bg-white"
+    >
+      <div v-for="(item, index) in faq?.acf?.faq" :key="index" class="accordion-item">
+        <!-- Title -->
+        <button
+          class="accordion-title flex w-full items-center justify-between px-4 py-3 text-left text-lg font-semibold cursor-pointer"
+          @click="toggle(item.tanya)"
+        >
+          <span>{{ item.tanya }}</span>
+          <icon
+            name="material-symbols:expand-more-rounded"
+            class="transition-transform duration-300 text-xl"
+            :class="{ 'rotate-180': active === item.tanya }"
+          />
+        </button>
+
+        <!-- Content -->
+        <transition name="accordion">
+          <div
+            v-if="active === item.tanya"
+            class="accordion-content px-4 pb-4 text-base text-gray-700"
+            v-html="item.jawab"
+          />
+        </transition>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-const items = ref([
-  {
-    label: "Loremipsum doloretsitamet ?",
-    content:
-      "Curabitur erat mi, rutrum ut molestie at, congue id eros. Integer convallis metus lorem, a fringilla orci varius sit amet. Quisque viverra justo at est aliquet tincidunt. ",
-  },
-  {
-    label: "Nulla neque nisi, semper id gravida a, pharetra vel augue ?",
-    content:
-      "Duis iaculis convallis augue, condimentum venenatis mi consectetur r a. Etiam convallis volutpat sem, vitae sollicitudin dolor mattis at.",
-  },
-  {
-    label: "Sed dapibus pellentesque libero id mattis. Nam in elit sit amet libero ?",
-    content:
-      "n sapien lacus, placerat eget purus nec, tempor sagittis turpis. Cras ultricies velit erat, in viverra enim bibendum quis. ",
-  },
-]);
+const { data: faq, status } = useWpContent("faq");
+
+// simpan id atau judul pertanyaan aktif
+const active = ref<string | null>(null);
+
+const toggle = (id: string) => {
+  active.value = active.value === id ? null : id;
+};
 </script>
 
-<style></style>
+<style scoped>
+/* Animasi accordion */
+.accordion-enter-active,
+.accordion-leave-active {
+  transition: all 0.3s ease;
+  max-height: 500px;
+  opacity: 1;
+}
+
+.accordion-enter-from,
+.accordion-leave-to {
+  max-height: 0;
+  opacity: 0;
+}
+</style>

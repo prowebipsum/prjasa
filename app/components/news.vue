@@ -1,24 +1,31 @@
 <template>
   <div>
+    <div v-if="status === 'pending'">
+      <loading />
+    </div>
     <section class="py-20">
       <div class="container">
         <h3 class="text-center mb-10 text-primary">Berita Terkini</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
           <div v-for="item in news" class="group">
-            <img
-              :src="item.image_url"
-              alt=""
-              class="w-full h-56 object-cover rounded-xl mb-5 group-hover:border border-gray-200 group-hover:shadow-2xl duration-300"
-            />
+            <NuxtLink :to="`/news/${item?.slug}`">
+              <img
+                :src="item?.featured_image"
+                alt=""
+                class="w-full h-56 object-cover rounded-xl mb-5 group-hover:border border-gray-200 group-hover:shadow-2xl duration-300"
+              />
+            </NuxtLink>
 
             <span class="text-sm flex items-center gap-1 text-gray-500 mb-1">
               <icon
                 name="material-symbols-light:calendar-month-outline-rounded"
                 class="text-lg"
               />
-              {{ item.date }}
+              {{ formatDate(item?.date) || item?.date }}
             </span>
-            <h5 v-html="item.title"></h5>
+            <NuxtLink :to="`/news/${item?.slug}`">
+              <h5 v-html="item.title"></h5>
+            </NuxtLink>
           </div>
         </div>
         <div class="flex justify-center items-center">
@@ -34,7 +41,10 @@
 <script lang="ts" setup>
 import { useNews } from "~/composables/news";
 
-const { news } = useNews();
+//const { news } = useNews();
+
+const { formatDate } = useDateFormat();
+const { data: news, status } = useWpPosts<PostContent>("post", { per_page: 3 });
 </script>
 
 <style></style>
