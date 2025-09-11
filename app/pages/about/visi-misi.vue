@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div v-if="status === 'pending'">
+      <loading />
+    </div>
+
     <div class="flex flex-col gap-2" v-html="vimi?.content"></div>
     <div class="p-6 mt-10 rounded-xl bg-gray-50">
       <h4 class="text-primary">Values</h4>

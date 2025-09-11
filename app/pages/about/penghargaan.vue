@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div v-if="status === 'loading'">Loading...</div>
+    <div v-if="status === 'pending'">
+      <Loading />
+    </div>
     <div
       v-if="penghargaan?.content"
       v-html="penghargaan.content"

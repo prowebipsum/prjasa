@@ -1,4 +1,7 @@
 <template>
+  <div v-if="status === 'pending'">
+    <loading />
+  </div>
   <div class="flex flex-col gap-2" v-html="kebijakan?.content"></div>
 </template>
 

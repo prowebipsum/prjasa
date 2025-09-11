@@ -1,5 +1,8 @@
 <template>
   <div class="">
+    <div v-if="status === 'pending'">
+      <loading />
+    </div>
     <div class="flex flex-col gap-2" v-html="cp?.content"></div>
     <h4>History</h4>
     <UTimeline

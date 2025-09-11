@@ -14,7 +14,9 @@ const { data, status } = useWpContent<PageContent>(route.params.slug as string);
 
 <template>
   <div>
-    <div v-if="status === 'loading'">Loading...</div>
+    <div v-if="status === 'pending'">
+      <loading />
+    </div>
     <article v-else>
       <h1>{{ data?.title }}</h1>
       <img v-if="data?.featured_image" :src="data.featured_image" />

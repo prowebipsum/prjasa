@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div v-if="status === 'pending'">
+      <loading />
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 mb-20">
       <div
         v-for="item in direksi?.acf?.dewan_direksi"
@@ -66,70 +69,6 @@ definePageMeta({
 });
 
 const { data: direksi, status, error } = useWpContent<PageContent>("dewan-direksi");
-
-/* 
-const direksi = ref([
-  {
-    name: "Tiar Nabila Karbala",
-    role: "Managing Director",
-    photo: "/direksi/tiar-1.jpg",
-    bio: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.</p>
-      <p>
-      In pharetra, lacus sed condimentum bibendum, urna nibh lobortis justo, sit amet convallis elit lorem a felis. Ut eu mi sit amet lacus dignissim sollicitudin ac sed mi. Sed non eros efficitur, pharetra erat sit amet, laoreet urna. In tempor varius nunc non gravida.
-      </p>
-      `,
-  },
-  {
-    name: "Robert Doe",
-    role: "CEO",
-    photo: "/img/direktur-2.jpg",
-    bio: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.</p>
-      <p>
-      In pharetra, lacus sed condimentum bibendum, urna nibh lobortis justo, sit amet convallis elit lorem a felis. Ut eu mi sit amet lacus dignissim sollicitudin ac sed mi. Sed non eros efficitur, pharetra erat sit amet, laoreet urna. In tempor varius nunc non gravida.
-      </p>
-      `,
-  },
-  {
-    name: "Peter Doe",
-    role: "CEO",
-    photo: "/img/direktur-2.jpg",
-    bio: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.</p>
-      <p>
-      In pharetra, lacus sed condimentum bibendum, urna nibh lobortis justo, sit amet convallis elit lorem a felis. Ut eu mi sit amet lacus dignissim sollicitudin ac sed mi. Sed non eros efficitur, pharetra erat sit amet, laoreet urna. In tempor varius nunc non gravida.
-      </p>
-      `,
-  },
-  {
-    name: "Harry Kane",
-    role: "CEO",
-    photo: "/img/direktur-2.jpg",
-    bio: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.</p>
-      <p>
-      In pharetra, lacus sed condimentum bibendum, urna nibh lobortis justo, sit amet convallis elit lorem a felis. Ut eu mi sit amet lacus dignissim sollicitudin ac sed mi. Sed non eros efficitur, pharetra erat sit amet, laoreet urna. In tempor varius nunc non gravida.
-      </p>
-      `,
-  },
-  {
-    name: "Karen Smith",
-    role: "CEO",
-    photo: "/img/direktur-2.jpg",
-    bio: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.</p>
-      <p>
-      In pharetra, lacus sed condimentum bibendum, urna nibh lobortis justo, sit amet convallis elit lorem a felis. Ut eu mi sit amet lacus dignissim sollicitudin ac sed mi. Sed non eros efficitur, pharetra erat sit amet, laoreet urna. In tempor varius nunc non gravida.
-      </p>
-      `,
-  },
-  {
-    name: "Robert Johnson",
-    role: "CEO",
-    photo: "/img/direktur-2.jpg",
-    bio: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo in repellat optio, autem similique sapiente a commodi sit accusamus.</p>
-      <p>
-      In pharetra, lacus sed condimentum bibendum, urna nibh lobortis justo, sit amet convallis elit lorem a felis. Ut eu mi sit amet lacus dignissim sollicitudin ac sed mi. Sed non eros efficitur, pharetra erat sit amet, laoreet urna. In tempor varius nunc non gravida.
-      </p>
-      `,
-  },
-]); */
 
 const selected = ref<any | null>(null);
 const selectDireksi = (index: any) => {

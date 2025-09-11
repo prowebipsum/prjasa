@@ -1,4 +1,5 @@
 <template>
+  <div v-if="status === 'pending'"><Loading /></div>
   <div class="text-center mb-10">
     <h4 class="text-primary" v-html="layanan?.acf?.sub_judul"></h4>
     <div v-html="layanan?.description" class="flex flex-col gap-2"></div>
@@ -53,7 +54,7 @@ interface TaxonomyPost {
 }
 
 const route = useRoute();
-const { data: layanan, status } = useWpTaxonomy<TaxonomyPost[]>(
+const { data: layanan, status, error } = useWpTaxonomy<TaxonomyPost[]>(
   "kategori-layanan", // taxonomy
   route.params.slug, // term slug
   { type: "layanan" },
