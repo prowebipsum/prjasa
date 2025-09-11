@@ -48,4 +48,9 @@ const { data: news, status } = useWpContent<PageContent>(route.params.slug as st
 const { formatDate } = useDateFormat();
 </script>
 
-<style></style>
+<style>
+@reference '@/assets/css/main.css';
+iframe {
+  @apply w-full;
+}
+</style>
