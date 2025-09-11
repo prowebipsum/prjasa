@@ -25,7 +25,7 @@
         :src="news.featured_image"
         class="mb-5 rounded-lg w-full"
       />
-      <div v-html="news?.content"></div>
+      <div v-html="news?.content" class="text-justify"></div>
     </article>
   </div>
 </template>
