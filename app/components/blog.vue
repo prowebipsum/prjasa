@@ -5,7 +5,7 @@
         <h3 class="text-center mb-10 text-primary">Artikel</h3>
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-6 justify-between">
           <div
-            v-for="(item, index) in blog"
+            v-for="(item, index) in blog?.posts"
             :key="index"
             class="bg-cover bg-center text-white border border-gray-300 rounded-xl overflow-hidden h-full min-h-[300px] flex flex-col justify-end relative group"
             :class="{ 'lg:row-span-2': index === 0 }"

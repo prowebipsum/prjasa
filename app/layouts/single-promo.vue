@@ -56,9 +56,9 @@
         <div class="flex flex-col">
           <div
             class="flex gap-3 p-2 rounded-xl hover:bg-gray-50 duration-300"
-            v-for="post in posts"
+            v-for="post in posts?.posts"
           >
-            <nuxt-link :to="`/news/${post.slug}`" class="shrink-0 w-max">
+            <nuxt-link :to="`/promo/${post.slug}`" class="shrink-0 w-max">
               <img
                 :src="post.featured_image"
                 alt=""
@@ -73,7 +73,7 @@
                 />
                 {{ formatDate(post?.date) || post.date }}
               </span>
-              <nuxt-link :to="`/news/${post.slug}`" class="text-sm">{{
+              <nuxt-link :to="`/promo/${post.slug}`" class="text-sm">{{
                 post.title
               }}</nuxt-link>
             </div>
@@ -92,7 +92,9 @@ type PostContent = {
   featured_image: string;
   date: string;
 };
-const { data: posts, status, error } = useWpPosts<PostContent>("promo");
+const { data: posts, status, error } = useWpPosts<PostContent>("promo", {
+  per_page: 5,
+});
 
 const route = useRoute();
 

@@ -56,7 +56,7 @@
         <div class="flex flex-col">
           <div
             class="flex gap-3 p-2 rounded-xl hover:bg-gray-50 duration-300"
-            v-for="post in posts"
+            v-for="post in posts?.posts"
           >
             <nuxt-link :to="`/news/${post.slug}`" class="shrink-0 w-max">
               <img
@@ -92,7 +92,9 @@ type PostContent = {
   featured_image: string;
   date: string;
 };
-const { data: posts, status, error } = useWpPosts<PostContent>("post");
+const { data: posts, status, error } = useWpPosts<PostContent>("post", {
+  per_page: 10,
+});
 
 const route = useRoute();
 

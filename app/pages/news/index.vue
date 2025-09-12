@@ -1,10 +1,38 @@
+<script setup lang="ts">
+const currentPage = ref(1);
+const perPage = 9;
+
+// ✅ API sekarang return { posts, pagination }
+const { data, status, error } = useWpPosts<PostContent>("post", {
+  taxonomy: "category",
+  term: "berita-csr",
+  per_page: perPage,
+  page: currentPage,
+});
+
+// ✅ posts ambil dari data.value.posts
+const posts = computed(() => data.value?.posts || []);
+
+// ✅ pagination langsung dari data.value.pagination
+const totalPages = computed(() => data.value?.pagination.total_pages ?? 1);
+const totalPosts = computed(() => data.value?.pagination.total ?? 0);
+
+const { formatDate } = useDateFormat();
+</script>
+
 <template>
   <div>
+    <!-- Loading -->
     <div v-if="status === 'pending'">
       <loading />
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
-      <div v-for="item in posts" class="group">
+
+    <!-- Grid posts -->
+    <div
+      v-else-if="posts.length"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10"
+    >
+      <div v-for="item in posts" :key="item.id" class="group">
         <nuxt-link :to="`/news/${item.slug}`">
           <img
             :src="item.featured_image"
@@ -17,23 +45,39 @@
             name="material-symbols-light:calendar-month-outline-rounded"
             class="text-lg"
           />
-          {{ formatDate(item?.date) || item.date }}
+          {{ formatDate(item.date) }}
         </span>
         <nuxt-link :to="`/news/${item.slug}`">
           <h5 v-html="item.title"></h5>
         </nuxt-link>
       </div>
     </div>
+
+    <!-- Empty -->
+    <div v-else class="text-center text-gray-500 py-10">Tidak ada postingan.</div>
+
+    <!-- Pagination -->
+    <div
+      v-if="totalPages > 1"
+      class="flex justify-center items-center pt-5 mb-20 max-w-xl mx-auto"
+    >
+      <button
+        @click="currentPage--"
+        :disabled="currentPage <= 1"
+        class="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+      >
+        ←
+      </button>
+
+      <span class="px-4 py-2"> Halaman {{ currentPage }} dari {{ totalPages }} </span>
+
+      <button
+        @click="currentPage++"
+        :disabled="currentPage >= totalPages"
+        class="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+      >
+        →
+      </button>
+    </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-const { data: posts, status, error } = useWpPosts<PostContent>("post", {
-  taxonomy: "category",
-  term: "berita-csr",
-});
-
-const { formatDate } = useDateFormat();
-</script>
-
-<style></style>

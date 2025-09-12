@@ -1,14 +1,32 @@
 import { useI18n } from 'vue-i18n'
 import { useFetchApi } from './fetchApi'
 
+// Tipe untuk posts + pagination
+export interface WpPostsResponse<T> {
+  posts: T[]
+  pagination: {
+    total: number
+    total_pages: number
+    current_page: number
+    per_page: number
+  }
+}
+
 export function useWpContent<T>(slug: string, options: any = {}) {
   const { locale } = useI18n()
   return useFetchApi<T>(`/content/${locale.value}/${slug}`, options)
 }
 
-export function useWpPosts<T>(type: string, params: Record<string, any> = {}) {
+// 🔄 FIX: sekarang API return { posts, pagination }
+export function useWpPosts<T>(
+  type: string,
+  params: Record<string, any> = {}
+) {
   const { locale } = useI18n()
-  return useFetchApi<T>(`/posts/${locale.value}/${type}`, { params })
+  return useFetchApi<WpPostsResponse<T>>(
+    `/posts/${locale.value}/${type}`,
+    { params }
+  )
 }
 
 export function useWpOptions<T>() {
@@ -27,7 +45,7 @@ export function useWpTaxonomy<T>(
   })
 }
 
-// ✅ NEW: fetch semua terms dari taxonomy (misalnya kategori-layanan)
+// ✅ NEW: fetch semua terms dari taxonomy
 export function useWpTerms<T>(
   taxonomy: string,
   params: Record<string, any> = {}
@@ -37,8 +55,6 @@ export function useWpTerms<T>(
     params: { ...params, lang: locale.value }
   })
 }
-
-
 
 // ✅ Ambil detail 1 term berdasarkan slug
 export function useWpTerm<T>(
@@ -51,4 +67,3 @@ export function useWpTerm<T>(
     params: { ...params, lang: locale.value }
   })
 }
-
