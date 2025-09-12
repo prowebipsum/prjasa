@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { Title } from "#components";
 
+const { data: sliders, status } = useWpPosts("slideshow");
+
 const items = [
   {
     src: "img/slider1a.jpg",
@@ -17,7 +19,7 @@ const items = [
   <UCarousel
     v-slot="{ item }"
     :autoplay="{ delay: 4000 }"
-    :items="items"
+    :items="sliders?.posts"
     :loop="true"
     :dots="true"
     wheel-gestures
@@ -29,15 +31,15 @@ const items = [
     }"
     class="relative"
   >
-    <div
-      class="w-full min-h-[calc(100vh+100px)] bg-cover bg-center flex flex-col justify-end py-20"
-      :style="{ backgroundImage: `url(${item.src})` }"
-    >
-      <div class="max-w-screen-lg mx-auto w-full px-6">
-        <div class="max-w-[600px]">
-          <h1 class="text-white mb-10 lg:mb-42 text-shadow-2xl">{{ item.title }}</h1>
-        </div>
-      </div>
-    </div>
+    <img
+      :src="item.featured_image"
+      :alt="item.title"
+      class="w-full h-full object-cover hidden lg:block"
+    />
+    <img
+      :src="item?.acf?.mobile_image?.url"
+      :alt="item.title"
+      class="w-full h-full object-cover lg:hidden"
+    />
   </UCarousel>
 </template>
