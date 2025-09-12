@@ -7,14 +7,14 @@
 
         <div
           v-if="success"
-          class="text-green-600 mt-2 w-full h-full flex flex-col justify-center items-center"
+          class="text-green-600 mt-2 w-full h-full flex flex-col justify-center items-center rounded-xl border border-green-600 border-dashed bg-gray-50"
         >
           ✅ Data berhasil dikirim!
         </div>
 
         <div
           v-else-if="error"
-          class="text-red-600 mt-2 w-full h-full flex flex-col justify-center items-center"
+          class="text-red-600 mt-2 w-full h-full flex flex-col justify-center items-center rounded-xl border border-green-600 border-dashed bg-gray-50"
         >
           ❌ {{ error }}
         </div>
