@@ -14,7 +14,7 @@
 
         <div
           v-else-if="error"
-          class="text-red-600 mt-2 w-full h-full flex flex-col justify-center items-center rounded-xl border border-green-600 border-dashed bg-gray-50"
+          class="text-red-600 mt-2 w-full h-full flex flex-col justify-center items-center rounded-xl border border-red-600 border-dashed bg-gray-50"
         >
           ❌ {{ error }}
         </div>
