@@ -138,11 +138,16 @@ async function onSubmit(event: FormSubmitEvent<typeof formState>) {
 
   try {
     // === Simulasi submit (nanti ganti dengan call API Resend) ===
-    await new Promise((resolve, reject) => {
+    /* await new Promise((resolve, reject) => {
       setTimeout(() => {
         // misal 70% sukses, 30% gagal
         Math.random() > 0.3 ? resolve(true) : reject(new Error("Gagal kirim data"));
       }, 1000);
+    }); */
+
+    await $fetch("/api/send", {
+      method: "POST",
+      body: formState,
     });
     // ==========================================================
 
