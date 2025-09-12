@@ -28,7 +28,10 @@
 </template>
 
 <script lang="ts" setup>
-const { data: posts, status, error } = useWpPosts<PostContent>("post");
+const { data: posts, status, error } = useWpPosts<PostContent>("post", {
+  taxonomy: "category",
+  term: "berita-csr",
+});
 
 const { formatDate } = useDateFormat();
 </script>
