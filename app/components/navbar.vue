@@ -43,15 +43,16 @@
             ]"
           >
             <ul
-              class="flex flex-col lg:flex-row items-start lg:items-center p-4 lg:p-0 lg:gap-4 w-full overflow-y-auto"
+              class="flex flex-col lg:flex-row items-start lg:items-center p-4 lg:p-0 lg:gap-4 w-full"
             >
               <li
                 v-for="menu in menusList"
                 :key="menu.id"
                 class="relative w-full lg:w-auto group"
               >
-                <div class="flex justify-between items-center " :class="`lg:h-[${navbarHeight}px]`"
-                    >
+                <div class="flex justify-between items-center" :style="{
+                      height: navbarHeight + 'px',
+                    }">
                   <!-- Parent link -->
                   <nuxt-link
                     :to="menu.to"
