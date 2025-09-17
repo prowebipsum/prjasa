@@ -43,6 +43,6 @@
 const { data: blog, status } = useWpPosts("post", {
   per_page: 3,
   taxonomy: "category",
-  category: "blog",
+  term: "blog",
 });
 </script>
