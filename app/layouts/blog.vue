@@ -2,9 +2,9 @@
   <div class="min-h-screen pt-[60px]">
     <navbar />
     <ElementHero
-      :title="activeMenu?.label"
-      :description="activeMenu?.description"
-      :background="activeMenu?.background"
+      title="Blog"
+      description=""
+      background="/img/about-1.jpg"
     />
     <div class="container py-16">
       <slot />
@@ -16,10 +16,6 @@
 </template>
 
 <script lang="ts" setup>
-
-const { activeMenu } = useActiveMenu();
-
-
 </script>
 
 <style></style>

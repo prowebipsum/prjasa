@@ -1,4 +1,8 @@
 <script setup lang="ts">
+
+definePageMeta({
+  layout: "blog",
+})
 const currentPage = ref(1);
 const perPage = 9;
 
