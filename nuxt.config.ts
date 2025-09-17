@@ -11,6 +11,12 @@ export default defineNuxtConfig({
     }
   },
 
+  nitro: {
+    routeRules: {
+      proxyTimeout: 30000
+    }
+  },
+
   css: [
     '~/assets/css/main.css',
     '~/assets/css/animation.css'

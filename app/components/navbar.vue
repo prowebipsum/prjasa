@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="fixed top-0 left-0 h-0.5 bg-gradient-to-r from-secondary via-primary to-red-200 z-[10000]"
+      class="fixed top-0 left-0 h-0.5 bg-gradient-to-r from-brand-900 via-primary to-brand-950 z-[10000] overflow-y-auto"
       :style="{ width: `${progress}%` }"
     ></div>
 
@@ -14,7 +14,11 @@
         <nav class="flex items-center justify-between gap-5 relative w-full">
           <!-- Logo -->
           <nuxt-link to="/">
-            <img src="/logo-white.png" alt="Logo Primajasa" class="h-12" />
+            <img
+              src="/logo-white.png"
+              alt="Logo Primajasa"
+              class="h-12 w-full object-contain"
+            />
           </nuxt-link>
 
           <!-- Hamburger -->
@@ -39,39 +43,45 @@
             ]"
           >
             <ul
-              class="flex flex-col lg:flex-row items-start lg:items-center p-4 lg:p-0 lg:gap-4 w-full"
+              class="flex flex-col lg:flex-row items-start lg:items-center p-4 lg:p-0 lg:gap-4 w-full overflow-y-auto"
             >
               <li
                 v-for="menu in menusList"
-                :key="menu.to"
+                :key="menu.id"
                 class="relative w-full lg:w-auto group"
               >
-                <div
-                  class="flex justify-between items-center cursor-pointer"
-                  @click="toggleDropdown(menu.to)"
-                >
+                <div class="flex justify-between items-center " :class="`lg:h-[${navbarHeight}px]`"
+                    >
+                  <!-- Parent link -->
                   <nuxt-link
                     :to="menu.to"
-                    class="block group h-max"
-                    :style="{
-                      height: navbarHeight + 'px',
-                      lineHeight: navbarHeight + 'px',
-                    }"
+                    class="block group"
                   >
                     <span
-                      class="pt-1 pb-2 px-3 rounded-full hover:bg-brand-700 duration-200"
+                      class="px-3 py-2 rounded-full hover:bg-brand-700 duration-200 flex items-center gap-1 h-auto"
                     >
                       {{ menu.label }}
                       <icon
                         v-if="menu.children"
                         name="bi:chevron-down"
-                        class="duration-200 text-md align-middle group-hover:rotate-180"
+                        class="duration-200 text-md align-middle lg:group-hover:rotate-180 lg:block hidden"
                       />
                     </span>
                   </nuxt-link>
-                  <span v-if="menu.children" class="lg:hidden ml-2 text-sm">
-                    {{ openDropdown === menu.to ? "" : "" }}
-                  </span>
+
+                  <!-- Tombol toggle khusus mobile -->
+                  <button
+                    v-if="menu.children"
+                    class="lg:hidden ml-2 text-sm p-2 bg-brand-950 rounded-md flex items-center justify-center"
+                    @click.prevent="toggleDropdown(menu.id)"
+                  >
+                    <icon
+                      :name="
+                        openDropdown === menu.id ? 'bi:chevron-up' : 'bi:chevron-down'
+                      "
+                      class="duration-200"
+                    />
+                  </button>
                 </div>
 
                 <!-- Submenu -->
@@ -79,13 +89,16 @@
                   v-if="menu.children"
                   class="flex-col gap-2 bg-brand-700 rounded-b-xl lg:w-[200px] pb-2"
                   :class="[
-                    openDropdown === menu.to ? 'flex' : 'hidden',
-                    'lg:absolute lg:top-full lg:hidden lg:group-hover:flex',
+                    isDesktop
+                      ? 'lg:absolute lg:top-full lg:hidden lg:group-hover:flex'
+                      : openDropdown === menu.id
+                      ? 'flex'
+                      : 'hidden',
                   ]"
                 >
                   <li
                     v-for="child in menu.children"
-                    :key="child.to"
+                    :key="child.id"
                     class="hover:bg-primary duration-300 py-2 px-4"
                   >
                     <nuxt-link :to="child.to" class="flex gap-2 items-center">
@@ -126,9 +139,7 @@
     </div>
   </div>
 </template>
-
 <script setup lang="ts">
-import { UButton } from "#components";
 import { onMounted, onBeforeUnmount, ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
 
@@ -136,7 +147,7 @@ const { locale, setLocale } = useI18n();
 const { menus } = useMenus();
 
 const isOpen = ref(false);
-const openDropdown = ref<string | null>(null);
+const openDropdown = ref<string | null>(null); // simpan id parent yg terbuka
 const isDesktop = ref(false);
 
 const navbar = ref<HTMLElement | null>(null);
@@ -148,9 +159,10 @@ const updateNavbarHeight = () => {
   }
 };
 
-const toggleDropdown = (menuTo: string) => {
-  if (isDesktop.value) return;
-  openDropdown.value = openDropdown.value === menuTo ? null : menuTo;
+// ✅ toggle pakai id
+const toggleDropdown = (menuId: string) => {
+  if (isDesktop.value) return; // di desktop tetap pakai hover
+  openDropdown.value = openDropdown.value === menuId ? null : menuId;
 };
 
 const checkDesktop = () => {
@@ -196,7 +208,7 @@ const { progress } = useLoadingIndicator({
     (2 / Math.PI) * 100 * Math.atan(((elapsed / duration) * 100) / 50),
 });
 
-// menusList yang stabil (kalau menus adalah object per-locale, ambil locale; kalau array pakai langsung)
+// menusList sesuai locale
 const menusList = computed(() => {
   if (Array.isArray(menus.value)) return menus.value;
   return menus.value?.[locale.value] || menus.value?.["id"] || [];

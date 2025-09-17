@@ -1,15 +1,15 @@
 <template>
   <div>
-    <section class="bg-gray-50 -mb-20 pb-10" :class="background">
+    <section class="bg-gray-50 -mb-10 lg:-mb-20 pb-10" :class="background">
       <!-- kategori -->
       <div class="max-w-screen-lg mx-auto px-6">
         <div
-          class="featured grid grid-cols-2 lg:grid-cols-4 bg-white px-5 rounded-2xl shadow-xl divide-y-1 lg:divide-x-1 divide-gray-200 relative -top-20 w-full mx-auto"
+          class="featured grid grid-cols-2 lg:grid-cols-4 bg-white px-5 rounded-2xl shadow-xl divide-y-1 lg:divide-x-1 divide-gray-200 relative -top-5 lg:-top-20 w-full mx-auto"
         >
           <div
             v-for="item in layanan?.terms"
             :key="item?.to"
-            class="featured-item flex flex-col items-center justify-end gap-2 p-5 text-center group"
+            class="featured-item flex flex-col items-center justify-start lg:justify-end gap-2 p-5 text-center group text-sm"
           >
             <nuxt-link
               :to="`/product/${item?.slug}`"
