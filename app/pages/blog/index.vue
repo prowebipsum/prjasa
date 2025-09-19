@@ -6,6 +6,8 @@ definePageMeta({
 
 
 const {locale} = useI18n();
+const localPath = useLocalePath();
+
 const currentPage = ref(1);
 const perPage = 9;
 
@@ -41,7 +43,8 @@ const { formatDate } = useDateFormat();
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10"
     >
       <div v-for="item in posts" :key="item.id" class="group">
-        <nuxt-link :to="`${locale}/news/${item.slug}`">
+        <nuxt-link :to="localPath(`/blog/${item.slug}`)">
+          
           <img
             :src="item.featured_image"
             alt=""
@@ -55,7 +58,7 @@ const { formatDate } = useDateFormat();
           />
           {{ formatDate(item.date) }}
         </span>
-        <nuxt-link :to="`/news/${item.slug}`">
+        <nuxt-link :to="localPath(`/blog/${item.slug}`)">
           <h5 v-html="item.title"></h5>
         </nuxt-link>
       </div>

@@ -55,7 +55,7 @@
                     }">
                   <!-- Parent link -->
                   <nuxt-link
-                    :to="menu.to"
+                    :to="localPath(menu.to)"
                     class="block group"
                   >
                     <span
@@ -102,7 +102,7 @@
                     :key="child.id"
                     class="hover:bg-primary duration-300 py-2 px-4"
                   >
-                    <nuxt-link :to="child.to" class="flex gap-2 items-center">
+                    <nuxt-link :to="localPath(child.to)" class="flex gap-2 items-center">
                       <img
                         v-if="child.image"
                         :src="child.image"
@@ -145,6 +145,7 @@ import { onMounted, onBeforeUnmount, ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { locale, setLocale } = useI18n();
+const localPath = useLocalePath();
 const { menus } = useMenus();
 
 const isOpen = ref(false);

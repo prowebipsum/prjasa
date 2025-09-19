@@ -13,6 +13,10 @@ interface MenuItem {
 }
 
 const menus = ref<Record<string, MenuItem[]>>({
+  
+  /*===========================
+  ID
+  =============================*/
   id: [
     {
       id: 'beranda',
@@ -129,6 +133,10 @@ const menus = ref<Record<string, MenuItem[]>>({
       background: '/img/about-3.jpg'
     }
   ],
+
+  /*===========================
+  EN
+  =============================*/
   en: [
     {
       id: 'home',
@@ -163,7 +171,7 @@ const menus = ref<Record<string, MenuItem[]>>({
         },
         {
           id: 'board-of-directors',
-          label: 'Dewan Direksi',
+          label: 'Board of Directors',
           to: '/en/about/dewan-direksi',
           description: 'loremipsum doloretsitamet',
           background: '/img/about-4.jpg'

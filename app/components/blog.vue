@@ -19,7 +19,7 @@
                 {{ item.title }}
               </h4>
 
-              <UButton :to="`/blog/${item.slug}`" size="xl" class="rounded-full px-6"
+              <UButton :to="localPath(`/blog/${item.slug}`)" size="xl" class="rounded-full px-6"
                 >Read more</UButton
               >
             </div>
@@ -45,4 +45,6 @@ const { data: blog, status } = useWpPosts("post", {
   taxonomy: "category",
   term: "blog",
 });
+
+const localPath = useLocalePath();
 </script>

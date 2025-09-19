@@ -9,7 +9,7 @@
             :key="item"
             class="border border-brand-400 border-dashed rounded-xl overflow-hidden"
           >
-            <NuxtLink :to="`/promo/${item?.slug}`">
+            <NuxtLink :to="localPath(`/promo/${item?.slug}`)">
               <img :src="item?.featured_image" :alt="item?.title" />
             </NuxtLink>
           </div>
@@ -37,6 +37,8 @@ type Promo = {
   featured_image: string;
 };
 const { data: promos, status } = useWpPosts<Promo>("promo", { per_page: 3, page: 1 });
+
+const localPath = useLocalePath();
 </script>
 
 <style></style>

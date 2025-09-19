@@ -2,6 +2,8 @@
 const currentPage = ref(1);
 const perPage = 9;
 
+const localPath = useLocalePath();
+
 // ✅ API sekarang return { posts, pagination }
 const { data, status, error } = useWpPosts<PostContent>("promo", {
   per_page: perPage,
@@ -31,7 +33,7 @@ const { formatDate } = useDateFormat();
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10"
     >
       <div v-for="item in posts" :key="item.id" class="group">
-        <nuxt-link :to="`/promo/${item.slug}`">
+        <nuxt-link :to="localPath(`/promo/${item.slug}`)">
           <img
             :src="item.featured_image"
             alt=""

@@ -8,7 +8,7 @@
         <h3 class="text-center mb-10 text-primary">Berita Terkini</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
           <div v-for="item in news?.posts" class="group">
-            <NuxtLink :to="`/news/${item?.slug}`">
+            <NuxtLink :to="localPath(`/news/${item?.slug}`)">
               <img
                 :src="item?.featured_image"
                 alt=""
@@ -23,7 +23,7 @@
               />
               {{ formatDate(item?.date) || item?.date }}
             </span>
-            <NuxtLink :to="`/news/${item?.slug}`">
+            <NuxtLink :to="localPath(`/news/${item?.slug}`)">
               <h5 v-html="item.title"></h5>
             </NuxtLink>
           </div>
@@ -43,6 +43,8 @@ import { table } from "#build/ui";
 import { useNews } from "~/composables/news";
 
 //const { news } = useNews();
+
+const  localPath = useLocalePath();
 
 const { formatDate } = useDateFormat();
 const { data: news, status } = useWpPosts<PostContent>("post", {
