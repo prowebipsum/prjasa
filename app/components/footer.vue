@@ -58,13 +58,13 @@
             <!-- col two -->
             <div>
               <h5 class="text-light mb-1">Product</h5>
-  
               <ul>
-                <li><nuxt-link to="/product/bus-regular">Bus Regular </nuxt-link></li>
+                <li><nuxt-link :to="localPath('/product/bus-regular')">Bus Regular </nuxt-link></li>
                 <li><nuxt-link to="/product/moda">Moda</nuxt-link></li>
                 <li><nuxt-link to="/product/shuttle">Shuttle </nuxt-link></li>
                  <li><nuxt-link to="/product/pariwisata">Pariwisata </nuxt-link></li>
               </ul>
+
             </div>
           </div>
 
@@ -72,11 +72,12 @@
             <div>
               <h5 class="text-light mb-1">Link</h5>
               <ul>
-                <li><nuxt-link to="/about/profil-perusahaan">Tentang Kami </nuxt-link></li>
-                <li><nuxt-link to="/promo"> Promo </nuxt-link></li>
-                <li><nuxt-link to="/news"> Berita & CSR </nuxt-link></li>
-                <li><nuxt-link to="/faq">FAQ </nuxt-link></li>
-                <li><nuxt-link to="/kontak">Contact </nuxt-link></li>
+                <li><nuxt-link :to="localPath('/about/profil-perusahaan')">Tentang Kami </nuxt-link></li>
+                <li><nuxt-link :to="localPath('/promo')"> Promo </nuxt-link></li>
+                <li><nuxt-link :to="localPath('/news')"> Berita & CSR </nuxt-link></li>
+                <li><nuxt-link :to="localPath('/blog')"> Blog </nuxt-link></li>
+                <li><nuxt-link :to="localPath('/faq')">FAQ </nuxt-link></li>
+                <li><nuxt-link :to="localPath('/kontak')">Contact </nuxt-link></li>
               </ul>
             </div>
           </div>
@@ -95,8 +96,8 @@
 </template>
 
 <script lang="ts" setup>
-const {locale} = useI18n();
-
+const localPath = useLocalePath();
+ 
 </script>
 
 <style scoped>
