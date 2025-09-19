@@ -35,6 +35,7 @@ definePageMeta({
   layout: "single-post",
 });
 const route = useRoute();
+const  {locale} = useI18n();
 
 type PageContent = {
   title: string;

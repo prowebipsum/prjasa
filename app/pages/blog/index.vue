@@ -3,8 +3,12 @@
 definePageMeta({
   layout: "blog",
 })
+
+
+const {locale} = useI18n();
 const currentPage = ref(1);
 const perPage = 9;
+
 
 // ✅ API sekarang return { posts, pagination }
 const { data, status, error } = useWpPosts<PostContent>("post", {
@@ -37,7 +41,7 @@ const { formatDate } = useDateFormat();
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10"
     >
       <div v-for="item in posts" :key="item.id" class="group">
-        <nuxt-link :to="`/news/${item.slug}`">
+        <nuxt-link :to="`${locale}/news/${item.slug}`">
           <img
             :src="item.featured_image"
             alt=""

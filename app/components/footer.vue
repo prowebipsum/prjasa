@@ -58,11 +58,12 @@
             <!-- col two -->
             <div>
               <h5 class="text-light mb-1">Product</h5>
+  
               <ul>
-                <li><nuxt-link to="/">Bus Regular </nuxt-link></li>
-                <li><nuxt-link to="/">Red White Star</nuxt-link></li>
-                <li><nuxt-link to="/">Moda </nuxt-link></li>
-                <li><nuxt-link to="/">Shuttle </nuxt-link></li>
+                <li><nuxt-link to="/product/bus-regular">Bus Regular </nuxt-link></li>
+                <li><nuxt-link to="/product/moda">Moda</nuxt-link></li>
+                <li><nuxt-link to="/product/shuttle">Shuttle </nuxt-link></li>
+                 <li><nuxt-link to="/product/pariwisata">Pariwisata </nuxt-link></li>
               </ul>
             </div>
           </div>
@@ -71,11 +72,11 @@
             <div>
               <h5 class="text-light mb-1">Link</h5>
               <ul>
-                <li><nuxt-link to="/">Tentang Kami </nuxt-link></li>
-                <li><nuxt-link to="/"> Promo </nuxt-link></li>
-                <li><nuxt-link to="/"> Berita & CSR </nuxt-link></li>
-                <li><nuxt-link to="/">FAQ </nuxt-link></li>
-                <li><nuxt-link to="/">Contact </nuxt-link></li>
+                <li><nuxt-link to="/about/profil-perusahaan">Tentang Kami </nuxt-link></li>
+                <li><nuxt-link to="/promo"> Promo </nuxt-link></li>
+                <li><nuxt-link to="/news"> Berita & CSR </nuxt-link></li>
+                <li><nuxt-link to="/faq">FAQ </nuxt-link></li>
+                <li><nuxt-link to="/kontak">Contact </nuxt-link></li>
               </ul>
             </div>
           </div>
@@ -93,7 +94,10 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const {locale} = useI18n();
+
+</script>
 
 <style scoped>
 .footer p {

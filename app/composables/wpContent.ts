@@ -13,7 +13,7 @@ export interface WpPostsResponse<T> {
 }
 
 export function useWpContent<T>(slug: string, options: any = {}) {
-  const { locale } = useI18n()
+  const { locale } = useI18n() 
   return useFetchApi<T>(`/content/${locale.value}/${slug}`, options)
 }
 
