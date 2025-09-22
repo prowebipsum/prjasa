@@ -52,7 +52,7 @@
               >
                 <div class="flex justify-between items-center" :style="{
                       height: navbarHeight + 'px',
-                    }">
+                    }" @click="closeMenu(menu.to)">
                   <!-- Parent link -->
                   <nuxt-link
                     :to="localPath(menu.to)"
@@ -101,6 +101,7 @@
                     v-for="child in menu.children"
                     :key="child.id"
                     class="hover:bg-primary duration-300 py-2 px-4"
+                    @click="closeMenu(child.to)"
                   >
                     <nuxt-link :to="localPath(child.to)" class="flex gap-2 items-center">
                       <img
@@ -215,6 +216,14 @@ const menusList = computed(() => {
   if (Array.isArray(menus.value)) return menus.value;
   return menus.value?.[locale.value] || menus.value?.["id"] || [];
 });
+
+
+const closeMenu = (path: string) => {
+  setTimeout(() => {
+    router.go(path);
+    cnsole.log(path);
+  }, 100);
+};  
 </script>
 
 <style>
