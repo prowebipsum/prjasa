@@ -1,11 +1,11 @@
 <template>
   <div
-    class="hero pt-20 pb-10 relative bg-cover w-full h-full bg-center lg:aspect-[32/9] aspect-[3/1] md:aspect-[3/2] flex flex-col justify-center  overflow-hidden"
+    class="hero pt-20 pb-10 relative bg-cover w-full h-full bg-center lg:aspect-[32/9] aspect-[3/1] md:aspect-[3/2] flex flex-col justify-center  overflow-hidden "
     :class="!isImage ? backgroundClass : ''"
     :style="backgroundStyle.style"
   >
  <!--    <div v-if="isImage" class="absolute inset-0 bg-white/40"></div> -->
-    <div class="container relative">
+    <div class="container relative text-white">
       <div class="relative z-30">
    <h1 class="text-4xl mb-2 text-white">{{ title }}</h1>
       <p v-if="description">{{ description }}</p>
