@@ -29,7 +29,7 @@
           </div>
         </div>
         <div class="flex justify-center items-center">
-          <UButton to="/news" size="xl" class="rounded-full px-6 mt-10 mx-auto"
+          <UButton to="/news" size="xl" class="rounded-full px-6 mt-10 mx-auto text-white"
             >Selengkapnya</UButton
           >
         </div>

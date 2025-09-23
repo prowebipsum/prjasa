@@ -13,7 +13,7 @@
               <UButton
                 href="https://primajasa.co/cektarif/index.html?embed=1&bg=transparent&primary=%23B91C1C&accent=%23F59E0B"
                 size="xl"
-                class="rounded-full mb-5"
+                class="rounded-full mb-5 text-white"
                 icon="gis:route"
                 target="_blank"
               >
@@ -39,7 +39,7 @@
             </div>
           </div>
           <div>
-            <img src="/img/pulkam.webp" alt="" />
+            <img src="/img/pulkam-primajasa.png" alt="" />
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@
                 {{ item.title }}
               </h4>
 
-              <UButton :to="localPath(`/blog/${item.slug}`)" size="xl" class="rounded-full px-6"
+              <UButton :to="localPath(`/blog/${item.slug}`)" size="xl" class="rounded-full px-6 text-white"
                 >Read more</UButton
               >
             </div>
@@ -30,7 +30,7 @@
             to="/blog"
             size="xl"
             color="primary"
-            class="rounded-full px-6 mt-10 mx-auto"
+            class="rounded-full px-6 mt-10 mx-auto text-white"
             >Selengkapnya</UButton
           >
         </div>
