@@ -1,8 +1,8 @@
 <template>
   <div
-    class="hero pt-20 pb-10 relative bg-cover bg-center min-h-[300px] flex flex-col justify-center  overflow-hidden"
+    class="hero pt-20 pb-10 relative bg-cover bg-center aspect-[32/9]  flex flex-col justify-center  overflow-hidden"
     :class="!isImage ? backgroundClass : ''"
-    :style="isImage ? { backgroundImage: `url(${background})` } : {}"
+    :style="backgroundStyle.style"
   >
  <!--    <div v-if="isImage" class="absolute inset-0 bg-white/40"></div> -->
     <div class="container relative">
@@ -31,4 +31,11 @@ const isImage = computed(() => {
 
 // fallback ke bg-gray-50 jika kosong
 const backgroundClass = computed(() => props.background || "bg-gray-50");
+
+const backgroundStyle = computed(() => {
+  if (props.background?.startsWith("http") || props.background?.startsWith("/")) {
+    return { style: { backgroundImage: `url('${props.background}')` }, class: "" }
+  }
+  return { style: {}, class: props.background || "bg-gray-50" }
+})
 </script>
