@@ -1,17 +1,17 @@
 <template>
   <div
-    class="hero pt-20 pb-10 relative bg-cover bg-center aspect-[32/9]  flex flex-col justify-center  overflow-hidden"
+    class="hero pt-20 pb-10 relative bg-cover w-full h-full bg-center lg:aspect-[32/9] aspect-[3/1] md:aspect-[3/2] flex flex-col justify-center  overflow-hidden"
     :class="!isImage ? backgroundClass : ''"
     :style="backgroundStyle.style"
   >
  <!--    <div v-if="isImage" class="absolute inset-0 bg-white/40"></div> -->
     <div class="container relative">
       <div class="relative z-30">
-   <h1 class="text-4xl mb-2 text-primary">{{ title }}</h1>
+   <h1 class="text-4xl mb-2 text-white">{{ title }}</h1>
       <p v-if="description">{{ description }}</p>
       </div>
    
-      <div class="max-w-[700px] w-full min-h-[300px] bg-white p-6 rounded-full absolute blur-2xl opacity-90  -bottom-10 -left-40 translate-y-1/2 ">
+      <div class="max-w-[700px] w-full min-h-[300px] bg-brand-950 p-6 rounded-full absolute blur-2xl opacity-70  -bottom-10 -left-40 translate-y-1/2 ">
       </div>
     </div>
   </div>
