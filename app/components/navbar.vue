@@ -19,18 +19,7 @@
               alt="Logo Primajasa"
               class="h-12 w-full object-contain"
             />
-          </nuxt-link>
-
-          <!-- Hamburger -->
-          <button
-            @click="isOpen = !isOpen"
-            class="lg:hidden flex flex-col gap-1"
-            aria-label="Toggle menu"
-          >
-            <span class="w-6 h-0.5 bg-white"></span>
-            <span class="w-6 h-0.5 bg-white"></span>
-            <span class="w-6 h-0.5 bg-white"></span>
-          </button>
+          </nuxt-link>     
 
           <!-- Menu -->
           <div
@@ -117,8 +106,9 @@
             </ul>
           </div>
 
-          <!-- Language switcher -->
-
+          <div class="flex items-center gap-2">
+ <!-- Language switcher -->
+         
           <div class="flex gap-2 items-center">
             <button
               class="rounded-full w-8 h-8"
@@ -135,6 +125,18 @@
             >
               EN
             </button>
+          </div>
+
+             <!-- Hamburger -->
+          <button
+            @click="isOpen = !isOpen"
+            class="lg:hidden flex flex-col gap-1"
+            aria-label="Toggle menu"
+          >
+            <span class="w-6 h-0.5 bg-white"></span>
+            <span class="w-6 h-0.5 bg-white"></span>
+            <span class="w-6 h-0.5 bg-white"></span>
+          </button>
           </div>
         </nav>
       </div>

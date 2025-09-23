@@ -34,12 +34,12 @@ const items = [
     <img
       :src="item.featured_image"
       :alt="item.title"
-      class="w-full h-full object-cover hidden lg:block"
+      class="w-full h-full object-cover hidden md:block"
     />
     <img
       :src="item?.acf?.mobile_image?.url"
       :alt="item.title"
-      class="w-full h-full object-cover lg:hidden"
+      class="w-full h-full object-cover md:hidden"
     />
   </UCarousel>
 </template>
