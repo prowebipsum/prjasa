@@ -8,7 +8,7 @@
     <div class="container relative text-white">
       <div class="relative z-30">
    <h1 class="text-4xl mb-2 text-white">{{ title }}</h1>
-      <p v-if="description">{{ description }}</p>
+      <!-- <p v-if="description">{{ description }}</p> -->
       </div>
    
       <div class="max-w-[700px] w-full min-h-[300px] bg-brand-950 p-6 rounded-full absolute blur-2xl opacity-70  -bottom-10 -left-40 translate-y-1/2 ">

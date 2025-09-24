@@ -39,7 +39,7 @@
 
       <div>
         <img
-          src="/img/pulkam.webp"
+          src="/img/pulkam3-min.png"
           alt=""
           class="absolute -top-1/2 w-[240px] hidden lg:block"
         />
