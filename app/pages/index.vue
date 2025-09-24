@@ -39,7 +39,7 @@
             </div>
           </div>
           <div>
-            <img src="/img/pulkam-primajasa.png" alt="" />
+            <img src="/img/pulkam3-min.png" alt="" />
           </div>
         </div>
       </div>
