@@ -109,14 +109,14 @@ const menus = ref<Record<string, MenuItem[]>>({
       label: 'Program',
       to: '/promo',
       description: 'loremipsum doloretsitamet',
-      background: '/img/product-2.jpg'
+      background: ''
     },
     {
       id: 'berita',
       label: 'Berita & CSR',
       to: '/news',
       description: 'loremipsum doloretsitamet',
-      background: '/img/berita.jpg'
+      background: ''
     },
     {
       id: 'faq',
@@ -130,7 +130,7 @@ const menus = ref<Record<string, MenuItem[]>>({
       label: 'Kontak',
       to: '/kontak',
       description: 'loremipsum doloretsitamet',
-      background: '/img/about-3.jpg'
+      background: ''
     }
   ],
 
@@ -228,17 +228,17 @@ const menus = ref<Record<string, MenuItem[]>>({
     },
     {
       id: 'promo',
-      label: 'Promo',
+      label: 'Program',
       to: '/promo',
       description: 'Our latest promos',
-      background: '/img/product-2.jpg'
+      background: ''
     },
     {
       id: 'news',
       label: 'News & CSR',
       to: '/news',
       description: 'Latest news and CSR activities',
-      background: '/img/berita.jpg'
+      background: ''
     },
     {
       id: 'faq',
@@ -252,7 +252,7 @@ const menus = ref<Record<string, MenuItem[]>>({
       label: 'Contact',
       to: '/kontak',
       description: 'Get in touch with us',
-      background: '/img/about-3.jpg'
+      background: ''
     }
   ]
 })
