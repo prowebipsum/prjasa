@@ -106,7 +106,7 @@ const menus = ref<Record<string, MenuItem[]>>({
     },
     {
       id: 'promo',
-      label: 'Promo',
+      label: 'Program',
       to: '/promo',
       description: 'loremipsum doloretsitamet',
       background: '/img/product-2.jpg'

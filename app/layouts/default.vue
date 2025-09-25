@@ -21,7 +21,7 @@ const { activeMenu } = useActiveMenu();
 
 const title = computed(() => {
   let label = activeMenu.value?.label
-  if (label === "Promo") {
+  if (label === "Program") {
     label = 'Program Spesial Primajasa'
   }else{
     label = activeMenu.value?.label 
