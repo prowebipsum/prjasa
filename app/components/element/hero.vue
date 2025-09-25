@@ -30,12 +30,12 @@ const isImage = computed(() => {
 });
 
 // fallback ke bg-gray-50 jika kosong
-const backgroundClass = computed(() => props.background || "bg-gray-50");
+const backgroundClass = computed(() => props.background || "bg-brand-900");
 
 const backgroundStyle = computed(() => {
   if (props.background?.startsWith("http") || props.background?.startsWith("/")) {
     return { style: { backgroundImage: `url('${props.background}')` }, class: "" }
   }
-  return { style: {}, class: props.background || "bg-gray-50" }
+  return { style: {}, class: props.background || "bg-brand-900" }
 })
 </script>
