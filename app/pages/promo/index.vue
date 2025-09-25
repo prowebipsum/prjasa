@@ -10,6 +10,7 @@ const { data, status, error } = useWpPosts<PostContent>("promo", {
   page: currentPage,
 });
 
+
 // ✅ posts ambil dari data.value.posts
 const posts = computed(() => data.value?.posts || []);
 
@@ -18,6 +19,7 @@ const totalPages = computed(() => data.value?.pagination.total_pages ?? 1);
 const totalPosts = computed(() => data.value?.pagination.total ?? 0);
 
 const { formatDate } = useDateFormat();
+
 </script>
 
 <template>

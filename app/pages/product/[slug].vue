@@ -40,7 +40,7 @@
             v-slot="{ item: foto }"
             :items="item?.acf?.foto"
             class="w-full mx-auto"
-            :ui="{ item: 'basis-1/2  ' }"
+            :ui="{ item: 'w-full' }"
             arrows
           >
             <div class="relative group rounded-lg overflow-hidden bg-primary">
