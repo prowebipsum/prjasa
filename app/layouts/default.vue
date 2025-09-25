@@ -2,7 +2,7 @@
   <div class="min-h-screen pt-[60px]">
     <navbar />
     <ElementHero
-      :title="activeMenu?.label"
+      :title="title"
       :description="activeMenu?.description"
       :background="activeMenu?.background"
     />
@@ -18,6 +18,17 @@
 <script lang="ts" setup>
 
 const { activeMenu } = useActiveMenu();
+
+const title = computed(() => {
+  let label = activeMenu.value?.label
+  if (label === "Promo") {
+    label = 'Program Spesial Primajasa'
+  }else{
+    label = activeMenu.value?.label 
+  }
+  return label
+})
+
 
 </script>
 
