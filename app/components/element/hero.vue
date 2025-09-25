@@ -1,6 +1,6 @@
 <template>
   <div
-    class="hero pt-20 pb-10 relative bg-cover w-full h-full bg-center lg:aspect-[32/9] aspect-[3/1] md:aspect-[3/2] flex flex-col justify-center  overflow-hidden "
+    class="hero pt-20 pb-10 relative bg-cover w-full h-auto bg-center lg:aspect-[32/9] aspect-[3/1] md:aspect-[3/2] flex flex-col justify-center  overflow-hidden "
     :class="!isImage ? backgroundClass : ''"
     :style="backgroundStyle.style"
   >

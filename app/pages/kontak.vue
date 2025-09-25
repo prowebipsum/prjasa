@@ -1,5 +1,6 @@
 <template>
   <div>
+ 
     <div class="grid grid-cols-1 lg:grid-cols-2">
       <div>
         <!-- kiri -->
@@ -92,23 +93,19 @@
         <div
           class="flex flex-col gap-2 max-w-[400px] mx-auto p-6 rounded-xl border border-gray-300"
         >
-          <img src="/logo.png" alt="" class="w-40 object-contain" />
+          <img :src="option?.acf?.logo?.url" :alt="option?.acf?.logo?.title" class="w-40 object-contain" />
           <h5 class="mb-0">PT. Primajasa Perdanarayautama</h5>
           <div class="flex gap-2">
             <icon name="fluent:mail-16-regular" class="text-xl shrink-0" />
-            <span> info.primajasa@gmail.com</span>
+            <span>{{ option?.acf?.email }}</span>
           </div>
           <div class="flex gap-2">
             <icon name="fluent:call-20-regular" class="text-xl shrink-0" />
-            <span> +628 1212 19545</span>
+            <span>{{ option?.acf?.tel }}</span>
           </div>
           <div class="flex gap-2">
             <icon name="material-symbols:home-pin-rounded" class="text-xl shrink-0" />
-            <span>
-              Jl. Mayjen Sutoyo No.32, RT.8/RW.8, <br />
-              Cililitan, Kec. Kramat jati Jakarta Timur, <br />
-              Daerah Khusus Ibukota Jakarta 13630</span
-            >
+            <span v-html="option?.acf?.alamat"></span>
           </div>
         </div>
       </div>
@@ -117,6 +114,11 @@
 </template>
 <script lang="ts" setup>
 import type { FormSubmitEvent } from "@nuxt/ui";
+
+const {locale} = useI18n()
+const { data: option, status  } = useWpOptions(locale.value);
+
+const {data:kontak, status:statusKontak} = useWpContent<PageContent>('kontak');;
 
 const formState = reactive({
   name: "",

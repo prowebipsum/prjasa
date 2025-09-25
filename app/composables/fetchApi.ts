@@ -1,11 +1,16 @@
-export function useFetchApi<T>(endpoint: string, options: any = {}) {
+// composables/useFetchApi.ts
+export function useFetchApi<T>(
+  endpoint: string,
+  options: any = {},
+  timeoutMs: number = 30000 // default 30 detik
+) {
   const config = useRuntimeConfig()
-  const controller = new AbortController()
 
-  // bikin timeout manual
+  // gunakan AbortController manual hanya jika perlu
+  const controller = new AbortController()
   const timeout = setTimeout(() => {
     controller.abort()
-  }, 10000) // 10 detik
+  }, timeoutMs)
 
   const fetchResult = useFetch<T>(endpoint, {
     baseURL: config.public.wpApi,
@@ -14,6 +19,8 @@ export function useFetchApi<T>(endpoint: string, options: any = {}) {
       ...(options.headers || {}),
     },
     signal: controller.signal,
+    // ofetch juga support timeout langsung
+    timeout: timeoutMs,
   })
 
   onUnmounted(() => {

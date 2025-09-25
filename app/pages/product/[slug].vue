@@ -1,11 +1,15 @@
 <template>
-  <div v-if="status === 'pending'"><Loading /></div>
+  
+   <ElementHero :title="layanan?.name" :background="layanan?.acf?.image" class="pb-32" />
+    <ProductCategory background="bg-white " />
+
+      <div v-if="status === 'pending'"><Loading /></div>
+ <div class="container ">
   <div class="text-center mb-10">
     <h4 class="text-primary" v-html="layanan?.acf?.sub_judul"></h4>
     <div v-html="layanan?.description" class="flex flex-col gap-2"></div>
   </div>
-
-  <div v-for="item in layanan?.posts" class="relative mb-10">
+    <div v-for="item in layanan?.posts" class="relative mb-10">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-6 lg:gap-10">
       <div class="lg:col-span-2">
         <!-- kiri -->
@@ -40,6 +44,8 @@
       </div>
     </div>
   </div>
+ </div>
+
 </template>
 <script setup lang="ts">
 definePageMeta({
