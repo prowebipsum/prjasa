@@ -20,7 +20,7 @@
               <div class="flex flex-col gap-2">
                 <span class="flex gap-2 items-center">
                   <icon name="fluent:mail-16-regular" class="text-xl" />
-                  <a :href="`mailto:${option?.acf?.email}`">
+                  <a :href="`mailto:${option?.acf?.email}`" target="_blank">
                   <span>{{ option?.acf?.email }}</span>
                   </a>
                 </span>
