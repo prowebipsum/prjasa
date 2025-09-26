@@ -2,17 +2,14 @@
   <div>
     <section class="footer bg-primary text-light text-sm pt-12 pb-6">
       <div class="container">
-        <img src="/logo-white.png" alt="" class="mb-5 h-12" />
+        <img :src="option?.acf?.logo?.url" alt="" class="mb-5 h-12" />
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
           <div>
             <!-- col one -->
             <div>
               <h5 class="text-white mb-1">Alamat</h5>
-              <p>
-                Jl. Mayjen Sutoyo No.32, RT.8/RW.8, <br />
-                Cililitan, Kec. Kramat jati, Kota Jakarta Timur, <br />
-                Jakarta 13630
-              </p>
+              <div v-html="option?.acf?.alamat"></div>
+
             </div>
           </div>
 
@@ -23,17 +20,20 @@
               <div class="flex flex-col gap-2">
                 <span class="flex gap-2 items-center">
                   <icon name="fluent:mail-16-regular" class="text-xl" />
-                  <span> info.primajasa@gmail.com</span>
+                  <a :href="`mailto:${option?.acf?.email}`">
+                  <span>{{ option?.acf?.email }}</span>
+                  </a>
                 </span>
                 <span class="flex gap-2 items-center">
                   <icon name="fluent:call-20-regular" class="text-xl" />
-                  <span> +628 1212 19545</span>
+                  <span> {{ option?.acf?.tel }}</span>
                 </span>
               </div>
             </div>
             <div>
               <p class="text-white textlbase mb-2">Connect With Us</p>
               <p class="flex gap-4 items-center group">
+               
                 <icon
                   name="bi:instagram"
                   class="text-xl text-light hover:text-red-300 duration-150"
@@ -60,9 +60,9 @@
               <h5 class="text-light mb-1">Product</h5>
               <ul>
                 <li><nuxt-link :to="localPath('/product/bus-regular')">Bus Regular </nuxt-link></li>
-                <li><nuxt-link to="/product/moda">Moda</nuxt-link></li>
-                <li><nuxt-link to="/product/shuttle">Shuttle </nuxt-link></li>
-                 <li><nuxt-link to="/product/pariwisata">Pariwisata </nuxt-link></li>
+                <li><nuxt-link :to="localPath('/product/moda')">Moda</nuxt-link></li>
+                <li><nuxt-link :to="localPath('/product/shuttle')"> Shuttle </nuxt-link></li>
+                 <li><nuxt-link :to="localPath('/product/pariwisata')" >Pariwisata </nuxt-link></li>
               </ul>
 
             </div>
@@ -96,8 +96,9 @@
 </template>
 
 <script lang="ts" setup>
-const localPath = useLocalePath();
- 
+const localPath = useLocalePath(); 
+const {locale} = useI18n()
+ const { data: option, status } = useWpOptions(locale.value);
 </script>
 
 <style scoped>
