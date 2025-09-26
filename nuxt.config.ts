@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      wpApi: process.env.WP_API
+      wpApi: process.env.WP_API 
     }
   },
 
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     routeRules: {
       proxyTimeout: 30000
     }
-  },
+  }, 
 
   css: [
     '~/assets/css/main.css',

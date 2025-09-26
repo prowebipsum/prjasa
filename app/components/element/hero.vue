@@ -7,7 +7,7 @@
  <!--    <div v-if="isImage" class="absolute inset-0 bg-white/40"></div> -->
     <div class="container relative text-white">
       <div class="relative z-30">
-   <h1 class="text-4xl mb-2 text-white">{{ title }}</h1>
+   <h1 class="text-4xl mb-2 text-white" v-html="title"></h1>
       <!-- <p v-if="description">{{ description }}</p> -->
       </div>
    

@@ -10,6 +10,7 @@ const { data, status, error } = useWpPosts<PostContent>("promo", {
   page: currentPage,
 });
 
+const { data: promo , status: statusPromo } = useWpContent<PageContent>("promo");
 
 // ✅ posts ambil dari data.value.posts
 const posts = computed(() => data.value?.posts || []);
@@ -24,14 +25,22 @@ const { formatDate } = useDateFormat();
 
 <template>
   <div>
+
+   <!--    <ElementHero
+      :title="promo?.title"
+      :description="promo?.acf?.sub_title"
+      :background="promo?.featured_image"
+    />
+ -->
     <!-- Loading -->
     <div v-if="status === 'pending'">
       <loading />
     </div>
 
+    <div  v-else-if="posts.length" class="container mt-16">
     <!-- Grid posts -->
     <div
-      v-else-if="posts.length"
+     
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10"
     >
       <div v-for="item in posts" :key="item.id" class="group">
@@ -54,14 +63,17 @@ const { formatDate } = useDateFormat();
         </nuxt-link>
       </div>
     </div>
+    </div>
+
+
 
     <!-- Empty -->
-    <div v-else class="text-center text-gray-500 py-10">Tidak ada postingan.</div>
+    <div v-else class=" container text-center text-gray-500 py-10">Tidak ada postingan.</div>
 
     <!-- Pagination -->
     <div
       v-if="totalPages > 1"
-      class="flex justify-center items-center pt-5 mb-20 max-w-xl mx-auto"
+      class="flex justify-center items-center pt-5 mb-20 px-6 max-w-xl mx-auto"
     >
       <button
         @click="currentPage--"

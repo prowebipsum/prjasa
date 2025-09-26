@@ -6,27 +6,12 @@ export function useFetchApi<T>(
 ) {
   const config = useRuntimeConfig()
 
-  // gunakan AbortController manual hanya jika perlu
-  const controller = new AbortController()
-  const timeout = setTimeout(() => {
-    controller.abort()
-  }, timeoutMs)
-
-  const fetchResult = useFetch<T>(endpoint, {
+  return useFetch<T>(endpoint, {
     baseURL: config.public.wpApi,
-    ...options,
+    timeout: timeoutMs, // gunakan ofetch timeout bawaan
     headers: {
       ...(options.headers || {}),
     },
-    signal: controller.signal,
-    // ofetch juga support timeout langsung
-    timeout: timeoutMs,
+    ...options,
   })
-
-  onUnmounted(() => {
-    clearTimeout(timeout)
-    controller.abort()
-  })
-
-  return fetchResult
 }

@@ -1,12 +1,17 @@
 <template>
   <div>
+        <ElementHero
+      :title="faq?.title"
+      :description="faq?.acf?.sub_title"
+      :background="faq?.featured_image"
+    />
+  
     <!-- Loading state -->
     <div v-if="status === 'pending'">
       <loading />
     </div>
-
-    <!-- Konten statis sebelum FAQ -->
-    <div v-if="faq?.content" class="flex flex-col gap-2" v-html="faq?.content"></div>
+<div class="container mt-16">
+   <div v-if="faq?.content" class="flex flex-col gap-2" v-html="faq?.content"></div>
 
 <div class="acc mb-10">
  <!-- Accordion -->
@@ -135,6 +140,9 @@
       </div>
     </div>
 </div>
+</div>
+    <!-- Konten statis sebelum FAQ -->
+   
   </div>
 </template>
 

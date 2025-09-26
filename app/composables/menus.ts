@@ -33,42 +33,42 @@ const menus = ref<Record<string, MenuItem[]>>({
           label: 'Profil Perusahaan',
           to: '/about/profil-perusahaan',
           description: 'loremipsum doloretsitamet',
-          background: '/img/about-1.jpg'
+          background:''
         },
         {
           id: 'visi-misi',
           label: 'Visi & Misi',
           to: '/about/visi-misi',
           description: 'loremipsum doloretsitamet',
-          background: '/img/visi-misi.jpg'
+          background:''
         },
         {
           id: 'pesan-pendiri',
           label: 'Pesan dari Pendiri',
           to: '/about/pesan-pendiri',
           description: 'loremipsum doloretsitamet',
-          background: '/img/about-3.jpg'
+          background:''
         },
         {
           id: 'dewan-direksi',
           label: 'Dewan Direksi',
           to: '/about/dewan-direksi',
           description: 'loremipsum doloretsitamet',
-          background: '/img/about-4.jpg'
+        background:''
         },
         {
           id: 'kebijakan-perusahaan',
           label: 'Kebijakan Perusahaan',
           to: '/about/kebijakan-perusahaan',
           description: 'loremipsum doloretsitamet',
-          background: '/img/product-2.jpg'
+          background:''
         },
         {
           id: 'penghargaan',
           label: 'Penghargaan',
           to: '/about/penghargaan',
           description: 'loremipsum doloretsitamet',
-          background: '/img/about-1.jpg'
+          background:''
         }
       ]
     },
@@ -82,7 +82,7 @@ const menus = ref<Record<string, MenuItem[]>>({
           label: 'Bus Regular',
           to: '/product/bus-regular',
           image: '/img/icon-reguler.png',
-          background: '/img/product-1.jpg'
+          background:''
         },
         {
           id: 'moda',
@@ -123,7 +123,7 @@ const menus = ref<Record<string, MenuItem[]>>({
       label: 'FAQ',
       to: '/faq',
       description: 'loremipsum doloretsitamet',
-      background: '/img/product-1.jpg'
+      background:''
     },
     {
       id: 'kontak',
@@ -153,42 +153,42 @@ const menus = ref<Record<string, MenuItem[]>>({
           label: 'Company Profile',
           to: '/en/about/profil-perusahaan',
           description: 'Our company profile',
-          background: '/img/about-1.jpg'
+          background:''
         },
         {
           id: 'vision-mission',
           label: 'Vision & Mission',
           to: '/en/about/visi-misi',
           description: 'Our vision and mission',
-          background: '/img/visi-misi.jpg'
+          background:''
         },
         {
           id: 'message-founder',
           label: 'Message from Founder',
           to: '/en/about/pesan-pendiri',
           description: 'Message from the founder',
-          background: '/img/about-3.jpg'
+          background:''
         },
         {
           id: 'board-of-directors',
           label: 'Board of Directors',
           to: '/en/about/dewan-direksi',
           description: 'loremipsum doloretsitamet',
-          background: '/img/about-4.jpg'
+           background:''
         },
         {
           id: 'company-policy',
           label: 'Company Policy',
           to: '/en/about/kebijakan-perusahaan',
           description: 'loremipsum doloretsitamet',
-          background: '/img/product-2.jpg'
+          background:''
         },
         {
           id: 'awards',
           label: 'Awards',
           to: '/en/about/penghargaan',
           description: 'loremipsum doloretsitamet',
-          background: '/img/about-1.jpg'
+          background:''
         }
       ]
     },
@@ -202,21 +202,21 @@ const menus = ref<Record<string, MenuItem[]>>({
           label: 'Regular Bus',
           to: '/product/bus-regular',
           image: '/img/icon-reguler.png',
-          background: '/img/product-1.jpg'
+          background:''
         },
         {
           id: 'moda',
           label: 'Moda',
           to: '/product/moda',
           image: '/img/icon-moda.png',
-          background: '/img/product-1.jpg'
+          background:''
         },
         {
           id: 'shuttle',
           label: 'Shuttle',
           to: '/product/shuttle',
           image: '/img/icon-shutle.png',
-          background: '/img/product-1.jpg'
+          background:''
         },
         {
           id: 'tourism',
@@ -245,7 +245,7 @@ const menus = ref<Record<string, MenuItem[]>>({
       label: 'FAQ',
       to: '/faq',
       description: 'Frequently Asked Questions',
-      background: '/img/product-1.jpg'
+      background:''
     },
     {
       id: 'contact',

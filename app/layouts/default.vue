@@ -1,13 +1,8 @@
 <template>
   <div class="min-h-screen pt-[60px]">
     <navbar />
-    <ElementHero
-      :title="title"
-      :description="activeMenu?.description"
-      :background="activeMenu?.background"
-    />
-    <div class="container py-16">
       <slot />
+       <div class="container">
       <ElementPoolTarif class="mt-16" />
     </div>
 
@@ -16,6 +11,7 @@
 </template>
 
 <script lang="ts" setup>
+const route = useRoute();
 
 const { activeMenu } = useActiveMenu();
 

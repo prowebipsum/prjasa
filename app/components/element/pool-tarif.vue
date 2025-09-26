@@ -1,5 +1,5 @@
 <template>
-  <div class="relative lg:pt-10">
+  <div class="relative lg:pt-10 mb-16">
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 justify-between p-6 rounded-xl bg-light border border-brand-100 relative"
     >

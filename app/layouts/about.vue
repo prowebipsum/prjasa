@@ -1,43 +1,15 @@
-<template>
-  <div class="min-h-screen pt-[60px]">
-    <navbar />
-    <ElementHero
-      :title="activeMenu?.label"
-      :description="activeMenu?.description"
-      :background="activeMenu?.background"
-    />
-
-    <div class="container py-20">
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-10">
-        <div class="sidebar">
-          <ul class="lg:flex flex-col gap-2 hidden sticky top-20">
-            <li v-for="smenu in sidebarMenu" :key="smenu?.to">
-              <nuxt-link
-                :to="smenu?.to"
-                :class="{ 'text-primary font-medium': $route.path === smenu.to }"
-                >{{ smenu?.label }}</nuxt-link
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="lg:col-span-4">
-          <slot />
-        </div>
-      </div>
-      <ElementPoolTarif class="mt-10" />
-    </div>
-    <Footer />
-  </div>
-</template>
 
 <script lang="ts" setup>
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { menus } = useMenus();
-const { activeMenu } = useActiveMenu();
+const { activeMenu, background } = useActiveMenu();
 const { locale } = useI18n();
 
+// abi data banner
+const route = useRoute();
+const hero = computed(() => route.meta.hero || {})
 // Normalisasi -> selalu array
 const menusList = computed(() => {
   if (Array.isArray(menus.value)) {
@@ -63,6 +35,40 @@ const sidebarMenu = computed(() => {
   );
   return parent?.children || [];
 });
+onMounted(() => {
+  setTimeout(() => {
+  activeMenu.value?.background
+}, 1000);
+})
+
 </script>
+
+<template>
+  <div class="min-h-screen pt-[60px]">
+    <navbar />
+  
+    <div class="container pt-20">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-10">
+        <div class="sidebar">
+          <ul class="lg:flex flex-col gap-2 hidden sticky top-20">
+            <li v-for="smenu in sidebarMenu" :key="smenu?.to">
+              <nuxt-link
+                :to="smenu?.to"
+                :class="{ 'text-primary font-medium': $route.path === smenu.to }"
+                >{{ smenu?.label }}</nuxt-link
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="lg:col-span-4">
+          <slot />
+        </div>
+      </div>
+      <ElementPoolTarif class="mt-10" />
+    </div>
+    <Footer />
+  </div>
+</template>
+
 
 <style></style>
