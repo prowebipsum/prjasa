@@ -32,12 +32,15 @@ const { formatDate } = useDateFormat();
       :background="promo?.featured_image"
     />
  -->
+    <div class="container mt-16">
+      <h1  v-html="promo?.title" class="text-primary"></h1>
+    </div>
     <!-- Loading -->
     <div v-if="status === 'pending'">
       <loading />
     </div>
 
-    <div  v-else-if="posts.length" class="container mt-16">
+    <div  v-else-if="posts.length" class="container ">
     <!-- Grid posts -->
     <div
      
