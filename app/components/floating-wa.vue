@@ -4,7 +4,7 @@
  <div v-if="openChat"  class="bg-gray-50  p-4 rounded-lg shadow-xl">
      <UForm :validate="validate" :state="state" class="space-y-4" @submit="onSubmit">
     <UFormField label="nama" name="nama">
-      <UInput v-model="state.nama" color="primary"  />
+      <UInput v-model="state.nama" color="primary"/>
     </UFormField>
 
     <UFormField label="Pesan" name="pesan">
