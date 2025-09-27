@@ -43,7 +43,7 @@ const validate = (state: any): FormError[] => {
 };
 
 const onSubmit = async (event: FormSubmitEvent<typeof state>) => {
-  const phoneNumber = "628979134998" // ✅ ganti dengan nomor tujuan (format internasional)
+  const phoneNumber = "628121219545" // ✅ ganti dengan nomor tujuan (format internasional)
 
   const message = `Halo, saya ${state.nama}.\n${state.pesan}`
   const encodedMessage = encodeURIComponent(message)
