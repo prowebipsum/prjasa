@@ -23,7 +23,7 @@
 
           <!-- Menu -->
           <div
-            class="absolute lg:static left-0 w-full lg:w-auto  transition-all duration-300 z-50"
+            class="absolute lg:static left-0 w-full lg:w-auto bg-white lg:bg-transparent  transition-all duration-300 z-50"
             :class="[
               isOpen
                 ? 'top-full opacity-100 visible'
