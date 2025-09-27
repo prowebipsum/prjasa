@@ -23,7 +23,7 @@
 
           <!-- Menu -->
           <div
-            class="absolute lg:static left-0 w-full lg:w-auto bg-white  transition-all duration-300 z-50"
+            class="absolute lg:static left-0 w-full lg:w-auto  transition-all duration-300 z-50"
             :class="[
               isOpen
                 ? 'top-full opacity-100 visible'
@@ -77,7 +77,7 @@
                 <!-- Submenu -->
                 <ul
                   v-if="menu.children"
-                  class="flex-col gap-2 bg-brand-50 rounded-b-xl lg:border border-gray-300 border-t-0 lg:w-[200px] pb-2"
+                  class="flex-col gap-2 bg-brand-50 rounded-b-xl lg:border border-gray-300 border-b border-x lg:w-[200px] pb-2"
                   :class="[
                     isDesktop
                       ? 'lg:absolute lg:top-full lg:hidden lg:group-hover:flex'
