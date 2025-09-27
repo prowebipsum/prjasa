@@ -29,7 +29,7 @@
             v-else
             :state="formState"
             @submit="onSubmit"
-            class="space-y-4"
+            class="space-y-4 mb-4"
           >
             <u-form-field label="Nama">
               <u-input

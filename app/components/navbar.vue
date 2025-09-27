@@ -7,7 +7,7 @@
 
     <div
       ref="navbar"
-      class="bg-primary text-white text-sm fixed top-0 left-0 w-full z-[9999] transition-transform duration-300 flex flex-col justify-center h-16"
+      class="bg-white text-primary border-b border-gray-300 text-sm fixed top-0 left-0 w-full z-[9999] transition-transform duration-300 flex flex-col justify-center h-16"
       :class="isVisible ? 'translate-y-0' : '-translate-y-full'"
     >
       <div class="container mx-auto w-full px-6">
@@ -15,7 +15,7 @@
           <!-- Logo -->
           <nuxt-link to="/">
             <img
-              src="/logo-white.png"
+              src="/logo.png"
               alt="Logo Primajasa"
               class="h-12 w-full object-contain"
             />
@@ -23,7 +23,7 @@
 
           <!-- Menu -->
           <div
-            class="absolute lg:static left-0 w-full lg:w-auto bg-primary lg:bg-transparent transition-all duration-300 z-50"
+            class="absolute lg:static left-0 w-full lg:w-auto bg-white  transition-all duration-300 z-50"
             :class="[
               isOpen
                 ? 'top-full opacity-100 visible'
@@ -48,7 +48,7 @@
                     class="block group"
                   >
                     <span
-                      class="px-3 py-2 rounded-full hover:bg-brand-700 duration-200 flex items-center gap-1 h-auto"
+                      class="px-3 py-2 rounded-full hover:bg-brand-100 duration-200 flex items-center gap-1 h-auto"
                     >
                       {{ menu.label }}
                       <icon
@@ -62,7 +62,7 @@
                   <!-- Tombol toggle khusus mobile -->
                   <button
                     v-if="menu.children"
-                    class="lg:hidden ml-2 text-sm p-2 bg-brand-950 rounded-md flex items-center justify-center"
+                    class="lg:hidden ml-2 text-sm p-2 bg-brand-50 rounded-md flex items-center justify-center"
                     @click.prevent="toggleDropdown(menu.id)"
                   >
                     <icon
@@ -77,7 +77,7 @@
                 <!-- Submenu -->
                 <ul
                   v-if="menu.children"
-                  class="flex-col gap-2 bg-brand-700 rounded-b-xl lg:w-[200px] pb-2"
+                  class="flex-col gap-2 bg-brand-50 rounded-b-xl lg:border border-gray-300 border-t-0 lg:w-[200px] pb-2"
                   :class="[
                     isDesktop
                       ? 'lg:absolute lg:top-full lg:hidden lg:group-hover:flex'
@@ -89,7 +89,7 @@
                   <li
                     v-for="child in menu.children"
                     :key="child.id"
-                    class="hover:bg-primary duration-300 py-2 px-4"
+                    class="hover:bg-primary hover:text-white duration-300 py-2 px-4"
                     @click="closeMenu(child.to)"
                   >
                     <nuxt-link :to="localPath(child.to)" class="flex gap-2 items-center">
@@ -113,7 +113,7 @@
             <button
               class="rounded-full w-8 h-8"
               @click="setLocale('id')"
-              :class="{ ' text-primary bg-white/80 ': locale === 'id' }"
+              :class="{ ' text-white bg-primary/80 ': locale === 'id' }"
             >
               ID
             </button>
@@ -121,7 +121,7 @@
             <button
               class="rounded-full w-8 h-8"
               @click="setLocale('en')"
-              :class="{ ' text-primary bg-white/80 ': locale === 'en' }"
+              :class="{ ' text-white bg-primary/80 ': locale === 'en' }"
             >
               EN
             </button>
@@ -133,9 +133,9 @@
             class="lg:hidden flex flex-col gap-1"
             aria-label="Toggle menu"
           >
-            <span class="w-6 h-0.5 bg-white"></span>
-            <span class="w-6 h-0.5 bg-white"></span>
-            <span class="w-6 h-0.5 bg-white"></span>
+            <span class="w-6 h-0.5 bg-primary"></span>
+            <span class="w-6 h-0.5 bg-primary"></span>
+            <span class="w-6 h-0.5 bg-primary"></span>
           </button>
           </div>
         </nav>
@@ -223,7 +223,8 @@ const menusList = computed(() => {
 const closeMenu = (path: string) => {
   setTimeout(() => {
     router.go(path);
-    cnsole.log(path);
+    isOpen.value = false;
+    console.log(path);
   }, 100);
 };  
 </script>
@@ -231,6 +232,6 @@ const closeMenu = (path: string) => {
 <style>
 /* Highlight menu aktif */
 .router-link-active span {
-  background-color: var(--color-brand-700);
+  background-color: var(--color-brand-100);
 }
 </style>

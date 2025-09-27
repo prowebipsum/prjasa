@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="footer bg-primary text-light text-sm pt-12 pb-6">
+    <section class="footer bg-white text-primary text-sm pt-12 pb-6  border-t border-gray-300">
       <div class="container">
         <img :src="option?.acf?.logo?.url" alt="" class="mb-5 h-12" />
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
@@ -16,7 +16,7 @@
           <div class="flex flex-col gap-4">
             <!-- col 2 -->
             <div>
-              <h5 class="text-white mb-1">Kontak</h5>
+              <h5 class="text-primary mb-1">Kontak</h5>
               <div class="flex flex-col gap-2">
                 <span class="flex gap-2 items-center">
                   <icon name="fluent:mail-16-regular" class="text-xl" />
@@ -31,7 +31,7 @@
               </div>
             </div>
             <div>
-              <p class="text-white textlbase mb-2">Connect With Us</p>
+              <p class="text-primary textlbase mb-2">Connect With Us</p>
               <p class="flex gap-4 items-center group">
                
                 <icon
@@ -57,7 +57,7 @@
           <div class="flex flex-col gap-4">
             <!-- col two -->
             <div>
-              <h5 class="text-light mb-1">Product</h5>
+              <h5 class="text-primary mb-1">Product</h5>
               <ul>
                 <li><nuxt-link :to="localPath('/product/bus-regular')">Bus Regular </nuxt-link></li>
                 <li><nuxt-link :to="localPath('/product/moda')">Moda</nuxt-link></li>
@@ -70,7 +70,7 @@
 
           <div class="flex flex-col gap-4">
             <div>
-              <h5 class="text-light mb-1">Link</h5>
+              <h5 class="text-primary mb-1">Link</h5>
               <ul>
                 <li><nuxt-link :to="localPath('/about/profil-perusahaan')">Tentang Kami </nuxt-link></li>
                 <li><nuxt-link :to="localPath('/promo')"> Promo </nuxt-link></li>
@@ -84,7 +84,7 @@
         </div>
       </div>
     </section>
-    <div class="p-2 bg-brand-900 text-light text-xs text-center">
+    <div class="p-2 bg-brand-100 text-brand-600 text-xs text-center">
       <div class="container">
         <p class="mb-0">
           Primajasa Perdanaraya Utama © 2025 | web developed by 
