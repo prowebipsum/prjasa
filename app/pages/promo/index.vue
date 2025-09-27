@@ -77,7 +77,7 @@ watchEffect(() => {
             <img
               :src="item.featured_image"
               alt=""
-              class="w-full h-56 object-cover rounded-xl mb-5 group-hover:border border-gray-200 group-hover:shadow-2xl duration-300"
+              class="w-full h-56 object-cover rounded-xl mb-5 border border-gray-300 border-dashed group-hover:shadow-2xl duration-300"
             />
           </nuxt-link>
           <span class="text-xs flex items-center gap-1 text-gray-500 mb-1">

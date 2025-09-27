@@ -87,11 +87,12 @@
     <div class="p-2 bg-brand-900 text-light text-xs text-center">
       <div class="container">
         <p class="mb-0">
-          Primajasa Perdanaraya Utama © 2025 | Powered by
+          Primajasa Perdanaraya Utama © 2025 | web developed by 
           <a href="https://proweb.co.id" target="_blank" class="underline"> proweb</a>
         </p>
       </div>
     </div>
+    <FloatingWa class="fixed bottom-4 right-4" />
   </div>
 </template>
 
