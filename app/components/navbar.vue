@@ -1,10 +1,12 @@
 <template>
   <div>
+    <!-- Progress bar -->
     <div
       class="fixed top-0 left-0 h-0.5 bg-gradient-to-r from-brand-900 via-primary to-brand-950 z-[10000] overflow-y-auto"
       :style="{ width: `${progress}%` }"
     ></div>
 
+    <!-- Navbar -->
     <div
       ref="navbar"
       class="bg-white text-primary border-b border-gray-300 text-sm fixed top-0 left-0 w-full z-[9999] transition-transform duration-300 flex flex-col justify-center h-16"
@@ -19,11 +21,11 @@
               alt="Logo Primajasa"
               class="h-12 w-full object-contain"
             />
-          </nuxt-link>     
+          </nuxt-link>
 
           <!-- Menu -->
           <div
-            class="absolute lg:static left-0 w-full lg:w-auto bg-white lg:bg-transparent  transition-all duration-300 z-50"
+            class="absolute lg:static left-0 w-full lg:w-auto bg-white lg:bg-transparent transition-all duration-300 z-50"
             :class="[
               isOpen
                 ? 'top-full opacity-100 visible'
@@ -39,13 +41,15 @@
                 :key="menu.id"
                 class="relative w-full lg:w-auto group"
               >
-                <div class="flex justify-between items-center" :style="{
-                      height: navbarHeight + 'px',
-                    }" @click="closeMenu(menu.to)">
+                <div
+                  class="flex justify-between items-center"
+                  :style="{ height: navbarHeight + 'px' }"
+                >
                   <!-- Parent link -->
                   <nuxt-link
                     :to="localPath(menu.to)"
                     class="block group"
+                    @click="!menu.children && closeMenu(localPath(menu.to))"
                   >
                     <span
                       class="px-3 py-2 rounded-full hover:bg-brand-100 duration-200 flex items-center gap-1 h-auto"
@@ -67,7 +71,9 @@
                   >
                     <icon
                       :name="
-                        openDropdown === menu.id ? 'bi:chevron-up' : 'bi:chevron-down'
+                        openDropdown === menu.id
+                          ? 'bi:chevron-up'
+                          : 'bi:chevron-down'
                       "
                       class="duration-200"
                     />
@@ -90,9 +96,12 @@
                     v-for="child in menu.children"
                     :key="child.id"
                     class="hover:bg-primary hover:text-white duration-300 py-2 px-4"
-                    @click="closeMenu(child.to)"
                   >
-                    <nuxt-link :to="localPath(child.to)" class="flex gap-2 items-center">
+                    <nuxt-link
+                      :to="localPath(child.to)"
+                      class="flex gap-2 items-center"
+                      @click.prevent="closeMenu(localPath(child.to))"
+                    >
                       <img
                         v-if="child.image"
                         :src="child.image"
@@ -106,43 +115,44 @@
             </ul>
           </div>
 
+          <!-- Right section -->
           <div class="flex items-center gap-2">
- <!-- Language switcher -->
-         
-          <div class="flex gap-2 items-center">
-            <button
-              class="rounded-full w-8 h-8"
-              @click="setLocale('id')"
-              :class="{ ' text-white bg-primary/80 ': locale === 'id' }"
-            >
-              ID
-            </button>
-            |
-            <button
-              class="rounded-full w-8 h-8"
-              @click="setLocale('en')"
-              :class="{ ' text-white bg-primary/80 ': locale === 'en' }"
-            >
-              EN
-            </button>
-          </div>
+            <!-- Language switcher -->
+            <div class="flex gap-2 items-center">
+              <button
+                class="rounded-full w-8 h-8"
+                @click="setLocale('id')"
+                :class="{ ' text-white bg-primary/80 ': locale === 'id' }"
+              >
+                ID
+              </button>
+              |
+              <button
+                class="rounded-full w-8 h-8"
+                @click="setLocale('en')"
+                :class="{ ' text-white bg-primary/80 ': locale === 'en' }"
+              >
+                EN
+              </button>
+            </div>
 
-             <!-- Hamburger -->
-          <button
-            @click="isOpen = !isOpen"
-            class="lg:hidden flex flex-col gap-1"
-            aria-label="Toggle menu"
-          >
-            <span class="w-6 h-0.5 bg-primary"></span>
-            <span class="w-6 h-0.5 bg-primary"></span>
-            <span class="w-6 h-0.5 bg-primary"></span>
-          </button>
+            <!-- Hamburger -->
+            <button
+              @click="isOpen = !isOpen"
+              class="lg:hidden flex flex-col gap-1"
+              aria-label="Toggle menu"
+            >
+              <span class="w-6 h-0.5 bg-primary"></span>
+              <span class="w-6 h-0.5 bg-primary"></span>
+              <span class="w-6 h-0.5 bg-primary"></span>
+            </button>
           </div>
         </nav>
       </div>
     </div>
   </div>
 </template>
+
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
@@ -152,7 +162,7 @@ const localPath = useLocalePath();
 const { menus } = useMenus();
 
 const isOpen = ref(false);
-const openDropdown = ref<string | null>(null); // simpan id parent yg terbuka
+const openDropdown = ref<string | null>(null);
 const isDesktop = ref(false);
 
 const navbar = ref<HTMLElement | null>(null);
@@ -219,14 +229,12 @@ const menusList = computed(() => {
   return menus.value?.[locale.value] || menus.value?.["id"] || [];
 });
 
-
+// ✅ close menu tanpa reload halaman
 const closeMenu = (path: string) => {
-  setTimeout(() => {
-    router.go(path);
-    isOpen.value = false;
-    console.log(path);
-  }, 100);
-};  
+  isOpen.value = false;
+  openDropdown.value = null;
+  navigateTo(path);
+};
 </script>
 
 <style>
