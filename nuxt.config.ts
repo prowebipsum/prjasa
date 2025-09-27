@@ -13,7 +13,7 @@ export default defineNuxtConfig({
 
   nitro: {
     routeRules: {
-      proxyTimeout: 30000
+      proxyTimeout: 30000 
     }
   }, 
 
@@ -41,5 +41,5 @@ export default defineNuxtConfig({
     ],
     defaultLocale: 'id',
   },
- 
+  
 })
