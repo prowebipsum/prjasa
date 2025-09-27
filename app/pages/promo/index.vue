@@ -5,7 +5,7 @@ const taxonomy = ref("kategori-promo")
 
 // ✅ Tambah opsi "All"
 const terms = [
-  { label: "All", value: "" },
+  { label: "All", value: undefined  },
   { label: "Bis Reguler", value: "bis-reguler" },
   { label: "Bis Moda Bandara", value: "bis-moda-bandara" },
   { label: "Shuttle", value: "shuttle" },
@@ -16,13 +16,21 @@ const term = ref(terms[0].value) // default = "All"
 
 const localPath = useLocalePath()
 
-// API call (otomatis reactive kalau term/currentPage berubah)
-const { data, status, error } = useWpPosts<PostContent>("promo", {
-  per_page: perPage,
-  page: currentPage,
-  taxonomy: taxonomy.value,
-  term, // kalau "" = ambil semua
+// reactive query options
+const queryOptions = computed(() => {
+  const opt: any = {
+    per_page: perPage,
+    page: currentPage.value,
+    taxonomy: taxonomy.value,
+  }
+  if (term.value) {
+    opt.term = term.value
+  }
+  return opt
 })
+
+// API call (otomatis reactive kalau term/currentPage berubah)
+const { data, status, error } = useWpPosts<PostContent>("promo",queryOptions)
 
 const { data: promo, status: statusPromo } = useWpContent<PageContent>("promo")
 
@@ -35,6 +43,11 @@ const { formatDate } = useDateFormat()
 // reset page ke 1 kalau term berubah
 watch(term, () => {
   currentPage.value = 1
+})
+
+// ✅ Debug: log setiap kali query berubah
+watchEffect(() => {
+  console.log("🔍 API Params:", queryOptions.value)
 })
 </script>
 
