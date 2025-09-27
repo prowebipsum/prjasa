@@ -136,6 +136,27 @@
   display: none !important;
 }
 
+
+ /* 📝 Input, Textarea, Select biar tidak ikut dark-mode bawaan browser */
+  input,
+  textarea,
+  select {
+    @apply bg-white ; /* paksa putih */
+    -webkit-text-fill-color: var(--color-gray-700) !important; /* untuk Safari/Chrome mobile */
+    caret-color: var(--color-gray-700); 
+  }
+
+  /* 📝 Placeholder text */
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-gray-400;
+  }
+
+  /* 📝 Nuxt UI UButton untuk color="primary" biar teks putih */
+  .u-button[data-color="primary"] {
+    @apply text-white;
+  }
+
 }
 
 
