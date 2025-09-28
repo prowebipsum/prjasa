@@ -41,6 +41,7 @@
 
 :root {
   color-scheme: light;
+  background: #ffffff; /* jaga-jaga */
 }
 
 @utility container {
@@ -49,9 +50,13 @@
 
 @layer base {
 
+ html {
+  color-scheme: light;
+  background: #fff; /* untuk jaga-jaga */
+}
   /* Body */
   body {
-    @apply text-gray-700 text-base leading-relaxed bg-white overflow-x-hidden;
+    @apply text-gray-700 text-base leading-relaxed bg-white overflow-x-hidden ;
   }
 
   /* Headings */
