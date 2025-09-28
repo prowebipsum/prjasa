@@ -4,11 +4,11 @@
  <div v-if="openChat"  class="bg-gray-50  p-4 rounded-lg shadow-xl">
      <UForm :validate="validate" :state="state" class="space-y-4" @submit="onSubmit">
     <UFormField label="nama" name="nama">
-      <UInput v-model="state.nama" color="primary" class="bg-white"/>
+      <UInput v-model="state.nama" color="primary" class="bg-white w-full"/>
     </UFormField>s
 
     <UFormField label="Pesan" name="pesan">
-      <UTextarea v-model="state.pesan" class=" bg-white" :rows="3" color="primary" />
+      <UTextarea v-model="state.pesan" class="w-full bg-white" :rows="3" color="primary" />
     </UFormField>
     <div class="flex items-center justify-between gap-2">
     <UButton type="submit" color="primary">
