@@ -3,29 +3,15 @@
     <div v-if="status === 'pending'">
       <loading />
     </div>
-    <article v-else class="">
-      <h1>{{ news?.title }}</h1>
-      <div class="flex gap-2 items-center justify-between mb-3">
-        <span class="text-sm flex items-center gap-1 text-gray-500 mb-1"
-          ><icon name="material-symbols-light:calendar-month-outline-rounded" />
-          {{ formatDate(news?.date) }}</span
-        >
-        <u-badge
-          v-for="item in news?.terms"
-          :key="item"
-          :label="item?.name"
-          color="neutral"
-          variant="soft"
-        >
-        </u-badge>
-      </div>
-
+    <article v-else class="container mt-16">
+      <h1 class="text-3xl ">{{ karir?.title }}</h1>
+   
       <img
-        v-if="news?.featured_image"
-        :src="news.featured_image"
+        v-if="karir?.featured_image"
+        :src="karir.featured_image"
         class="mb-5 rounded-lg w-full"
       />
-      <div v-html="news?.content" class="text-justify"></div>
+      <div v-html="karir?.content" class="text-justify"></div>
     </article>
   </div>
 </template>
@@ -43,7 +29,7 @@ type PageContent = {
   date: string;
   tags: string[];
 };
-const { data: news, status } = useWpContent<PageContent>(route.params.slug as string);
+const { data: karir, status } = useWpContent<PageContent>(route.params.slug as string);
 
 const { formatDate } = useDateFormat();
 </script>

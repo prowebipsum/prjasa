@@ -77,6 +77,7 @@
                 <li><nuxt-link :to="localPath('/news')"> Berita & CSR </nuxt-link></li>
                 <li><nuxt-link :to="localPath('/blog')"> Blog </nuxt-link></li>
                 <li><nuxt-link :to="localPath('/faq')">FAQ </nuxt-link></li>
+                <li><nuxt-link :to="localPath('/karir')">FAQ </nuxt-link></li>
                 <li><nuxt-link :to="localPath('/kontak')">Contact </nuxt-link></li>
               </ul>
             </div>

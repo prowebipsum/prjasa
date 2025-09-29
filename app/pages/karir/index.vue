@@ -11,7 +11,7 @@ const { data, status, error } = useWpPosts<PostContent>("karir", {
   page: currentPage,
 });
 
-const { data: news, status: statusNews } = useWpContent<PageContent>("news");
+const { data: karir, status: statusKarir } = useWpContent<PageContent>("karir");
 
 // ✅ posts ambil dari data.value.posts
 const posts = computed(() => data.value?.posts || []);
@@ -26,9 +26,9 @@ const { formatDate } = useDateFormat();
 <template>
   <div>
     <ElementHero
-      :title="news?.title"
-      :description="news?.acf?.sub_title"
-      :background="news?.featured_image"
+      :title="karir?.title"
+      :description="karir?.acf?.sub_title"
+      :background="karir?.featured_image"
     />
 
     <!-- Loading -->
@@ -40,22 +40,16 @@ const { formatDate } = useDateFormat();
       <div
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10"
       >
-        <div v-for="item in posts" :key="item.id" class="group">
-          <nuxt-link :to="localPath(`/news/${item.slug}`)">
+        <div v-for="item in posts" :key="item.id" class="group flex flex-col gap-2 text-center border border-gray-300 p-2 rounded-lg">
+          <nuxt-link :to="localPath(`/karir/${item.slug}`)">
             <img
               :src="item.featured_image"
               alt=""
-              class="w-full h-56 object-cover rounded-xl mb-5 group-hover:border border-gray-200 group-hover:shadow-2xl duration-300"
+              class="w-full  h-52 object-cover rounded-lg group-hover:border border-gray-200 group-hover:shadow-2xl duration-300"
             />
           </nuxt-link>
-          <span class="text-xs flex items-center gap-1 text-gray-500 mb-1">
-            <icon
-              name="material-symbols-light:calendar-month-outline-rounded"
-              class="text-lg"
-            />
-            {{ formatDate(item.date) }}
-          </span>
-          <nuxt-link :to="localPath(`/news/${item.slug}`)">
+   
+          <nuxt-link :to="localPath(`/karir/${item.slug}`)">
             <h5 v-html="item.title"></h5>
           </nuxt-link>
         </div>
