@@ -29,9 +29,26 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxt/ui', '@nuxtjs/i18n', '@nuxt/image'],
+
+  ui: {
+    // defaultColorMode bisa 'light', 'dark', atau 'system'
+    // ganti jadi light supaya tidak ikut forced dark mode Android
+    defaultColorMode: 'light',
+  },
+  app: {
+    head: {
+      meta: [
+        { name: 'color-scheme', content: 'light' },
+        { name: 'theme-color', content: '#ffffff' }
+      ]
+    }
+  },
+  
   plugins: [
     { src: '~/plugins/splide.client.ts', mode: 'client' },
   ],
+
+
 
   i18n: {
     strategy: 'prefix_except_default', // URL /id/... /en/... 
