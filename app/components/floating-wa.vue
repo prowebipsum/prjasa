@@ -19,9 +19,11 @@
   </div>
   </transition>
   <div class="flex justify-end mt-4">
-  <UButton  @click="openChat = !openChat" class="rounded-full" color="primary" :icon="openChat ? 'bi:x-lg' : 'bi:whatsapp'"/>
-  </div>
-
+    <div class="flex items-center gap-2 p-2 rounded-full bg-white shadow"> 
+      <span class="text-sm"> Tanya Kami</span>
+        <UButton  @click="openChat = !openChat" class="rounded-full  cursor-pointer" color="primary" :icon="openChat ? 'bi:x-lg' : 'bi:whatsapp'"/>
+    </div>
+</div>
   </div>
 
 </template>
