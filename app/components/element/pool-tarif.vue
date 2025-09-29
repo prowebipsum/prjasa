@@ -35,7 +35,7 @@
 
       <div>
         <img
-          src="/img/pulkam3-min.png"
+          :src="option?.acf?.gambar?.url"
           alt=""
           class="absolute -top-1/2 w-[240px] hidden lg:block"
         />

@@ -32,7 +32,7 @@
 
 <script lang="ts" setup>
 definePageMeta({
-  layout: "single-post",
+  layout: "single-karir",
 });
 const route = useRoute();
 

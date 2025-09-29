@@ -8,38 +8,34 @@
         <div class="grid grid-cols-1 lg:grid-cols-2">
           <div class="flex flex-col gap-10 justify-center items-center">
             <div class="text-center">
-              <h2>Cek Rute dan Tarif</h2>
-              <h4 class="text-gray-700">Dan temukan Armada terdekat di lokasi Anda</h4>
-              <UButton
-                href="https://primajasa.co/cektarif/index.html?embed=1&bg=transparent&primary=%23B91C1C&accent=%23F59E0B"
-                size="xl"
-                class="rounded-full mb-5 text-white"
-                icon="gis:route"
-                target="_blank"
-              >
-                Cek Rute dan Tarif
-              </UButton>
-              <p>Tiket dapat di pesan melalui</p>
+              <h2>{{ option?.acf?.judul }}</h2>
+              <h4 class="text-gray-700">{{ option?.acf?.sub_judul }}</h4>
+               <UButton
+          :href=" option?.acf?.tombol?.url "
+          size="xl"
+          class="rounded-full"
+          icon="gis:route"
+          :target="option?.acf?.tombol?.target"
+        >
+        {{  option?.acf?.tombol?.title }}
+        
+        </UButton>
+
+              <p>{{ option?.acf?.pesan_tiket }}</p>
               <div class="flex items-center justify-center gap-4">
-                <a href="https://www.redbus.id/" class="" target="_blank">
-                  <img
-                    src="/img/redbus.png"
-                    alt=""
-                    class="w-20 h-20 object-contain rounded-xl hover:shadow-2xl duration-300"
-                  />
-                </a>
-                <a href="https://www.traveloka.com/id/" class="" target="_blank">
-                  <img
-                    src="/img/traveloka.webp"
-                    alt=""
-                    class="w-20 h-20 object-contain border border-gray-300 rounded-xl hover:shadow-2xl duration-300"
-                  />
-                </a>
+               <a v-for="item in option?.acf?.platform" :href="item?.link" class="" target="_blank">
+            <img
+              :src="item?.logo?.url"
+              alt=""
+              class="w-20 h-20 object-contain rounded-xl hover:shadow-2xl duration-300"
+            />
+          </a>
+              
               </div>
             </div>
           </div>
           <div>
-            <img src="/img/pulkam3-min.png" alt="" />
+            <img :src="option?.acf?.gambar?.url" alt="" />
           </div>
         </div>
       </div>
@@ -57,4 +53,6 @@
 definePageMeta({
   layout: "home",
 });
+const {locale} = useI18n();
+const {data:option, status} = useWpOptions(locale.value);
 </script>

@@ -5,9 +5,8 @@ const perPage = 9;
 const localPath = useLocalePath();
 
 // ✅ API sekarang return { posts, pagination }
-const { data, status, error } = useWpPosts<PostContent>("post", {
-  taxonomy: "category",
-  term: "berita-csr",
+const { data, status, error } = useWpPosts<PostContent>("karir", {
+
   per_page: perPage,
   page: currentPage,
 });
