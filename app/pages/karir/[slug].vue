@@ -3,8 +3,8 @@
     <div v-if="status === 'pending'">
       <loading />
     </div>
-    <article v-else class="container mt-16">
-      <h1 class="text-3xl ">{{ karir?.title }}</h1>
+    <article v-else class="container mt-20">
+      <h1 class="text-3xl mb-3 text-primary">{{ karir?.title }}</h1>
    
       <img
         v-if="karir?.featured_image"
