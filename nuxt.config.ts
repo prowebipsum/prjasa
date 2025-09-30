@@ -30,11 +30,10 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/ui', '@nuxtjs/i18n', '@nuxt/image'],
 
-  ui: {
-    // defaultColorMode bisa 'light', 'dark', atau 'system'
-    // ganti jadi light supaya tidak ikut forced dark mode Android
-    defaultColorMode: 'light',
+  colorMode: {
+    preference: 'light',
   },
+  
   app: {
     head: {
       meta: [
