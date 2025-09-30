@@ -81,26 +81,26 @@ const menus = ref<Record<string, MenuItem[]>>({
           id: 'bus-regular',
           label: 'Bus Regular',
           to: '/product/bus-regular',
-          image: '/img/icon-reguler.png',
+          image: '/icons/icon-reguler.png',
           background:''
         },
         {
           id: 'moda',
           label: 'Moda',
           to: '/product/moda',
-          image: '/img/icon-moda.png'
+          image: '/icons/icon-moda.png'
         },
         {
           id: 'shuttle',
           label: 'Shuttle',
           to: '/product/shuttle',
-          image: '/img/icon-shutle.png'
+          image: '/icons/icon-shuttle.png'
         },
         {
           id: 'pariwisata',
           label: 'Pariwisata',
           to: '/product/pariwisata',
-          image: '/img/icon-wisata.png'
+          image: '/icons/icon-pariwisata.png'
         }
       ]
     },
@@ -201,28 +201,28 @@ const menus = ref<Record<string, MenuItem[]>>({
           id: 'regular-bus',
           label: 'Regular Bus',
           to: '/product/bus-regular',
-          image: '/img/icon-reguler.png',
+          image: '/icons/icon-reguler.png',
           background:''
         },
         {
           id: 'moda',
           label: 'Moda',
           to: '/product/moda',
-          image: '/img/icon-moda.png',
+          image: '/icons/icon-moda.png',
           background:''
         },
         {
           id: 'shuttle',
           label: 'Shuttle',
           to: '/product/shuttle',
-          image: '/img/icon-shutle.png',
+          image: '/icons/icon-shuttle.png',
           background:''
         },
         {
           id: 'tourism',
           label: 'Tourism',
           to: '/product/pariwisata',
-          image: '/img/icon-wisata.png'
+          image: '/icons/icon-pariwisata.png'
         }
       ]
     },
