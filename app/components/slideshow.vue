@@ -22,12 +22,18 @@ const items = [
     :items="sliders?.posts"
     :loop="true"
     :dots="true"
+    fade
     wheel-gestures
     :ui="{
       item: 'w-full ps-0',
       dots:
-        'absolute right-0 left-3 -translate-y-1/2 top-1/2 w-max h-max flex-col px-1 py-2 rounded-full bg-primary',
-      dot: '',
+        'absolute right-0 left-3 -translate-y-1/2 top-1/2 w-max h-max flex-col px-1 py-2 rounded-full bg-primary hidden lg:flex',
+      dot:'bg-brand-400',
+      active:{
+        true:{
+          dot:'bg-white'
+        }
+      }
     }"
     class="relative"
   >
