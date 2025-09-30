@@ -4,12 +4,12 @@
  <div v-if="openChat"  class="bg-gray-50  p-4 rounded-lg shadow-xl">
      <UForm :validate="validate" :state="state" class="space-y-4" @submit="onSubmit">
     <UFormField label="nama" name="nama">
-      <UInput v-model="state.nama" color="primary" class="bg-white w-full"/>
+      <UInput v-model="state.nama" color="primary" class="bg-white w-full dark:bg-white"/>
     </UFormField>
 
     <UFormField label="Pesan" name="pesan">
-      <UTextarea v-model="state.pesan" class="w-full bg-white" :rows="3" color="primary" />
-    </UFormField>
+      <UTextarea v-model="state.pesan" class="w-full bg-white dark:bg-white" :rows="3" color="primary" />
+    </UFormField> 
     <div class="flex items-center justify-between gap-2">
     <UButton type="submit" color="primary">
       Send <icon name="bi:whatsapp" class="text-xl" />
@@ -21,7 +21,7 @@
   <div class="flex justify-end mt-4">
     <div class="flex items-center gap-2 p-2 rounded-full bg-white shadow"> 
       <span class="text-sm"> Tanya Kami</span>
-        <UButton  @click="openChat = !openChat" class="rounded-full  cursor-pointer" color="primary" :icon="openChat ? 'bi:x-lg' : 'bi:whatsapp'"/>
+        <UButton  @click="openChat = !openChat" class="rounded-full  cursor-pointer text-white dark:text-white" color="primary" :icon="openChat ? 'bi:x-lg' : 'bi:whatsapp'"/>
     </div>
 </div>
   </div>
