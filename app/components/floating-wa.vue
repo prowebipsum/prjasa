@@ -12,7 +12,7 @@
     </UFormField> 
     <div class="flex items-center justify-between gap-2">
     <UButton type="submit" color="primary">
-      Send <icon name="bi:whatsapp" class="text-xl" />
+      Send <icon name="bi:whatsapp" class="text-xl text-white dark:text-white" />
     </UButton>
     </div>  
   </UForm>
