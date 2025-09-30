@@ -150,7 +150,7 @@
   input,
   textarea,
   select {
-    @apply bg-white ; /* paksa putih */
+    @apply bg-white dark:bg-white ; /* paksa putih */
     -webkit-text-fill-color: var(--color-gray-700) !important; /* untuk Safari/Chrome mobile */
     caret-color: var(--color-gray-700); 
   }
