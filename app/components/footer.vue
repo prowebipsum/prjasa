@@ -58,7 +58,7 @@
             <!-- col two -->
             <div>
               <h5 class="text-primary mb-1">Product</h5>
-              <ul>
+              <ul class="menu">
                 <li><nuxt-link :to="localPath('/product/bus-regular')">Bus Regular </nuxt-link></li>
                 <li><nuxt-link :to="localPath('/product/moda')">Moda</nuxt-link></li>
                 <li><nuxt-link :to="localPath('/product/shuttle')"> Shuttle </nuxt-link></li>
@@ -71,7 +71,7 @@
           <div class="flex flex-col gap-4">
             <div>
               <h5 class="text-primary mb-1">Link</h5>
-              <ul>
+              <ul class="menu">
                 <li><nuxt-link :to="localPath('/about/profil-perusahaan')">Tentang Kami </nuxt-link></li>
                 <li><nuxt-link :to="localPath('/promo')"> Promo </nuxt-link></li>
                 <li><nuxt-link :to="localPath('/news')"> Berita & CSR </nuxt-link></li>
