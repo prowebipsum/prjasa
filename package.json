@@ -10,7 +10,6 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@splidejs/vue-splide": "^0.6.12",
     "@tailwindcss/vite": "^4.1.12",
     "leaflet": "^1.9.4",
     "nuxt": "^4.0.3",

@@ -47,17 +47,12 @@ export default defineNuxtConfig({
     }
   },
   
-  plugins: [
-    { src: '~/plugins/splide.client.ts', mode: 'client' },
-  ],
-
-
-
   i18n: {
     strategy: 'prefix_except_default', // URL /id/... /en/... 
+    langDir: 'locales',
     locales: [
-       { code: 'id', iso: 'id-ID', name: 'Bahasa Indonesia' },
-      { code: 'en', iso: 'en-US', name: 'English' }
+       { code: 'id', iso: 'id-ID', name: 'Bahasa Indonesia', file: 'id.json' },
+      { code: 'en', iso: 'en-US', name: 'English', file: 'en.json' },
     ],
     defaultLocale: 'id',
   },
