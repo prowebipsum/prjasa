@@ -34,7 +34,7 @@
             ]"
           >
             <ul
-              class="flex flex-col lg:flex-row items-start lg:items-center p-4 lg:p-0 lg:gap-4 w-full"
+              class="menu flex flex-col lg:flex-row items-start lg:items-center p-4 lg:p-0 lg:gap-4 w-full"
             >
               <li
                 v-for="menu in menusList"

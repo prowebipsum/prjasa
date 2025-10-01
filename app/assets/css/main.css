@@ -98,10 +98,10 @@
     @apply mb-4 leading-relaxed;
   }
 
-  ul {
+  ul:not(.menu) {
     @apply list-disc pl-6 mb-4 space-y-1;
   }
-  ol {
+  ol:not(.menu) {
     @apply list-decimal pl-6 mb-4 space-y-1;
   }
 
