@@ -83,7 +83,7 @@
                 <!-- Submenu -->
                 <ul
                   v-if="menu.children"
-                  class="flex-col gap-2 bg-brand-50 lg:rounded-b-xl lg:border border-gray-300 lg:border-b lg:border-x lg:w-[200px] pb-2"
+                  class="menu flex-col gap-2 bg-brand-50 lg:rounded-b-xl lg:border border-gray-300 lg:border-b lg:border-x lg:w-[200px] pb-2"
                   :class="[
                     isDesktop
                       ? 'lg:absolute lg:top-full lg:hidden lg:group-hover:flex'
