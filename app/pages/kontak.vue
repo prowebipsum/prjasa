@@ -9,20 +9,20 @@
       <div class="grid grid-cols-1 lg:grid-cols-2">
         <div>
           <!-- kiri -->
-          <p>Anda bisa hubungi kami melalui form di bawah ini.</p>
+          <p>{{  $t('contact.description') }}</p>
 
           <div
             v-if="success"
             class="text-green-600 mt-2 w-full h-full flex flex-col justify-center items-center rounded-xl border border-green-600 border-dashed bg-gray-50"
           >
-            ✅ Data berhasil dikirim!
+            ✅ {{ $t('contact.success') }}
           </div>
 
           <div
             v-else-if="error"
             class="text-red-600 mt-2 w-full h-full flex flex-col justify-center items-center rounded-xl border border-red-600 border-dashed bg-gray-50"
           >
-            ❌ {{ error }}
+            ❌ {{  $t('contact.error') }}
           </div>
 
           <u-form
@@ -31,9 +31,9 @@
             @submit="onSubmit"
             class="space-y-4 mb-4"
           >
-            <u-form-field label="Nama">
+            <u-form-field :label="$t('contact.name')">
               <u-input
-                placeholder="Masukan Nama"
+                :placeholder="$t('contact.placeholderName')"
                 type="text"
                 size="lg"
                 class="w-full"
@@ -42,9 +42,9 @@
               />
             </u-form-field>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <u-form-field label="Email">
+              <u-form-field :label="$t('contact.email')">
                 <u-input
-                  placeholder="Masukan Email"
+                  :placeholder="$t('contact.placeholderEmail')"
                   type="email"
                   size="lg"
                   class="w-full"
@@ -52,9 +52,9 @@
                   required
                 />
               </u-form-field>
-              <u-form-field label="No Telepon">
+              <u-form-field :label="$t('contact.phone')">
                 <u-input
-                  placeholder="Masukan No Telepon"
+                  :placeholder="$t('contact.placeholderPhone')"
                   type="number"
                   size="lg"
                   class="w-full"
@@ -63,9 +63,9 @@
                 />
               </u-form-field>
             </div>
-            <u-form-field label="Subjek">
+            <u-form-field :label="$t('contact.subject')">
               <u-input
-                placeholder="Masukan Subjek"
+                :placeholder="$t('contact.placeholderSubject')"
                 type="text"
                 size="lg"
                 class="w-full"
@@ -73,9 +73,9 @@
                 required
               />
             </u-form-field>
-            <u-form-field label="Pesan">
+            <u-form-field :label="$t('contact.message')">
               <u-textarea
-                placeholder="Masukan Pesan"
+                :placeholder="$t('contact.placeholderMessage')"
                 size="lg"
                 v-model="formState.message"
                 class="w-full"
@@ -93,7 +93,7 @@
               <span class="text-2xl text-light" v-if="proses">
                 <icon name="line-md:loading-twotone-loop" />
               </span>
-              Kirim
+              {{ $t('contact.submit') }}
             </u-button>
           </u-form>
         </div>

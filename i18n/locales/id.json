@@ -5,6 +5,23 @@
     "shuttle": "F.A.Q Layanan Bus Shuttle",
     "pariwisata": "F.A.Q Layanan Bus Pariwisata"
   },
+  "contact": {
+    "title": "Hubungi Kami",
+    "description": "Anda bisa hubungi kami melalui form di bawah ini.",
+    "name": "Nama",
+    "email": "Email",
+    "phone": "Nomor Telepon",
+    "subject": "Subjek",
+    "message": "Pesan",
+    "submit": "Kirim",
+    "success": "Pesan berhasil dikirim",
+    "error": "Terjadi kesalahan saat mengirim pesan",
+    "placeholderName": "Masukkan Nama",
+    "placeholderEmail": "Masukkan Email",
+    "placeholderPhone": "Masukkan Nomor Telepon",
+    "placeholderSubject": "Masukkan Subjek",
+    "placeholderMessage": "Masukkan Pesan"
+  },
   "footer": {
     "address": "Alamat",
     "contact": "Kontak",

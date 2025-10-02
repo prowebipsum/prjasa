@@ -5,6 +5,23 @@
     "shuttle": "F.A.Q for Shuttle  Service",
     "pariwisata": "F.A.Q for Tour Bus Service"
   },
+  "contact": {
+    "title": "Contact Us",
+    "description": "You can contact us using the form below.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "submit": "Submit",
+    "success": "Message sent successfully",
+    "error": "An error occurred while sending the message",
+    "placeholderName": "Enter your name",
+    "placeholderEmail": "Enter your email",
+    "placeholderPhone": "Enter your phone number",
+    "placeholderSubject": "Enter subject",
+    "placeholderMessage": "Enter your message"
+  },
   "footer": {
     "address": "Address",
     "contact": "Contact",
