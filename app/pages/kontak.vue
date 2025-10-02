@@ -1,7 +1,7 @@
 <template>
   <div>
     <ElementHero
-      :title="kontak?.title"
+      :title="$t('contact.title')"
       :description="kontak?.acf?.sub_title"
       :background="kontak?.featured_image"
     />
