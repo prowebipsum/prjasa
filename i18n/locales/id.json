@@ -1,4 +1,10 @@
 {
+  "faq":{
+    "regular": "F.A.Q Layanan Bus Reguler",
+    "moda": "F.A.Q Layanan Bus Moda",
+    "shuttle": "F.A.Q Layanan Bus Shuttle",
+    "pariwisata": "F.A.Q Layanan Bus Pariwisata"
+  },
   "footer": {
     "address": "Alamat",
     "contact": "Kontak",

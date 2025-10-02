@@ -1,4 +1,10 @@
 {
+  "faq": {
+    "regular": "F.A.Q for Regular Bus Service",
+    "moda": "F.A.Q for Moda Bus Service",
+    "shuttle": "F.A.Q for Shuttle  Service",
+    "pariwisata": "F.A.Q for Tour Bus Service"
+  },
   "footer": {
     "address": "Address",
     "contact": "Contact",

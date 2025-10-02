@@ -1,7 +1,7 @@
 <template>
 
       <div class="sidebar">
-          <ul class="lg:flex flex-col gap-2 hidden sticky top-20">
+          <ul class="menu lg:flex flex-col gap-2 hidden sticky top-20">
             <li v-for="smenu in sidebarMenu" :key="smenu?.to">
               <nuxt-link
                 :to="smenu?.to"

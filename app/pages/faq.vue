@@ -15,7 +15,7 @@
 
 <div class="acc mb-10">
  <!-- Accordion -->
-    <h5 class="text-primary mb-4"> F.A.Q Layanan Bus Reguler</h5>
+    <h5 class="text-primary mb-4"> {{ $t('faq.regular') }}</h5>
     <div
       class="accordion divide-y divide-gray-200 border border-gray-300 rounded-xl bg-white"
     >
@@ -47,7 +47,7 @@
 
 <div class="acc mb-10">
  <!-- Accordion -->
-    <h5 class="text-primary mb-4"> F.A.Q Layanan Bus Moda</h5>
+    <h5 class="text-primary mb-4"> {{ $t('faq.moda')}}</h5>
     <div
       class="accordion divide-y divide-gray-200 border border-gray-300 rounded-xl bg-white"
     >
@@ -79,7 +79,7 @@
    
    <div class="acc mb-10">
  <!-- Accordion -->
-    <h5 class="text-primary mb-4"> F.A.Q Layanan Shuttle</h5>
+    <h5 class="text-primary mb-4"> {{ $t('faq.shuttle') }}</h5>
     <div
       class="accordion divide-y divide-gray-200 border border-gray-300 rounded-xl bg-white"
     >
@@ -111,7 +111,7 @@
 
  <div class="acc mb-10">
  <!-- Accordion -->
-    <h5 class="text-primary mb-4"> F.A.Q Layanan Bus Pariwisata</h5>
+    <h5 class="text-primary mb-4">{{ $t('faq.pariwisata')}}</h5>
     <div
       class="accordion divide-y divide-gray-200 border border-gray-300 rounded-xl bg-white"
     >
@@ -147,6 +147,7 @@
 </template>
 
 <script lang="ts" setup>
+const { locale } = useI18n();
 const { data: faq, status } = useWpContent("faq");
 
 // simpan id atau judul pertanyaan aktif
