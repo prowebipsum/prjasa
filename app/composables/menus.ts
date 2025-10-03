@@ -63,13 +63,13 @@ const menus = ref<Record<string, MenuItem[]>>({
           description: 'loremipsum doloretsitamet',
           background:''
         },
-        {
+      /*   {
           id: 'penghargaan',
           label: 'Penghargaan',
           to: '/about/penghargaan',
           description: 'loremipsum doloretsitamet',
           background:''
-        }
+        } */
       ]
     },
     {
@@ -183,13 +183,13 @@ const menus = ref<Record<string, MenuItem[]>>({
           description: 'loremipsum doloretsitamet',
           background:''
         },
-        {
+  /*       {
           id: 'awards',
           label: 'Awards',
           to: '/en/about/penghargaan',
           description: 'loremipsum doloretsitamet',
           background:''
-        }
+        } */
       ]
     },
     {
