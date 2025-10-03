@@ -2,6 +2,7 @@
 const currentPage = ref(1);
 const perPage = 9;
 
+const { activeMenu } = useActiveMenu();
 const localPath = useLocalePath();
 
 // ✅ API sekarang return { posts, pagination }
@@ -22,6 +23,8 @@ const totalPages = computed(() => data.value?.pagination.total_pages ?? 1);
 const totalPosts = computed(() => data.value?.pagination.total ?? 0);
 
 const { formatDate } = useDateFormat();
+
+console.log(activeMenu)
 </script>
 
 <template>
@@ -31,7 +34,6 @@ const { formatDate } = useDateFormat();
       :description="news?.acf?.sub_title"
       :background="news?.featured_image"
     />
-
     <!-- Loading -->
     <div v-if="status === 'pending'">
       <loading />

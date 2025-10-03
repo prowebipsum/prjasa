@@ -20,7 +20,7 @@
               </h4>
 
               <UButton :to="localPath(`/blog/${item.slug}`)" size="xl" class="rounded-full px-6 text-white"
-                >{{ $('home.selengkapnya') }}</UButton
+                >{{ $t('home.selengkapnya') }}</UButton
               >
             </div>
           </div>

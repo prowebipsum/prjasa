@@ -52,6 +52,8 @@ const { data: news, status } = useWpPosts<PostContent>("post", {
   taxonomy: "category",
   term: "berita-csr",
 });
+
+
 </script>
 
 <style></style>
