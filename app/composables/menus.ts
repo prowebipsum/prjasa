@@ -56,13 +56,13 @@ const menus = ref<Record<string, MenuItem[]>>({
           description: 'loremipsum doloretsitamet',
         background:''
         },
-        {
+      /*   {
           id: 'kebijakan-perusahaan',
           label: 'Kebijakan Perusahaan',
           to: '/about/kebijakan-perusahaan',
           description: 'loremipsum doloretsitamet',
           background:''
-        },
+        }, */
       /*   {
           id: 'penghargaan',
           label: 'Penghargaan',
@@ -176,13 +176,13 @@ const menus = ref<Record<string, MenuItem[]>>({
           description: 'loremipsum doloretsitamet',
            background:''
         },
-        {
+    /*     {
           id: 'company-policy',
           label: 'Company Policy',
           to: '/en/about/kebijakan-perusahaan',
           description: 'loremipsum doloretsitamet',
           background:''
-        },
+        }, */
   /*       {
           id: 'awards',
           label: 'Awards',
@@ -200,28 +200,28 @@ const menus = ref<Record<string, MenuItem[]>>({
         {
           id: 'regular-bus',
           label: 'Regular Bus',
-          to: '/product/bus-regular',
+          to: '/product/regular-bus',
           image: '/icons/icon-reguler.png',
           background:''
         },
         {
           id: 'moda',
           label: 'Moda',
-          to: '/product/moda',
+          to: '/product/moda-en',
           image: '/icons/icon-moda.png',
           background:''
         },
         {
           id: 'shuttle',
           label: 'Shuttle',
-          to: '/product/shuttle',
+          to: '/product/shuttle-en',
           image: '/icons/icon-shuttle.png',
           background:''
         },
         {
           id: 'tourism',
           label: 'Tourism',
-          to: '/product/pariwisata',
+          to: '/product/tour',
           image: '/icons/icon-pariwisata.png'
         }
       ]

@@ -75,7 +75,7 @@
       </div>
     </section>
 
-    <div class="p-2 bg-brand-100 text-brand-600 text-xs text-center">
+    <div class="p-2 bg-primary text-brand-100 text-xs text-center">
       <div class="container">
         <p class="mb-0">
           Primajasa Perdanaraya Utama © 2025 | web developed by

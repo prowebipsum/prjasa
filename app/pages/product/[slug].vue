@@ -105,7 +105,10 @@ const {
   "kategori-layanan", // taxonomy
   route.params.slug, // term slug
   { type: "layanan" },
-  { per_page: 5 },
+  { 
+    per_page: 5,
+    lang:locale.value
+   },
 
 );
 

@@ -20,7 +20,7 @@
   </transition>
   <div class="flex justify-end mt-4">
     <div class="flex items-center gap-2 p-2 rounded-full bg-white shadow"> 
-      <span class="text-sm"> Tanya Kami</span>
+      <span class="text-sm text-primary font-medium"> Tanya Kami</span>
         <UButton  @click="openChat = !openChat" class="rounded-full  cursor-pointer text-white dark:text-white" color="primary" :icon="openChat ? 'bi:x-lg' : 'bi:whatsapp'"/>
     </div>
 </div>
