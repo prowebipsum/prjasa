@@ -12,7 +12,7 @@
             class="featured-item flex flex-col items-center justify-start lg:justify-end gap-2 p-5 text-center group text-sm"
           >
             <nuxt-link
-              :to="`/product/${item?.slug}`"
+              :to="localPath(`/product/${item?.slug}`)"
               :class="{ 'router-link-active': $route.params.slug === item?.slug }"
             >
               <img
@@ -36,13 +36,9 @@ const props = defineProps({
     default: "bg-gray-50",
   },
 });
-const productCategory = ref([
-  { name: "Bus Reguler", image: "/img/icon-wisata.png" },
-  { name: "Moda", image: "/img/icon-moda.png" },
-  { name: "Shuttle", image: "/img/icon-shutle.png" },
-  { name: "Pariwisata", image: "/img/icon-wisata.png" },
-]);
 
+const { locale } = useI18n();
+const localPath = useLocalePath(); 
 const { menus } = useMenus();
 const productMenu = computed(() => menus.value[2]?.children);
 

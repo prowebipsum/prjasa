@@ -87,6 +87,8 @@ definePageMeta({
   layout: "product",
 });
 
+const {locale} = useI18n();
+
 interface TaxonomyPost {
   id: number;
   title: string;
@@ -103,7 +105,8 @@ const {
   "kategori-layanan", // taxonomy
   route.params.slug, // term slug
   { type: "layanan" },
-  { per_page: 5 }
+  { per_page: 5 },
+
 );
 
 const showLightbox = ref(false);
