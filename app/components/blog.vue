@@ -2,7 +2,7 @@
   <div>
     <section class="py-20 bg-brand-50">
       <div class="container">
-        <h3 class="text-center mb-10 text-primary">Artikel</h3>
+        <h3 class="text-center mb-10 text-primary">{{ $t('home.artikel') }}</h3>
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-6 justify-between">
           <div
             v-for="(item, index) in blog?.posts"
@@ -20,7 +20,7 @@
               </h4>
 
               <UButton :to="localPath(`/blog/${item.slug}`)" size="xl" class="rounded-full px-6 text-white"
-                >Read more</UButton
+                >{{ $('home.selengkapnya') }}</UButton
               >
             </div>
           </div>
@@ -31,7 +31,7 @@
             size="xl"
             color="primary"
             class="rounded-full px-6 mt-10 mx-auto text-white"
-            >Selengkapnya</UButton
+            >{{ $t('home.selengkapnya') }}</UButton
           >
         </div>
       </div>
@@ -47,4 +47,6 @@ const { data: blog, status } = useWpPosts("post", {
 });
 
 const localPath = useLocalePath();
+
+
 </script>

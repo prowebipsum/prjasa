@@ -5,7 +5,7 @@
     </div>
     <section class="py-20">
       <div class="container">
-        <h3 class="text-center mb-10 text-primary">Berita Terkini</h3>
+        <h3 class="text-center mb-10 text-primary">{{ $t('home.beritaTerkini') }}</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
           <div v-for="item in news?.posts" class="group">
             <NuxtLink :to="localPath(`/news/${item?.slug}`)">
@@ -30,7 +30,7 @@
         </div>
         <div class="flex justify-center items-center">
           <UButton to="/news" size="xl" class="rounded-full px-6 mt-10 mx-auto text-white"
-            >Selengkapnya</UButton
+            >{{ $t('home.selengkapnya') }}</UButton
           >
         </div>
       </div>
@@ -42,8 +42,8 @@
 import { table } from "#build/ui";
 import { useNews } from "~/composables/news";
 
-//const { news } = useNews();
 
+const {locale} = useI18n();
 const  localPath = useLocalePath();
 
 const { formatDate } = useDateFormat();
