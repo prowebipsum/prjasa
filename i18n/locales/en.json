@@ -5,6 +5,12 @@
     "beritaTerkini":"Latest news",
     "artikel":"Articles"
   },
+  "cta":{
+   "title":"Check Routes and Fares",
+    "subTitle":"And find the nearest Fleet to your location",
+    "pesanTiket":"Tickets can be ordered via",
+    "tombolCek":"Click... Check Route and Rates" 
+  },
   "faq": {
     "regular": "F.A.Q for Regular Bus Service",
     "moda": "F.A.Q for Moda Bus Service",

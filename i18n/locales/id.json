@@ -5,6 +5,12 @@
     "beritaTerkini":"Berita Terkini",
     "artikel":"Artikel"
   },
+  "cta":{
+   "title":"Cek Rute dan Tarif",
+    "subTitle":"Dan temukan Armada terdekat di lokasi Anda",
+    "pesanTiket":"Tiket dapat di pesan melalui",
+    "tombolCek":"Klik... Cek Rute dan Tarif" 
+  },
   "faq":{
     "regular": "F.A.Q Layanan Bus Reguler",
     "moda": "F.A.Q Layanan Bus Moda",
