@@ -5,24 +5,24 @@
       :description="kontak?.acf?.sub_title"
       :background="kontak?.featured_image"
     />
-    <div class="container mt-16 ">
+    <div class="container mt-16">
       <div class="grid grid-cols-1 lg:grid-cols-2">
         <div>
           <!-- kiri -->
-          <p>{{  $t('contact.description') }}</p>
+          <p>{{ $t("contact.description") }}</p>
 
           <div
             v-if="success"
             class="text-green-600 mt-2 w-full h-full flex flex-col justify-center items-center rounded-xl border border-green-600 border-dashed bg-gray-50"
           >
-            ✅ {{ $t('contact.success') }}
+            ✅ {{ $t("contact.success") }}
           </div>
 
           <div
             v-else-if="error"
             class="text-red-600 mt-2 w-full h-full flex flex-col justify-center items-center rounded-xl border border-red-600 border-dashed bg-gray-50"
           >
-            ❌ {{  $t('contact.error') }}
+            ❌ {{ $t("contact.error") }}
           </div>
 
           <u-form
@@ -93,7 +93,7 @@
               <span class="text-2xl text-light" v-if="proses">
                 <icon name="line-md:loading-twotone-loop" />
               </span>
-              {{ $t('contact.submit') }}
+              {{ $t("contact.submit") }}
             </u-button>
           </u-form>
         </div>
@@ -109,21 +109,37 @@
               class="w-40 object-contain"
             />
             <h5 class="mb-0">PT. Primajasa Perdanarayautama</h5>
-            <div class="flex gap-2">
-              <icon name="fluent:mail-16-regular" class="text-xl shrink-0" />
+
+            <a :href="`mailto:${option?.acf?.email}`" class="flex gap-2">
+              <icon
+                name="fluent:mail-16-regular"
+                class="text-xl shrink-0 text-primary"
+              />
               <span>{{ option?.acf?.email }}</span>
-            </div>
-            <div class="flex gap-2">
-              <icon name="fluent:call-20-regular" class="text-xl shrink-0" />
-              <span>{{ option?.acf?.tel }}</span>
-            </div>
+            </a>
+
             <div class="flex gap-2">
               <icon
-                name="material-symbols:home-pin-rounded"
-                class="text-xl shrink-0"
+                name="fluent:call-20-regular"
+                class="text-xl shrink-0 text-primary"
               />
-              <span v-html="option?.acf?.alamat"></span>
+              <span class="tracking-wide">{{ option?.acf?.tel }}</span>
             </div>
+            <div class="flex gap-2">
+              <NuxtLink
+                to="https://maps.app.goo.gl/Um8tWg6sU8fwrxZR8"
+                target="_blank"
+              >
+                <icon
+                  name="material-symbols:home-pin-rounded"
+                  class="text-xl shrink-0 text-primary"
+                />
+              </NuxtLink>
+
+              <span v-html="option?.acf?.alamat"></span>
+              
+            </div>
+            <UButton to="https://maps.app.goo.gl/Um8tWg6sU8fwrxZR8" trailing-icon="material-symbols:location-on" size="xs" variant="outline" target="_blank" class="italic max-w-max">See map</UButton>
           </div>
         </div>
       </div>

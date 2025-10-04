@@ -10,6 +10,8 @@
             <div>
               <h5 class="text-primary mb-1">{{ $t('footer.address') }}</h5>
               <div v-html="option?.acf?.alamat"></div>
+              <UButton to="https://maps.app.goo.gl/Um8tWg6sU8fwrxZR8" trailing-icon="material-symbols:location-on" size="xs" variant="outline" target="_blank" class="mt-5 italic">See map</UButton>
+              
             </div>
           </div>
 
