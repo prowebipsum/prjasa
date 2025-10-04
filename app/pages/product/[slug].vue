@@ -22,7 +22,7 @@
         <div class="lg:col-span-2">
           <div class="p-6 rounded-xl bg-gray-50 border border-gray-300 h-full">
             <h5 class="mb-3 text-primary">{{ item?.title }}</h5>
-            <ul class="flex flex-col gap-2">
+            <ul class="flex flex-col gap-2 menu">
               <li
                 v-for="value in item?.acf?.fasilitas"
                 class="flex gap-2 items-center"
