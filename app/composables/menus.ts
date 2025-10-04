@@ -200,28 +200,28 @@ const menus = ref<Record<string, MenuItem[]>>({
         {
           id: 'regular-bus',
           label: 'Regular Bus',
-          to: '/product/regular-bus',
+          to: '/en/product/regular-bus',
           image: '/icons/icon-reguler.png',
           background:''
         },
         {
           id: 'moda',
           label: 'Moda',
-          to: '/product/moda-en',
+          to: '/en/product/moda-en',
           image: '/icons/icon-moda.png',
           background:''
         },
         {
           id: 'shuttle',
           label: 'Shuttle',
-          to: '/product/shuttle-en',
+          to: '/en/product/shuttle-en',
           image: '/icons/icon-shuttle.png',
           background:''
         },
         {
           id: 'tourism',
           label: 'Tourism',
-          to: '/product/tour',
+          to: '/en/product/tour',
           image: '/icons/icon-pariwisata.png'
         }
       ]

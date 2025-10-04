@@ -8,7 +8,7 @@
   "faq":{
     "regular": "F.A.Q Layanan Bus Reguler",
     "moda": "F.A.Q Layanan Bus Moda",
-    "shuttle": "F.A.Q Layanan Bus Shuttle",
+    "shuttle": "F.A.Q Layanan Shuttle",
     "pariwisata": "F.A.Q Layanan Bus Pariwisata"
   },
   "contact": {
@@ -32,7 +32,7 @@
     "address": "Alamat",
     "contact": "Kontak",
     "connect": "Terhubung dengan Kami",
-    "product": "Produk",
+    "product": "Layanan",
     "link": "Tautan",
     "about": "Tentang Kami",
     "promo": "Promo",

@@ -3,20 +3,20 @@ const currentPage = ref(1)
 const perPage = 9
 const taxonomy = ref("kategori-promo")
 
-// ✅ Tambah opsi "All"
-const terms = [
-  { label: "All", value: undefined  },
+// daftar tab manual
+const items = [
+  { label: "All", value: undefined },
   { label: "Bis Reguler", value: "bis-reguler" },
   { label: "Bis Moda Bandara", value: "bis-moda-bandara" },
   { label: "Shuttle", value: "shuttle" },
   { label: "Pariwisata", value: "pariwisata" },
 ]
 
-const term = ref(terms[0].value) // default = "All"
+const term = ref(items[0].value) // default = All
 
 const localPath = useLocalePath()
 
-// reactive query options
+// query options
 const queryOptions = computed(() => {
   const opt: any = {
     per_page: perPage,
@@ -29,14 +29,11 @@ const queryOptions = computed(() => {
   return opt
 })
 
-// API call (otomatis reactive kalau term/currentPage berubah)
-const { data, status, error } = useWpPosts<PostContent>("promo",queryOptions)
-
-const { data: promo, status: statusPromo } = useWpContent<PageContent>("promo")
+const { data, status } = useWpPosts<PostContent>("promo", queryOptions)
+const { data: promo } = useWpContent<PageContent>("promo")
 
 const posts = computed(() => data.value?.posts || [])
 const totalPages = computed(() => data.value?.pagination.total_pages ?? 1)
-const totalPosts = computed(() => data.value?.pagination.total ?? 0)
 
 const { formatDate } = useDateFormat()
 
@@ -45,7 +42,6 @@ watch(term, () => {
   currentPage.value = 1
 })
 
-// ✅ Debug: log setiap kali query berubah
 watchEffect(() => {
   console.log("🔍 API Params:", queryOptions.value)
 })
@@ -57,9 +53,21 @@ watchEffect(() => {
       <h1 v-html="promo?.title" class="text-primary"></h1>
     </div>
 
-    <!-- Tabs -->
+    <!-- ✅ Tabs Manual (mirip UTabs variant link) -->
     <div class="container my-6">
-      <UTabs v-model="term" :items="terms" variant="link" />
+      <div class="flex gap-6 overflow-x-auto whitespace-nowrap no-scrollbar border-b border-gray-300">
+        <button
+          v-for="item in items"
+          :key="item.value ?? 'all'"
+          @click="term = item.value"
+          class="pb-2 -mb-px border-b-2 transition-colors"
+          :class="term === item.value 
+            ? 'border-primary text-primary font-medium' 
+            : 'border-transparent  hover:text-primary'"
+        >
+          {{ item.label }}
+        </button>
+      </div>
     </div>
 
     <!-- Loading -->
@@ -69,9 +77,7 @@ watchEffect(() => {
 
     <!-- Grid posts -->
     <div v-else-if="posts.length" class="container">
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10"
-      >
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
         <div v-for="item in posts" :key="item.id" class="group">
           <nuxt-link :to="localPath(`/promo/${item.slug}`)">
             <img
@@ -126,3 +132,14 @@ watchEffect(() => {
     </div>
   </div>
 </template>
+
+<style scoped>
+/* sembunyikan scrollbar di mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+</style>
