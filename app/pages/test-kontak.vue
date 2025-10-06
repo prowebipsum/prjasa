@@ -5,24 +5,24 @@
       :description="kontak?.acf?.sub_title"
       :background="kontak?.featured_image"
     />
-    <div class="container mt-16">
+    <div class="container mt-16 ">
       <div class="grid grid-cols-1 lg:grid-cols-2">
         <div>
           <!-- kiri -->
-          <p>{{ $t("contact.description") }}</p>
+          <p>{{  $t('contact.description') }}</p>
 
           <div
             v-if="success"
             class="text-green-600 mt-2 w-full h-full flex flex-col justify-center items-center rounded-xl border border-green-600 border-dashed bg-gray-50"
           >
-            ✅ {{ $t("contact.success") }}
+            ✅ {{ $t('contact.success') }}
           </div>
 
           <div
             v-else-if="error"
             class="text-red-600 mt-2 w-full h-full flex flex-col justify-center items-center rounded-xl border border-red-600 border-dashed bg-gray-50"
           >
-            ❌ {{ $t("contact.error") }}
+            ❌ {{  $t('contact.error') }}
           </div>
 
           <u-form
@@ -93,7 +93,7 @@
               <span class="text-2xl text-light" v-if="proses">
                 <icon name="line-md:loading-twotone-loop" />
               </span>
-              {{ $t("contact.submit") }}
+              {{ $t('contact.submit') }}
             </u-button>
           </u-form>
         </div>
@@ -109,37 +109,21 @@
               class="w-40 object-contain"
             />
             <h5 class="mb-0">PT. Primajasa Perdanarayautama</h5>
-
-            <a :href="`mailto:${option?.acf?.email}`" class="flex gap-2">
-              <icon
-                name="fluent:mail-16-regular"
-                class="text-xl shrink-0 text-primary"
-              />
+            <div class="flex gap-2">
+              <icon name="fluent:mail-16-regular" class="text-xl shrink-0" />
               <span>{{ option?.acf?.email }}</span>
-            </a>
-
+            </div>
+            <div class="flex gap-2">
+              <icon name="fluent:call-20-regular" class="text-xl shrink-0" />
+              <span>{{ option?.acf?.tel }}</span>
+            </div>
             <div class="flex gap-2">
               <icon
-                name="fluent:call-20-regular"
-                class="text-xl shrink-0 text-primary"
+                name="material-symbols:home-pin-rounded"
+                class="text-xl shrink-0"
               />
-              <span class="tracking-wide">{{ option?.acf?.tel }}</span>
-            </div>
-            <div class="flex gap-2">
-              <NuxtLink
-                to="https://maps.app.goo.gl/Um8tWg6sU8fwrxZR8"
-                target="_blank"
-              >
-                <icon
-                  name="material-symbols:home-pin-rounded"
-                  class="text-xl shrink-0 text-primary"
-                />
-              </NuxtLink>
-
               <span v-html="option?.acf?.alamat"></span>
-              
             </div>
-            <UButton to="https://maps.app.goo.gl/Um8tWg6sU8fwrxZR8" trailing-icon="material-symbols:location-on" size="xs" variant="outline" target="_blank" class="italic max-w-max">See map</UButton>
           </div>
         </div>
       </div>
@@ -150,10 +134,8 @@
 import type { FormSubmitEvent } from "@nuxt/ui";
 
 const { locale } = useI18n();
-const { data: option, status } = useWpOptions(locale.value);
-
-const { data: kontak, status: statusKontak } =
-  useWpContent<PageContent>("kontak");
+const { data: option } = useWpOptions(locale.value);
+const { data: kontak } = useWpContent<PageContent>("kontak");
 
 const formState = reactive({
   name: "",
@@ -168,46 +150,34 @@ const success = ref(false);
 const error = ref<string | null>(null);
 
 async function onSubmit(event: FormSubmitEvent<typeof formState>) {
-  if (proses.value) return;
   proses.value = true;
   success.value = false;
   error.value = null;
 
   try {
-    // === Simulasi submit (nanti ganti dengan call API Resend) ===
-    /* await new Promise((resolve, reject) => {
-      setTimeout(() => {
-        // misal 70% sukses, 30% gagal
-        Math.random() > 0.3 ? resolve(true) : reject(new Error("Gagal kirim data"));
-      }, 1000);
-    }); */
-
-    await $fetch("/api/send", {
+    const { data } = await useFetch("/wp-json/api/v1/contact", {
       method: "POST",
-      body: formState,
+      baseURL: "https://primajasa.sementara.net", // ganti dengan domain WP kamu
+      body: {
+        nama: formState.name,
+        email: formState.email,
+        no_tel: formState.phone,
+        subject: formState.subject,
+        pesan: formState.message,
+      },
     });
-    // ==========================================================
 
-    success.value = true;
-    // setelah sukses
-    if (success.value) {
-      // reset form setelah sukses
-      formState.name = "";
-      formState.email = "";
-      formState.phone = "";
-      formState.subject = "";
-      formState.message = "";
+    if (data.value?.success) {
+      success.value = true;
+      Object.keys(formState).forEach((k) => (formState[k as keyof typeof formState] = "")); // reset form
+    } else {
+      error.value = data.value?.message || "Gagal mengirim pesan";
     }
-
-    setTimeout(() => {
-      success.value = false;
-    }, 2000);
   } catch (err: any) {
-    error.value = err.message || "Terjadi kesalahan";
+    error.value = err?.data?.message || "Terjadi kesalahan server";
   } finally {
     proses.value = false;
   }
-
-  console.log("Data dikirim:", event.data);
 }
 </script>
+

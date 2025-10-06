@@ -28,11 +28,11 @@
     "submit": "Kirim",
     "success": "Pesan berhasil dikirim",
     "error": "Terjadi kesalahan saat mengirim pesan",
-    "placeholderName": "Masukkan Nama",
-    "placeholderEmail": "Masukkan Email",
-    "placeholderPhone": "Masukkan Nomor Telepon",
-    "placeholderSubject": "Masukkan Subjek",
-    "placeholderMessage": "Masukkan Pesan"
+    "placeholderName": "Masukan Nama",
+    "placeholderEmail": "Masukan Email",
+    "placeholderPhone": "Masukan Nomor Telepon",
+    "placeholderSubject": "Masukan Subjek",
+    "placeholderMessage": "Masukan Pesan"
   },
   "footer": {
     "address": "Alamat",
@@ -41,7 +41,7 @@
     "product": "Layanan",
     "link": "Tautan",
     "about": "Tentang Kami",
-    "promo": "Promo",
+    "promo": "Program",
     "news": "Berita & CSR",
     "blog": "Blog",
     "faq": "FAQ",
