@@ -140,9 +140,8 @@
     <div class="p-2 bg-primary text-brand-100 text-xs text-center">
       <div class="container">
         <p class="mb-0">
-          Primajasa Perdanaraya Utama © 2025 | web developed by
-          <a href="https://proweb.co.id" target="_blank" class="underline"
-            >proweb</a
+          Primajasa Perdanaraya Utama © 2025 | <a href="https://proweb.co.id" target="_blank" class="underline"
+            >Pengembangan Digital</a
           >
         </p>
       </div>
