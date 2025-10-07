@@ -96,6 +96,7 @@
               {{ $t("contact.submit") }}
             </u-button>
           </u-form>
+          {{ formState }}
         </div>
         <!--  end kiri -->
         <div>

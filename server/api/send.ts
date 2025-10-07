@@ -15,8 +15,8 @@ export default defineEventHandler(async (event) => {
 
     // kirim email
     const data = await resend.emails.send({
-      from: "Website Contact <primajasa@resend.dev>",
-      to: ["prowebindo@gmail.com"], // email tujuan tetap (admin)
+      from: "Website Contact <onboarding@resend.dev>",
+      to: ["info.primajasa@primajasagroup.com"], // email tujuan tetap (admin)
       reply_to: body.email, // bisa ditambah supaya mudah reply ke pengirim
       subject: `Pesan Baru: ${body.subject}`,
       html: `
