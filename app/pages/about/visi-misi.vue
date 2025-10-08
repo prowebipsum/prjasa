@@ -9,7 +9,7 @@
     <div v-if="status === 'pending'">
       <loading />
     </div>
-    <div class="container pt-16">
+    <div class="container py-16">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-10">
         <sidebar-menu />
         <div class="lg:col-span-4">
