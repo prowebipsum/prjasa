@@ -31,6 +31,8 @@
 </template>
 
 <script lang="ts" setup>
+
+
 definePageMeta({
   layout: "single-post",
 });
@@ -46,6 +48,14 @@ type PageContent = {
 const { data: news, status } = useWpContent<PageContent>(route.params.slug as string);
 
 const { formatDate } = useDateFormat();
+
+useSeoMeta({
+  title:  news.value?.title,
+  ogTitle:  news.value?.title,
+  description: news.value?.title,
+  ogDescription: news.value?.title,
+})
+
 </script>
 
 <style>

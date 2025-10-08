@@ -149,6 +149,12 @@
 </template>
 <script lang="ts" setup>
 import type { FormSubmitEvent } from "@nuxt/ui";
+useSeoMeta({
+  title: 'Kontak',
+  ogTitle: 'Kontak',
+  description: 'Hubungi Primajasa sebagai layanan Transportasi Bus.',
+  ogDescription: 'Hubungi Primajasa sebagai layanan Transportasi Bus.'
+})
 
 const { locale } = useI18n();
 const { data: option, status } = useWpOptions(locale.value);

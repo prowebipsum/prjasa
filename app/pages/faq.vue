@@ -147,6 +147,14 @@
 </template>
 
 <script lang="ts" setup>
+
+useSeoMeta({
+  title: 'FAQ',
+  ogTitle: 'FAQ',
+  description: 'Seputar Pertanyaan tentang layanan Primajasa',
+  ogDescription: 'Seputar Pertanyaan tentang layanan Primajasa.'
+})
+
 const { locale } = useI18n();
 const { data: faq, status } = useWpContent("faq");
 

@@ -53,6 +53,14 @@
 definePageMeta({
   layout: "home",
 });
+
+useSeoMeta({
+  title: 'Primajasa',
+  ogTitle: 'Primajasa',
+  description: 'penyedia transportasi yang terpercaya di Indonesia.',
+  ogDescription: 'penyedia transportasi yang terpercaya di Indonesia.'
+})
+
 const {locale} = useI18n();
 const {data:option, status} = useWpOptions(locale.value);
 </script>

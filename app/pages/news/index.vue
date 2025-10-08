@@ -1,4 +1,12 @@
 <script setup lang="ts">
+
+useSeoMeta({
+  title: 'News',
+  ogTitle: 'News',
+  description: 'Seputar Informasi tentang layanan dan kegiatan Primajasa',
+  ogDescription: 'Seputar Informasi tentang layanan dan kegiatan Primajasa.'
+})
+
 const currentPage = ref(1);
 const perPage = 9;
 

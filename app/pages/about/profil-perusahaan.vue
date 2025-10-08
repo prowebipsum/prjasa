@@ -34,6 +34,13 @@
 <script lang="ts" setup>
 import { avatar } from "#build/ui";
 
+useSeoMeta({
+  title: 'Profil Perusahaan',
+  ogTitle: 'Profil Perusahaan',
+  description: 'Primajasa salah satu perusahaan penyedia transportasi yang terpercaya di Indonesia.',
+  ogDescription: 'Primajasa salah satu perusahaan penyedia transportasi yang terpercaya di Indonesia.'
+})
+
 definePageMeta({
  
 });

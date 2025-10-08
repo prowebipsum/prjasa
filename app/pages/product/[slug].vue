@@ -83,6 +83,7 @@
   </transition>
 </template>
 <script setup lang="ts">
+
 definePageMeta({
   layout: "product",
 });
@@ -124,4 +125,12 @@ function closeLightbox() {
   showLightbox.value = false;
   selectedImage.value = null;
 }
+
+useSeoMeta({
+  title: layanan.value?.name,
+  ogTitle: layanan.value?.name,
+  description: layanan.value?.description,
+  ogDescription: layanan.value?.description,
+})
+
 </script>

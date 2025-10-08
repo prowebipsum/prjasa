@@ -6,6 +6,9 @@
   </div>
 </template>
 <script setup>
+
+ const router = useRouter()
+ 
 useHead({
   script: [
     {
@@ -23,9 +26,10 @@ useHead({
   ],
 })
 
+
 // tracking otomatis setiap kali pindah halaman
 onMounted(() => {
-  const router = useRouter()
+ 
   router.afterEach((to) => {
     if (typeof window.gtag === 'function') {
       window.gtag('config', 'G-6PB5CEND33', {
