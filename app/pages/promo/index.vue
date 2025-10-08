@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 const currentPage = ref(1)
 const perPage = 9
 const taxonomy = ref("kategori-promo")

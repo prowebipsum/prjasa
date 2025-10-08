@@ -37,7 +37,7 @@
 
 <script lang="ts" setup>
 definePageMeta({
-
+ layout: "about",
 });
 
 const {

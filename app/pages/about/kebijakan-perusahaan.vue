@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 definePageMeta({
-
+ layout: "about",
 });
 
 const { data: kebijakan, status, error } = useWpContent<PageContent>(

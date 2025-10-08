@@ -42,7 +42,7 @@ useSeoMeta({
 })
 
 definePageMeta({
- 
+  layout: "about",
 });
 
 // const { data: cp, status, error } = useFetchApi(`/content/id/profil-perusahaan`);

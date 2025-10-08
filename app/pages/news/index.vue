@@ -1,5 +1,7 @@
 <script setup lang="ts">
-
+definePageMeta({
+  layout: "about"
+})
 useSeoMeta({
   title: 'News',
   ogTitle: 'News',

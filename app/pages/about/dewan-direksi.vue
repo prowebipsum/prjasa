@@ -124,7 +124,7 @@
 
 <script lang="ts" setup>
 definePageMeta({
-  // layout: "about"
+   layout: "about"
 });
 
 const route = useRoute();

@@ -5,7 +5,7 @@
       :description="kontak?.acf?.sub_title"
       :background="kontak?.featured_image"
     />
-    <div class="container mt-16">
+    <div class="container my-16">
       <div class="grid grid-cols-1 lg:grid-cols-2">
         <div>
           <!-- kiri -->
@@ -149,6 +149,7 @@
 </template>
 <script lang="ts" setup>
 import type { FormSubmitEvent } from "@nuxt/ui";
+definePageMeta({ layout: "about" });
 useSeoMeta({
   title: 'Kontak',
   ogTitle: 'Kontak',

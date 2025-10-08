@@ -30,7 +30,9 @@
 </template>
 
 <script lang="ts" setup>
-definePageMeta({});
+definePageMeta({
+  layout: "about",
+});
 
 interface PageContent {
   id: number;

@@ -5,8 +5,9 @@
 
       <slot />
        <div class="container mb-20">
-      <ElementPoolTarif class="mt-16" />
+      <ElementPoolTarif v-if="route.params.slug !== 'moda' && route.params.slug !== 'pariwisata'" class="mt-16" />
     </div>
+   
     <Footer />
   </div>
 </template>
