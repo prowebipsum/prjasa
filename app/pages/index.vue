@@ -21,7 +21,7 @@
         
         </UButton>
 
-              <p> {{ $t('cta.pesanTiket') }} </p>
+             <!--  <p> {{ $t('cta.pesanTiket') }} </p>
               <div class="flex items-center justify-center gap-4">
                <a v-for="item in option?.acf?.platform" :href="item?.link" class="" target="_blank">
             <img
@@ -31,7 +31,7 @@
             />
           </a>
               
-              </div>
+              </div> -->
             </div>
           </div>
           <div>

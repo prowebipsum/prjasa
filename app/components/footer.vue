@@ -6,7 +6,7 @@
       <div class="container">
         <img :src="option?.acf?.logo?.url" alt="" class="mb-5 h-12" />
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-10"
         >
           <!-- col one -->
           <div>
@@ -132,6 +132,24 @@
                 </li>
               </ul>
             </div>
+          </div>
+<!-- col five -->
+          <div class="flex flex-col gap-4"> 
+          
+            <a href="https://www.redbus.id/en/travels/primajasa "  target="_blank" class="text-primary text-center flex gap-2 items-center "> 
+              <img src="/img/redbus.png" class="w-10 h-10 object-contain"/>
+              <span>Bus</span>
+            </a>
+
+            <a href="https://www.redbus.id/perjalanan/redwhite-star-primajasa"  target="_blank" class="text-primary text-center flex gap-2 items-center"> 
+              <img src="/img/redbus.png" class="w-10 h-10 object-contain"/>
+              <span>RedWhite Star</span>
+            </a>
+           <a href="https://www.traveloka.com/id-id/bus-and-shuttle/provider/primajasa.PTPrimajasaPerdanarayautama" target="_blank" class="text-primary text-center flex gap-2 items-center">
+            <img src="/img/traveloka.webp" class="w-10 h-10 object-contain"/>
+            <span>Traveloka</span>
+           </a>
+          
           </div>
         </div>
       </div>
