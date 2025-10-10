@@ -143,7 +143,7 @@
 
             <a href="https://www.redbus.id/perjalanan/redwhite-star-primajasa"  target="_blank" class="text-primary text-center flex gap-2 items-center"> 
               <img src="/img/redbus.png" class="w-10 h-10 object-contain"/>
-              <span>RedWhite Star</span>
+              <span>Shuttle</span>
             </a>
            <a href="https://www.traveloka.com/id-id/bus-and-shuttle/provider/primajasa.PTPrimajasaPerdanarayautama" target="_blank" class="text-primary text-center flex gap-2 items-center">
             <img src="/img/traveloka.webp" class="w-10 h-10 object-contain"/>
