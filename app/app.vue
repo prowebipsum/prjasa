@@ -38,7 +38,7 @@ onMounted(() => {
     }
   })
 
-  console.log('loremipsum')
+  console.log('loremipsum') 
 })
 </script>
 
