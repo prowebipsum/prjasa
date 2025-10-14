@@ -37,6 +37,8 @@ onMounted(() => {
       })
     }
   })
+
+  console.log('loremipsum')
 })
 </script>
 
