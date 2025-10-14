@@ -140,6 +140,38 @@
       </div>
     </div>
 </div>
+
+ <div class="acc mb-10">
+ <!-- Accordion layanan umum-->
+    <h5 class="text-primary mb-4">{{ $t('faq.umum')}}</h5>
+    <div
+      class="accordion divide-y divide-gray-200 border border-gray-300 rounded-xl bg-white"
+    >
+      <div v-for="(item, index) in faq?.acf?.layanan_primajasa" :key="index" class="accordion-item">
+        <!-- Title -->
+        <button
+          class="accordion-title flex w-full  justify-between px-4 py-3 text-left text-lg font-semibold cursor-pointer"
+          @click="toggle(item.tanya)"
+        >
+          <span>{{ item.tanya }}</span>
+          <icon
+            name="material-symbols:expand-more-rounded"
+            class="transition-transform duration-300 text-xl"
+            :class="{ 'rotate-180': active === item.tanya }"
+          />
+        </button>
+
+        <!-- Content -->
+        <transition name="accordion">
+          <div
+            v-if="active === item.tanya"
+            class="accordion-content px-4 pb-4 text-base text-gray-700"
+            v-html="item.jawab"
+          />
+        </transition>
+      </div>
+    </div>
+</div>
 </div>
     <!-- Konten statis sebelum FAQ -->
    

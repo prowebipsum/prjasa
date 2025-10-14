@@ -15,7 +15,8 @@
     "regular": "F.A.Q for Regular Bus Service",
     "moda": "F.A.Q for Moda Bus Service",
     "shuttle": "F.A.Q for Shuttle  Service",
-    "pariwisata": "F.A.Q for Tour Bus Service"
+    "pariwisata": "F.A.Q for Tour Bus Service",
+    "umum": "Public Services"
   },
   "contact": {
     "title": "Contact Us",

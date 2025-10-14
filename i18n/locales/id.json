@@ -15,7 +15,8 @@
     "regular": "F.A.Q Layanan Bus Reguler",
     "moda": "F.A.Q Layanan Bus Moda",
     "shuttle": "F.A.Q Layanan Shuttle",
-    "pariwisata": "F.A.Q Layanan Bus Pariwisata"
+    "pariwisata": "F.A.Q Layanan Bus Pariwisata",
+    "umum":"Layanan Umum"
   },
   "contact": {
     "title": "Hubungi Kami",
