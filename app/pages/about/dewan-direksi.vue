@@ -34,7 +34,7 @@
                   <p class="mb-0">{{ item.nama }}</p>
                   <p class="text-xs mb-0">{{ item.jabatan }}</p>
                 </div>
-                <u-button
+              <!--   <u-button
                   size="xl"
                   variant="link"
                   @click="selectDireksi(item)"
@@ -44,7 +44,7 @@
                     name="bi:arrow-right-circle-fill"
                     class="text-2xl text-primary"
                   />
-                </u-button>
+                </u-button> -->
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@
                   <p class="mb-0">{{ item.nama }}</p>
                   <p class="text-xs mb-0">{{ item.jabatan }}</p>
                 </div>
-                <u-button
+              <!--   <u-button
                   size="xl"
                   variant="link"
                   @click="selectDireksi(item)"
@@ -79,7 +79,7 @@
                     name="bi:arrow-right-circle-fill"
                     class="text-2xl text-primary"
                   />
-                </u-button>
+                </u-button> -->
               </div>
             </div>
           </div>
