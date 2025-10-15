@@ -6,10 +6,10 @@
       <div class="container">
         <img :src="option?.acf?.logo?.url" alt="" class="mb-5 h-12" />
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-10"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-6 lg:gap-10"
         >
           <!-- col one -->
-          <div>
+          <div class="lg:col-span-2">
             <div>
               <h5 class="text-primary mb-1">{{ $t("footer.address") }}</h5>
               <div v-html="option?.acf?.alamat"></div>
