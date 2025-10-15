@@ -6,7 +6,7 @@
       <div class="container">
         <img :src="option?.acf?.logo?.url" alt="" class="mb-5 h-12" />
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-10"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-10"
         >
           <!-- col one -->
           <div>
@@ -26,11 +26,11 @@
           </div>
 
           <!-- col two -->
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-4 lg:col-span-2">
             <div>
               <h5 class="text-primary mb-1">{{ $t("footer.contact") }}</h5>
               <div class="flex flex-col gap-2">
-                <span class="flex gap-2 items-center">
+                <span class="flex gap-2 items-center max-w-max">
                   <icon name="fluent:mail-16-regular" class="text-xl" />
                   <a :href="`mailto:${option?.acf?.email}`" target="_blank">
                     <span>{{ option?.acf?.email }}</span>
