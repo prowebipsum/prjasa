@@ -29,6 +29,9 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxt/ui', '@nuxtjs/i18n', '@nuxt/image'],
+   plugins: [
+    '~/plugins/disable-right-click.client.ts'
+  ],
 
   colorMode: {
     preference: 'light',
