@@ -18,9 +18,12 @@ const { data, status } = useWpContent<PageContent>(route.params.slug as string);
       <loading />
     </div>
     <article v-else>
-      <h1>{{ data?.title }}</h1>
+      <div class="container mt-10">
+        <h1>{{ data?.title }}</h1>
       <img v-if="data?.featured_image" :src="data.featured_image" />
-      <div v-html="data?.content"></div>
+        <div v-html="data?.content"></div>
+      </div>
+      
     </article>
   </div>
 </template>
