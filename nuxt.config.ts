@@ -28,10 +28,22 @@ export default defineNuxtConfig({
     ]
   },
 
-  modules: ['@nuxt/ui', '@nuxtjs/i18n', '@nuxt/image'],
+  modules: ['@nuxt/ui', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-gtag'],
    plugins: [
     '~/plugins/disable-right-click.client.ts'
   ],
+  
+  gtag: {
+  tags: [
+    { 
+      id: 'G-6PB5CEND33',
+      config: { send_page_view: false }
+    },
+    { 
+      id: 'AW-17675835660'
+    }
+  ]
+},
 
   colorMode: {
     preference: 'light',
