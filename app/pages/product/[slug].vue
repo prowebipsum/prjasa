@@ -1,10 +1,5 @@
 <template>
-
-   <ElementHero
-    :title="layanan?.name"
-    :background="layanan?.acf?.image"
-    class="pb-32"
-  />
+  <ElementHero :title="layanan?.name" :background="layanan?.acf?.image" class="pb-32" />
   <ProductCategory background="bg-white " />
 
   <div v-if="status === 'pending'"><Loading /></div>
@@ -15,18 +10,13 @@
     </div>
 
     <div v-for="item in layanan?.posts" class="relative mb-10">
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-6 lg:gap-10"
-      >
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-6 lg:gap-10">
         <!-- kiri -->
         <div class="lg:col-span-2">
           <div class="p-6 rounded-xl bg-gray-50 border border-gray-300 h-full">
             <h5 class="mb-3 text-primary">{{ item?.title }}</h5>
             <ul class="flex flex-col gap-2 menu">
-              <li
-                v-for="value in item?.acf?.fasilitas"
-                class="flex gap-2 items-center"
-              >
+              <li v-for="value in item?.acf?.fasilitas" class="flex gap-2 items-center">
                 <icon :name="value.icon" class="text-xl" />
                 <span>{{ value.titel }}</span>
               </li>
@@ -47,11 +37,11 @@
               <icon
                 name="bi:fullscreen-exit"
                 class="absolute top-1/2 right-1/2 text-2xl translate-1/2 z-30 text-white opacity-0 group-hover:opacity-100 duration-300 cursor-pointer"
-                 @click="openLightbox(foto?.url)"
+                @click="openLightbox(foto?.url)"
               />
               <img
                 :src="foto?.url"
-                class="w-full h-[180px] lg:h-[340px] bg-primary object-cover rounded-lg cursor-pointer group-hover:opacity-60 duration-300 "
+                class="w-full h-[180px] lg:h-[340px] bg-primary object-cover rounded-lg cursor-pointer group-hover:opacity-60 duration-300"
                 @click="openLightbox(foto?.url)"
               />
             </div>
@@ -73,22 +63,20 @@
         class="max-h-[90%] max-w-[90%] rounded-lg shadow-lg animate-jelly"
         @click.stop
       />
-      <button
-        class="absolute top-4 right-4 text-primary text-3xl"
-        @click="closeLightbox"
-      >
+      <button class="absolute top-4 right-4 text-primary text-3xl" @click="closeLightbox">
         ✕
       </button>
     </div>
   </transition>
 </template>
 <script setup lang="ts">
+import PoolTarif from "~/components/element/pool-tarif.vue";
 
 definePageMeta({
   layout: "product",
 });
 
-const {locale} = useI18n();
+const { locale } = useI18n();
 
 interface TaxonomyPost {
   id: number;
@@ -98,19 +86,14 @@ interface TaxonomyPost {
 }
 
 const route = useRoute();
-const {
-  data: layanan,
-  status,
-  error,
-} = useWpTaxonomy<TaxonomyPost[]>(
+const { data: layanan, status, error } = useWpTaxonomy<TaxonomyPost[]>(
   "kategori-layanan", // taxonomy
   route.params.slug, // term slug
   { type: "layanan" },
-  { 
+  {
     per_page: 5,
-    lang:locale.value
-   },
-
+    lang: locale.value,
+  }
 );
 
 const showLightbox = ref(false);
@@ -131,6 +114,5 @@ useSeoMeta({
   ogTitle: layanan.value?.name,
   description: layanan.value?.description,
   ogDescription: layanan.value?.description,
-})
-
+});
 </script>
