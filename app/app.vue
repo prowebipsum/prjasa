@@ -1,13 +1,9 @@
 <template>
   <div>
+    <element-popup />
     <nuxt-layout>
       <nuxt-page />
     </nuxt-layout>
   </div>
 </template>
-<script setup>
-
- const router = useRouter()
-
-</script>
-
+<script lang="ts" setup></script>
