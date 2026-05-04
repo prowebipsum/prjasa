@@ -1,6 +1,5 @@
 <template>
   <div>
-    <element-popup />
     <nuxt-layout>
       <nuxt-page />
     </nuxt-layout>
